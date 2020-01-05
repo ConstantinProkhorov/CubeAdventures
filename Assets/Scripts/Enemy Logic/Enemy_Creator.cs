@@ -39,87 +39,93 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
     private float SpawnIntervalStep;
     private void Start()
     {
-        AllFigures = new Dictionary<GameObject, int>
-        {
-        { PointsFigure, 0 + PointsFigureSpawnChance },
-        { DiamondFigure, PointsFigureSpawnChance + DiamondFigureSpawnChance },
-        { enemyA, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance },
-        { enemyB, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance },
-        { enemyC, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance },
-        { enemyD, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance },
-        { enemyE,PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance + enemyESpawnChance }
-        };
+        //AllFigures = new Dictionary<GameObject, int>
+        //{
+        //{ PointsFigure, 0 + PointsFigureSpawnChance },
+        //{ DiamondFigure, PointsFigureSpawnChance + DiamondFigureSpawnChance },
+        //{ enemyA, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance },
+        //{ enemyB, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance },
+        //{ enemyC, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance },
+        //{ enemyD, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance },
+        //{ enemyE,PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance + enemyESpawnChance }
+        //};
 
-        spawnInterval = GetNewSpawnInterval(stepType);
+        //spawnInterval = GetNewSpawnInterval(stepType);
         spawnPosY = ScreenBorders.Top + ScreenBorders.Top / 10;
         positionArray = SpawnPositionCalculator();
-        EnemySpawnInterval = ActiveLevelData.EnemySpawnInterval;
-        SpawnIntervalStep = ActiveLevelData.SpawnIntervalStep;
+        //EnemySpawnInterval = ActiveLevelData.EnemySpawnInterval;
+        //SpawnIntervalStep = ActiveLevelData.SpawnIntervalStep;
     }
     void Update()
     {
-        if (isActive)
+        timeCount += Time.deltaTime;
+        if (timeCount > 2)
         {
-            timeCount += Time.deltaTime;
-            if (timeCount > spawnInterval)
-            {
-                Enemy_Spawner();
-                ++EnemyCounter;
-                timeCount = default;
-                if (EnemyCounter >= ActiveLevelData.DifficultyIncreaseStep)
-                {
-                    spawnInterval = GetNewSpawnInterval(stepType, ActiveLevelData.SpawnIntervalStep);
-                    EnemyCounter = default;
-                }
-                else
-                    spawnInterval = GetNewSpawnInterval(stepType);
-            }
+            Instantiate(enemyA, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
+            timeCount = default;
         }
+        //if (isActive)
+        //{
+        //    timeCount += Time.deltaTime;
+        //    if (timeCount > spawnInterval)
+        //    {
+        //        Enemy_Spawner();
+        //        ++EnemyCounter;
+        //        timeCount = default;
+        //        if (EnemyCounter >= ActiveLevelData.DifficultyIncreaseStep)
+        //        {
+        //            spawnInterval = GetNewSpawnInterval(stepType, ActiveLevelData.SpawnIntervalStep);
+        //            EnemyCounter = default;
+        //        }
+        //        else
+        //            spawnInterval = GetNewSpawnInterval(stepType);
+        //    }
+        //}
     }
-    public void Enemy_Spawner()
-    {
-        int i = Random.Range(0, 100);
-        foreach (var enemy in AllFigures)
-        {
-            if (enemy.Key != null && i < enemy.Value)
-            {
-                Instantiate(enemy.Key, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
-                return;
-            }
-        }     
-    }
-    public float GetNewSpawnInterval(StepType stepType)
-    {
-        if (stepType == StepType.NoStep)
-        {
-            return EnemySpawnInterval;
-        }
-        int i = Random.Range(0, 2);
-        if (stepType == StepType.FloatStep)
-        {
-            if (i == 0)
-            {
-                return EnemySpawnInterval += Random.Range(0, SpawnIntervalStep);
-            }
-            else
-            {
-                return EnemySpawnInterval -= Random.Range(0, SpawnIntervalStep);
-            }
-        }
-        else
-        {
-            if (i == 0)
-            {
-                return EnemySpawnInterval += SpawnIntervalStep;
-            }
-            else
-            {
-                return EnemySpawnInterval -= SpawnIntervalStep;
-            }
-        }
-    }
-    public float GetNewSpawnInterval(StepType stepType, float delta)
-    {
-        return GetNewSpawnInterval(stepType) - delta;
-    }
+    //public void Enemy_Spawner()
+    //{
+    //    int i = Random.Range(0, 100);
+    //    foreach (var enemy in AllFigures)
+    //    {
+    //        if (enemy.Key != null && i < enemy.Value)
+    //        {
+    //            Instantiate(enemy.Key, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
+    //            return;
+    //        }
+    //    }     
+    //}
+    //public float GetNewSpawnInterval(StepType stepType)
+    //{
+    //    if (stepType == StepType.NoStep)
+    //    {
+    //        return EnemySpawnInterval;
+    //    }
+    //    int i = Random.Range(0, 2);
+    //    if (stepType == StepType.FloatStep)
+    //    {
+    //        if (i == 0)
+    //        {
+    //            return EnemySpawnInterval += Random.Range(0, SpawnIntervalStep);
+    //        }
+    //        else
+    //        {
+    //            return EnemySpawnInterval -= Random.Range(0, SpawnIntervalStep);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (i == 0)
+    //        {
+    //            return EnemySpawnInterval += SpawnIntervalStep;
+    //        }
+    //        else
+    //        {
+    //            return EnemySpawnInterval -= SpawnIntervalStep;
+    //        }
+    //    }
+    //}
+    //public float GetNewSpawnInterval(StepType stepType, float delta)
+    //{
+    //    return GetNewSpawnInterval(stepType) - delta;
+    //}
 }
