@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 public sealed class Enemy_Creator : EnemySpawnRandomizer 
 {
@@ -49,7 +50,6 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
         { enemyD, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance },
         { enemyE,PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance + enemyESpawnChance }
         };
-
         spawnInterval = GetNewSpawnInterval(stepType);
         spawnPosY = ScreenBorders.Top + ScreenBorders.Top / 10;
         positionArray = SpawnPositionCalculator();
@@ -78,7 +78,7 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
     }
     public void Enemy_Spawner()
     {
-        int i = Random.Range(0, 100);
+        int i = Random.Range(1, 101);
         foreach (var enemy in AllFigures)
         {
             if (enemy.Key != null && i < enemy.Value)
@@ -86,7 +86,8 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
                 Instantiate(enemy.Key, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
                 return;
             }
-        }     
+        }
+
     }
     public float GetNewSpawnInterval(StepType stepType)
     {
