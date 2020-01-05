@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 public sealed class Enemy_Creator : EnemySpawnRandomizer 
 {
+    public Text logger;
+    public int LoggerNum;
     // фигуры врагов и шанс их появления
     #pragma warning disable 649
     [SerializeField] private GameObject enemyA;
@@ -57,10 +60,13 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
         //SpawnIntervalStep = ActiveLevelData.SpawnIntervalStep;
     }
     void Update()
-    {
+    {      
         timeCount += Time.deltaTime;
         if (timeCount > 2)
         {
+            LoggerNum = 1;
+            logger.text = LoggerNum.ToString();
+
             Enemy_Spawner();
             timeCount = default;
         }
@@ -84,15 +90,33 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
     }
     public void Enemy_Spawner()
     {
-        int i = Random.Range(0, 100);
+        ++LoggerNum;
+        logger.text = LoggerNum.ToString();
+
+        int i = Random.Range(1, 101);
+
+        ++LoggerNum;
+        logger.text = LoggerNum.ToString();
+
         foreach (var enemy in AllFigures)
         {
+            ++LoggerNum;
+            logger.text = LoggerNum.ToString();
+
             if (enemy.Key != null && i < enemy.Value)
             {
+                ++LoggerNum;
+                logger.text = LoggerNum.ToString();
+
                 Instantiate(enemy.Key, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
+                
+                logger.text = "Done";
+                LoggerNum = default;
+                
                 return;
             }
         }
+
     }
     //public float GetNewSpawnInterval(StepType stepType)
     //{
