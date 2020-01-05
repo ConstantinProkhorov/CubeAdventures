@@ -1,2 +1,1 @@
-# CuveAdventures
-Unity Game first project
+# UnityGame
