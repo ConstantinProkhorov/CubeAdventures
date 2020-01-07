@@ -32,7 +32,22 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
     }
     void Update()
     {
-        
+        if (Player.transform.rotation.z < 0)
+        {
+            Player.transform.Rotate(Vector3.forward, 0.3f, Space.World);
+        }
+        if(Player.transform.rotation.z > 0)
+        {
+            Player.transform.Rotate(Vector3.back, 0.3f, Space.World);
+        }
+        if (Player.transform.rotation.x > 0)
+        {
+            Player.transform.Rotate(Vector3.left, 0.3f, Space.World);
+        }
+        if (Player.transform.rotation.x < 0)
+        {
+            Player.transform.Rotate(Vector3.right, 0.3f, Space.World);
+        }
 
         LeftFootPosition.y = Mathf.Clamp(LeftFoot.position.y + (float)0.1, Player.transform.position.y - ymin, Player.transform.position.y - ymax);
         LeftFoot.position = LeftFootPosition;
@@ -72,8 +87,8 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
     }
     private void PlayerRotation()
     {
-        float rotX = Input.GetAxis("Mouse X") * rotationSpeed;
-        Player.transform.Rotate (Vector3.forward, -rotX, Space.World);
+        Player.transform.Rotate (Vector3.forward, -Input.GetAxis("Mouse X") * rotationSpeed, Space.World);
+        Player.transform.Rotate(Vector3.left, -Input.GetAxis("Mouse Y") * rotationSpeed, Space.World);
     }
     public void OnEndDrag(PointerEventData eventData){ }
     public void OnBeginDrag(PointerEventData eventData) { }
