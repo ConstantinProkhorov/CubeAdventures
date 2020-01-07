@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44877464, g: 0.4988324, b: 0.5756943, a: 1}
+  m_IndirectSpecularColor: {r: 0.44877416, g: 0.49883157, b: 0.5756931, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1357,14 +1357,14 @@ MonoBehaviour:
   fallingSpeed: 1.5
   timerIsNeeded: 1
   PointsPerSecond: 10
-  enemySpawnInterval: 1.2
+  enemySpawnInterval: 1.4
   SpawnIntervalStep: 0.1
   diamondSpawnMultiplier: 1
   pointsFigureSpawnMultiplier: 10
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
   DifficultyIncreaseStep: 10
-  Timer: 10
+  Timer: 20
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1380,11 +1380,11 @@ MonoBehaviour:
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
   enemyASpawnChance: 10
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 20
+  enemyBSpawnChance: 40
   enemyC: {fileID: 1550654925732726866, guid: 75c6055b2b166fc45885327c1332d709, type: 3}
   enemyCSpawnChance: 30
   enemyD: {fileID: 2443867936017225212, guid: c565e46be0b51dc43960c8826c5771e5, type: 3}
-  enemyDSpawnChance: 40
+  enemyDSpawnChance: 0
   enemyE: {fileID: 8930868702727515543, guid: 6b8808df5988af34a82609e363dcafca, type: 3}
   enemyESpawnChance: 0
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   PointsFigureSpawnChance: 0
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 0
+  DiamondFigureSpawnChance: 20
   isActive: 0
   EnemyCounter: 0
   stepType: 1
