@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using GameWork.Unity.Directions;
 
 public sealed class DiagonalEnemyMovement : EnemyMovement
 {
