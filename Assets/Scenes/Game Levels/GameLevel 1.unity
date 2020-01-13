@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallingSpeed: 1.5
-  timerIsNeeded: 1
+  timerIsNeeded: 0
   PointsPerSecond: 10
   enemySpawnInterval: 1.4
   SpawnIntervalStep: 0.1
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
   DifficultyIncreaseStep: 10
-  Timer: 20
+  Timer: 30
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1378,10 +1378,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 10
+  enemyASpawnChance: 20
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
   enemyBSpawnChance: 40
-  enemyC: {fileID: 1550654925732726866, guid: 75c6055b2b166fc45885327c1332d709, type: 3}
+  enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
   enemyCSpawnChance: 30
   enemyD: {fileID: 2443867936017225212, guid: c565e46be0b51dc43960c8826c5771e5, type: 3}
   enemyDSpawnChance: 0
@@ -1389,10 +1389,10 @@ MonoBehaviour:
   enemyESpawnChance: 0
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 0
+  PointsFigureSpawnChance: 9
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 20
+  DiamondFigureSpawnChance: 1
   isActive: 0
   EnemyCounter: 0
   stepType: 1
