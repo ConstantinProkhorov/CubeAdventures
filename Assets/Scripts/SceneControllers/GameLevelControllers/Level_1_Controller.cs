@@ -22,8 +22,6 @@ public class Level_1_Controller : LevelSceneController
     {
         if (levelIsEnding & EnemyCreator.EnemyCounter <= 0)
         {
-
-            Debug.Log("!!!!!!!!!!!!!!!!");
             SceneLoad("WinScore");
         }
     }
