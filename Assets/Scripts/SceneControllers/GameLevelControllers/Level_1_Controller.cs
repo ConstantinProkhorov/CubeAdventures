@@ -3,7 +3,8 @@ using UnityEngine.UI;
 using UnityEngine;
 public class Level_1_Controller : LevelSceneController
 {
-    public Timer timer;
+    public LevelStartUpTimer LevelStartUpTimer;
+    public Timer WaveTimer;
     public Text TimerReplacementText;
     private const string levelName = "GameLevel 1";
     public Level_1_Controller() : base(/*buildindex =*/ 8, levelName) { }
@@ -13,9 +14,9 @@ public class Level_1_Controller : LevelSceneController
     {
         base.Start();
         SceneController.LastLevel = levelName;        // перезапись последнего уровня в который играл игрок
-        timer.TimerEnded += new Action(TimerAtZero);
-        // подписка на событие окончания вступительного текста += new Action(LevelStartTextEnded);
-        LevelStartTextEnded(); // ЭТО ТУТ ВРЕМЕННО!!! пока не переедет в событие
+        LevelStartUpTimer.TimerEnded += new Action(LevelStartTextEnded);
+        WaveTimer.TimerEnded += new Action(TimerAtZero);
+        levelIsEnding = false;
     }
 
     public void Update()
@@ -29,15 +30,16 @@ public class Level_1_Controller : LevelSceneController
     private void LevelStartTextEnded() // метод для события окончания проигрывания вступительного текста
     {
         //выключение текста через его внутренний метод
+        LevelStartUpTimer.TurnOff();
         //запуск таймера
-        timer.TurnOn();
+        WaveTimer.TurnOn();
         // включение Enemy_Creator
         EnemyCreator.isActive = true;
     }
 
     private void TimerAtZero()
     {
-        timer.TurnOff();
+        WaveTimer.TurnOff();
         EnemyCreator.isActive = false;
         TimerReplacementText.gameObject.SetActive(true);
         levelIsEnding = true;
