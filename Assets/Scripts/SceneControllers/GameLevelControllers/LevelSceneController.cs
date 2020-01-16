@@ -27,7 +27,7 @@ public class LevelSceneController : BaseController
         ActiveLevelData.Set(currentLevelData);
         Player = _Player_Assembler.Player_Creator(SceneController.lastForm);
         ScoreGainedOnLevel = new ScoreGainedOnLevel();
-        localTimer.TurnOn();
+        //localTimer.TurnOn();
     }
     public void OnDisable()
     {
