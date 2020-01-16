@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine.UI;
-using UnityEngine;
 public class Level_1_Controller : LevelSceneController
 {
     public Timer timer;
