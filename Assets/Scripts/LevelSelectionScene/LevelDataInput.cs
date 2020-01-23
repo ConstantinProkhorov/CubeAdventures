@@ -10,9 +10,6 @@ public class LevelDataInput : MonoBehaviour
     [Tooltip("Possible values are in range from 0.01 to enemySpawnInterval")]
     public float SpawnIntervalStep;
     [Tooltip("Chance in percents to spawn diamond")]
-    [SerializeField]
-    public int diamondSpawnMultiplier;
-    public int pointsFigureSpawnMultiplier;
     // variables for setting subtraction amount for case of losing
     public int PointsSubtractionAmount;
     public int DiamondsSubtractAmount;

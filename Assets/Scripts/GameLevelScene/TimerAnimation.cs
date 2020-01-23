@@ -13,7 +13,6 @@ public class TimerAnimation : MonoBehaviour
 
     private IEnumerator TextSizeChange(Text text)
     {
-        yield return new WaitForSeconds(0.2f);
         text.fontSize += TextSizeIncrement;
         yield return new WaitForSeconds(0.5f);
         text.fontSize -= TextSizeIncrement;

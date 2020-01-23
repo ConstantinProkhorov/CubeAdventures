@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 public sealed class Enemy_Creator : EnemySpawnRandomizer 
 {
+    private IColorRandomizer ColorRandomizer;
     // фигуры врагов и шанс их появления
     #pragma warning disable 649
     [SerializeField] private GameObject enemyA;
@@ -55,6 +56,7 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
         positionArray = SpawnPositionCalculator();
         EnemySpawnInterval = ActiveLevelData.EnemySpawnInterval;
         SpawnIntervalStep = ActiveLevelData.SpawnIntervalStep;
+        ColorRandomizer = new EnemyColorRandomizer();
     }
     void Update()
     {
@@ -78,12 +80,18 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
     }
     public void Enemy_Spawner()
     {
+        GameObject Enemy;
         int i = Random.Range(1, 101);
         foreach (var enemy in AllFigures)
         {
             if (enemy.Key != null && i < enemy.Value)
             {
-                Instantiate(enemy.Key, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
+                Enemy = Instantiate(enemy.Key, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
+                if (Enemy.name == "Sphere_Enemy(Clone)")
+                {
+                    ColorRandomizer.AssignColor(Enemy);
+                }
+
                 return;
             }
         }
