@@ -206,7 +206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: //Time
+  m_Text: 00:00
 --- !u!222 &55712583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 365924855}
   - component: {fileID: 365924854}
   - component: {fileID: 365924853}
+  - component: {fileID: 365924857}
   m_Layer: 5
   m_Name: LevelStartUpText
   m_TagString: Untagged
@@ -358,6 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de3e30871826644c89206355503c42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerAnimation: {fileID: 365924857}
   Timer: {fileID: 1555726714}
 --- !u!114 &365924854
 MonoBehaviour:
@@ -416,6 +418,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365924851}
   m_CullTransparentMesh: 0
+--- !u!114 &365924857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365924851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c443e18e3738244bae39fe9054f2b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextSizeIncrement: 2
 --- !u!1 &387312994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,7 +1491,7 @@ MonoBehaviour:
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
   DifficultyIncreaseStep: 10
-  Timer: 30
+  Timer: 10
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1858,7 +1873,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.00001001358, y: -34}
-  m_SizeDelta: {x: 30, y: 30}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555726713
 MonoBehaviour:

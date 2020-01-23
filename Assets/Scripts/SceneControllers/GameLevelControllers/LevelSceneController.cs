@@ -15,19 +15,18 @@ public class LevelSceneController : BaseController
 
     public LevelSceneController() { }
     
-    public LevelSceneController(byte index, string levelName)
+    public LevelSceneController(byte index)
     {
-        LevelName = levelName;
         buildIndex = index;
         Dictionary = new ContinuePlayingDictionary();
     }
     protected void Start()
     {
-        thisSetActive(buildIndex); //установка данной сцены активной методом из наследуемого класса
+        thisSetActive(buildIndex);                                          //установка данной сцены активной методом из наследуемого класса
         ActiveLevelData.Set(currentLevelData);
+        SceneController.LastLevel = LevelName;                              // перезапись последнего уровня в который играл игрок
         Player = _Player_Assembler.Player_Creator(SceneController.lastForm);
         ScoreGainedOnLevel = new ScoreGainedOnLevel();
-        //localTimer.TurnOn();
     }
     public void OnDisable()
     {
