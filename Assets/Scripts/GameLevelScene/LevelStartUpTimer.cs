@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class LevelStartUpTimer : MonoBehaviour
 {
+    public TimerAnimation TimerAnimation;
     public event Action TimerEnded;
     [SerializeField] private Text Timer;
     private float time = 1;
@@ -16,6 +17,7 @@ public class LevelStartUpTimer : MonoBehaviour
         {
             time = 0;
             Timer.text = CountDownText[IndexValue];
+            TimerAnimation.RunAnimation(Timer);
             IndexValue++;
         }
         else if (time >= 1)

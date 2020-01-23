@@ -27,6 +27,7 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
         {
             thisSceneController.ScoreGainedOnLevel.Add(/*pointsAdded =*/ 10);
             Destroy(col.gameObject);
+            thisSceneController.DecrementEnemyCounter();
             PopUp.OnCollision(gameObject.transform.position);
             sizeChange.ChangeSize();
             thisSceneController.DecrementEnemyCounter();

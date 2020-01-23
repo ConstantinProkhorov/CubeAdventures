@@ -206,7 +206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: //Time
+  m_Text: 00:00
 --- !u!222 &55712583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 365924855}
   - component: {fileID: 365924854}
   - component: {fileID: 365924853}
+  - component: {fileID: 365924857}
   m_Layer: 5
   m_Name: LevelStartUpText
   m_TagString: Untagged
@@ -358,6 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de3e30871826644c89206355503c42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerAnimation: {fileID: 365924857}
   Timer: {fileID: 1555726714}
 --- !u!114 &365924854
 MonoBehaviour:
@@ -416,6 +418,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365924851}
   m_CullTransparentMesh: 0
+--- !u!114 &365924857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365924851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c443e18e3738244bae39fe9054f2b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextSizeIncrement: 2
 --- !u!1 &387312994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,13 +1481,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallingSpeed: 1.5
+  fallingSpeed: 2
   timerIsNeeded: 0
   PointsPerSecond: 10
-  enemySpawnInterval: 1.4
+  enemySpawnInterval: 1
   SpawnIntervalStep: 0.1
-  diamondSpawnMultiplier: 1
-  pointsFigureSpawnMultiplier: 10
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
   DifficultyIncreaseStep: 10
@@ -1490,21 +1503,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 20
+  enemyASpawnChance: 50
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 40
+  enemyBSpawnChance: 20
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
-  enemyCSpawnChance: 30
+  enemyCSpawnChance: 20
   enemyD: {fileID: 2443867936017225212, guid: c565e46be0b51dc43960c8826c5771e5, type: 3}
   enemyDSpawnChance: 0
   enemyE: {fileID: 8930868702727515543, guid: 6b8808df5988af34a82609e363dcafca, type: 3}
   enemyESpawnChance: 0
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 9
+  PointsFigureSpawnChance: 10
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 1
+  DiamondFigureSpawnChance: 0
   isActive: 0
   EnemyCounter: 0
   stepType: 1
@@ -1858,7 +1871,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.00001001358, y: -34}
-  m_SizeDelta: {x: 30, y: 30}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555726713
 MonoBehaviour:
