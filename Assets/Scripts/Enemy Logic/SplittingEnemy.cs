@@ -4,7 +4,7 @@ public class SplittingEnemy : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("Screen borders range from -3.5 to 5.5")]
-    private float SplitPosition = 1;
+    private float SplitPosition;
     [SerializeField]
     private int SpawnNumber = 3;
     public GameObject ChildFigure;
@@ -14,7 +14,7 @@ public class SplittingEnemy : MonoBehaviour
     {
         GameObject ScriptHolder = GameObject.Find("ScriptHolder");
         thisSceneController = ScriptHolder.GetComponent<LevelSceneController>();
-        SplitPosition = Mathf.Clamp(SplitPosition, -3.5f, 5.5f);
+        SplitPosition = Random.Range(-2f, 2f);
         ThisTransform = gameObject.transform;
     }
     void Update()
