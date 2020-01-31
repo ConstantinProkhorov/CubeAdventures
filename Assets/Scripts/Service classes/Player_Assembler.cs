@@ -70,16 +70,18 @@ public class Player_Assembler : MonoBehaviour
 
         return _player;
     }
-    public GameObject Player_Creator(Vector3 position, string s, float _playerSize) //вызывается из сцены крафта
+    public GameObject Player_Creator(Vector3 position, string lastForm, float playerSize) //вызывается из сцены крафта
     {
-        _player = Resources.Load<GameObject>(s) as GameObject ?? Resources.Load <GameObject>(SceneController.lastForm) as GameObject ;
+        _player = Resources.Load<GameObject>(lastForm) as GameObject ?? Resources.Load <GameObject>(SceneController.lastForm) as GameObject ;
         _player = Instantiate(_player, position, Quaternion.Euler(RandomRotation()));
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
 
-        _player.transform.localScale = new Vector3(_playerSize, _playerSize, _playerSize);
+        Debug.Log(playerSize);
+        _player.transform.localScale = new Vector3(playerSize, playerSize, playerSize);
         _player.AddComponent<RotationControlls>();
         return _player;
-    }
+    }   
+
     public Vector3 RandomRotation()
     {
         float rotationX = Random.Range(20.0f, 720.0f);

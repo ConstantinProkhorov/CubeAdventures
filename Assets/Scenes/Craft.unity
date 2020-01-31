@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Player_Assembler: {fileID: 196646674}
-  playerSize: 2
+  playerSize: 1.5
 --- !u!4 &196646668
 Transform:
   m_ObjectHideFlags: 0

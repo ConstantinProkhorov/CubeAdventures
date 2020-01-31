@@ -5,7 +5,7 @@ public class CraftSceneController : BaseController, IDictionarySupport
     private const byte buildIndex = 2;
     public Player_Assembler _Player_Assembler;
     public static GameObject player;
-    [SerializeField] private float playerSize = 2;
+    [SerializeField] private float playerSize = 1.5f;
     public IOpenCloseDictionary UnlockDictionary { get; set; }
     public IPriceDictionary PriceDictionary { get; set; }
 
@@ -16,6 +16,6 @@ public class CraftSceneController : BaseController, IDictionarySupport
         PriceDictionary = SceneController.ColorPriceDictionary;
 
         //загрузка фигуры игрока  
-        player = _Player_Assembler.Player_Creator(new Vector3(0, 2, 2), SceneController.lastForm, playerSize);
+        player = _Player_Assembler.Player_Creator(new Vector3(0, 3, 2), SceneController.lastForm, playerSize);
     }
 }
