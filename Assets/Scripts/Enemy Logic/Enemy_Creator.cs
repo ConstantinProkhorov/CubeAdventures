@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 public sealed class Enemy_Creator : EnemySpawnRandomizer 
 {
     private IColorRandomizer ColorRandomizer;
@@ -28,7 +27,7 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
     public static float spawnInterval;
     private float timeCount = 0;
 
-    public sbyte EnemyCounter = 0;
+    public sbyte EnemyCounter { get; set; } = 0;
 
     public StepType stepType = StepType.FloatStep;
 
@@ -52,13 +51,14 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
         { enemyE,PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance + enemyESpawnChance }
         };
         spawnInterval = GetNewSpawnInterval(stepType);
-        spawnPosY = ScreenBorders.Top + ScreenBorders.Top / 10;
+        spawnPosY = ScreenBorders.Top + ScreenBorders.Top / 3f;
         positionArray = SpawnPositionCalculator();
         EnemySpawnInterval = ActiveLevelData.EnemySpawnInterval;
         SpawnIntervalStep = ActiveLevelData.SpawnIntervalStep;
         ColorRandomizer = new EnemyColorRandomizer();
     }
-    void Update()
+    void Update() // Ох, надо все это через события писать было... один таймер на уровне может считать время, и рассылать события о прошедшем времени. 
+        // а у меня тут сколько раз время считается? три, может больше. 
     {
         if (isActive)
         {
@@ -95,7 +95,6 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
                 return;
             }
         }
-
     }
     public float GetNewSpawnInterval(StepType stepType)
     {

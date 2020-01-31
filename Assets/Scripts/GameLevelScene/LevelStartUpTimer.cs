@@ -24,7 +24,7 @@ public class LevelStartUpTimer : MonoBehaviour
         {
             TimerEnded();
         }
-        time += Time.deltaTime;
+        time += Time.fixedDeltaTime;
     }
     public void TurnOff()
     {
