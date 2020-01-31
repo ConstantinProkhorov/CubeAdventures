@@ -26,7 +26,8 @@ public class SplittingEnemy : MonoBehaviour
                 Instantiate(ChildFigure, ThisTransform.position, Quaternion.identity);
             }
             Destroy(gameObject);
-            thisSceneController.IncrementEnemyCounter(2);
+            thisSceneController.DecrementEnemyCounter();
+            thisSceneController.IncrementEnemyCounter((sbyte)SpawnNumber);
         }
     }
 }
