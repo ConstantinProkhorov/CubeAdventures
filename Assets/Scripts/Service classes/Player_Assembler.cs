@@ -23,10 +23,10 @@ public class Player_Assembler : MonoBehaviour
         RightFoot = Resources.Load<GameObject>("Forms/RightFoot") as GameObject;
 
         _player = Instantiate(_player, new Vector3(0, ScreenBorders.Buttom + 3*_player.transform.lossyScale.x, 0), Quaternion.identity);
-        LeftEye = Instantiate(LeftEye, new Vector3((float)0.35, (float)-1.65, -1), Quaternion.identity, _player.transform);
-        RightEye = Instantiate(RightEye, new Vector3((float)-0.35, (float)-1.65, -1), Quaternion.identity, _player.transform);
-        LeftFoot = Instantiate(LeftFoot, new Vector3((float)0.22, (float)-2.75, 0), Quaternion.identity, _player.transform);
-        RightFoot = Instantiate(RightFoot, new Vector3((float)-0.22, (float)-2.75, 0), Quaternion.identity, _player.transform);
+        LeftEye = Instantiate(LeftEye, new Vector3(0.35f, -1.65f, -0.55f), Quaternion.identity, _player.transform);
+        RightEye = Instantiate(RightEye, new Vector3(-0.35f,-1.65f, -0.55f), Quaternion.identity, _player.transform);
+        LeftFoot = Instantiate(LeftFoot, new Vector3(0.25f,-2.75f, 0), Quaternion.identity, _player.transform);
+        RightFoot = Instantiate(RightFoot, new Vector3(-0.25f,-2.75f, 0), Quaternion.identity, _player.transform);
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
 
         LeftEye.AddComponent<OpenCloseEye>();
