@@ -13,7 +13,7 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
     Transform LeftFoot;
     Transform RightFoot;
     float ymin = 2;
-    float ymax = 1f;
+    float ymax = 0.85f;
     [SerializeField] float rotationSpeed = 0.01f;
     Vector3 LeftFootPosition; 
     Vector3 RightFootPosition;
@@ -48,6 +48,14 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
         if (Player.transform.rotation.x < 0)
         {
             Player.transform.Rotate(Vector3.right, 0.3f, Space.World);
+        }
+        if (Player.transform.rotation.y > 0)
+        {
+            Player.transform.Rotate(Vector3.down, 0.3f, Space.World);
+        }
+        if (Player.transform.rotation.y < 0)
+        {
+            Player.transform.Rotate(Vector3.up, 0.3f, Space.World);
         }
 
         LeftFootPosition.y = Mathf.Clamp(LeftFoot.position.y + (float)0.1, Player.transform.position.y - ymin, Player.transform.position.y - ymax);
