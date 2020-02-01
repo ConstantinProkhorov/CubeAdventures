@@ -4,9 +4,10 @@ public class LevelOpenCloseDictionary : IOpenCloseDictionary
     private static Dictionary<string, bool> LevelState = new Dictionary<string, bool>
     {
         { "GameLevel 1", true },
-        { "GameLevel 2", false },
-        { "GameLevel 3", false },
-        { "GameLevel 4", false }
+        { "GameLevel 4", true },
+        { "GameLevel 7", true },
+        { "GameLevel 10", true },
+        { "GameLevel 13", true }
     };
     public bool GetState(string Name)
     {

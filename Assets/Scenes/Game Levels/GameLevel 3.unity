@@ -1463,8 +1463,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   LevelName: GameLevel 3
   _Player_Assembler: {fileID: 1395036231}
-  currentLevelData: {fileID: 1395036226}
-  localTimer: {fileID: 1046821810}
+  LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
   WaveTimer: {fileID: 1046821810}
@@ -1519,7 +1518,6 @@ MonoBehaviour:
     type: 3}
   DiamondFigureSpawnChance: 2
   isActive: 0
-  EnemyCounter: 0
   stepType: 1
 --- !u!114 &1395036228
 MonoBehaviour:

@@ -7,7 +7,7 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
     private SizeChange sizeChange;
     private ContinuePlayingWindow ContinuePlayingWindow;
     private SpecialEffects CurrentPlayerEffect;
-    private LevelSceneController thisSceneController;
+    [SerializeField] private LevelSceneController thisSceneController;
     void Start()
     {
         GameObject ScriptHolder = GameObject.Find("ScriptHolder");

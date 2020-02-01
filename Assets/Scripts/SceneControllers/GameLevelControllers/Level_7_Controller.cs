@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.UI;
-public class Level_4_Controller : LevelSceneController
+public class Level_7_Controller : LevelSceneController
 {
     public LevelStartUpTimer LevelStartUpTimer;
     public Timer WaveTimer;
     public Text TimerReplacementText;
-    public Level_4_Controller() : base(/*buildindex =*/ 11) { }
+    public Level_7_Controller() : base(/*buildindex =*/ 14) { }
     private bool levelIsEnding = false;
 
     new void Start()

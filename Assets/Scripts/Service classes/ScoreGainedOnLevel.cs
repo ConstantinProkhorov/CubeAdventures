@@ -1,4 +1,5 @@
-﻿public class ScoreGainedOnLevel
+﻿using System;
+public class ScoreGainedOnLevel
 {
     public int Score { get; private set; } = 0;
 
@@ -19,12 +20,17 @@
         }
         else Save();
     }
-    private void Save()
+    [Obsolete("Was used for mechanic of points substraction. Use void SaveScore() instead.")]
+    public void Save()
     {
         int temp = SceneController.score + Score;
         SceneController.score = temp < 0 ? 0 : temp;
         SceneController.ScoreGainedOnLevel = Score;
     }
+    public void SaveScore()
+    {
+        SceneController.score += Score;
+    } 
     public override string ToString()
     {
         return Score.ToString();
