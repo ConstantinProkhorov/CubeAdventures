@@ -25,7 +25,7 @@ public sealed class Timer : MonoBehaviour
     {
         if (timer > 0)
         {
-            timer -= Time.deltaTime;
+            timer -= Time.fixedDeltaTime;
             timerDisplay.text = String.Format("{0:00}:{1:00}", (int)timer / 60, (int)timer % 60);
         }
         else if(timer < 0)

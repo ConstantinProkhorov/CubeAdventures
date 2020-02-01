@@ -12,8 +12,8 @@ public abstract class EnemyMovement : MonoBehaviour
         GameObject ScriptHolder = GameObject.Find("ScriptHolder");
         thisSceneController = ScriptHolder.GetComponent<LevelSceneController>();
         fallingSpeed = ActiveLevelData.FallingSpeed;
-        destroyPosY = (ScreenBorders.Buttom + ScreenBorders.Buttom / 10, ScreenBorders.Top + ScreenBorders.Top / 10);
-        destroyPosX = (ScreenBorders.Left - ScreenBorders.Left / 10, ScreenBorders.Right + ScreenBorders.Right / 10);
+        destroyPosY = (ScreenBorders.Buttom + ScreenBorders.Buttom / 2, ScreenBorders.Top + ScreenBorders.Top / 2);       
+        destroyPosX = (ScreenBorders.Left + ScreenBorders.Left / 2, ScreenBorders.Right + ScreenBorders.Right / 2);
     }
     public virtual void Movement()
     {     

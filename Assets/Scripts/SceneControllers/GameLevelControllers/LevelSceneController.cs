@@ -35,11 +35,19 @@ public class LevelSceneController : BaseController
     public void DecrementEnemyCounter()
     {
         EnemyCreator.EnemyCounter--;
+        Display();
     }
 
     public void IncrementEnemyCounter(sbyte amount = 1)
     {
         EnemyCreator.EnemyCounter += amount;
+        Display();
+    }
+
+    private void Display()
+    {
+        Debug.Log(EnemyCreator.EnemyCounter);
+        //Debug.Break();
     }
 }
 

@@ -20,7 +20,8 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
     {
         if (col.gameObject.CompareTag("Enemy") && (CurrentPlayerEffect != SpecialEffects.Invincibility)) 
         {
-            ContinuePlayingWindow.OpenWindow(col.gameObject); 
+            ContinuePlayingWindow.OpenWindow(col.gameObject);
+            thisSceneController.DecrementEnemyCounter();
         }
 
         else if (col.gameObject.CompareTag("pointsgiver"))
@@ -30,7 +31,6 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
             thisSceneController.DecrementEnemyCounter();
             PopUp.OnCollision(gameObject.transform.position);
             sizeChange.ChangeSize();
-            thisSceneController.DecrementEnemyCounter();
         }
 
         else if (col.gameObject.CompareTag("transparent"))
