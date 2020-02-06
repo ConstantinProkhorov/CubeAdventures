@@ -3,7 +3,7 @@
 public class SplittingEnemy : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("Screen borders range from -3.5 to 5.5")]
+    [Tooltip("Screen borders range from -3.5 to 5.5. Assigned randomly.")]
     private float SplitPosition;
     [SerializeField]
     private int SpawnNumber = 3;

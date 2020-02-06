@@ -1,4 +1,4 @@
-﻿public sealed class RotationEnemyMovement : EnemyMovement
+﻿public sealed class RotationEnemyMovement : EnemyMovement //used for UIDiamond
 {
     public void Update()
     {

@@ -4,10 +4,11 @@ public class LevelOpenPriceDictionary : IPriceDictionary
 {
     private static Dictionary<string, int> LevelPrice = new Dictionary<string, int>
     {
-        //{ "GameLevel 1", 0 },
-        { "GameLevel 2", 10 },
-        { "GameLevel 3", 20 },
-        { "GameLevel 4", 40 }
+        { "GameLevel 1", 0 },
+        { "GameLevel 4", 0 },
+        { "GameLevel 7", 0 },
+        { "GameLevel 10", 0 },
+        { "GameLevel 13", 0 }
     };
 
     public int GetPrice(string Name) // возвращает цену разблокировки

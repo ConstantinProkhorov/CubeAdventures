@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44877416, g: 0.49883157, b: 0.5756931, a: 1}
+  m_IndirectSpecularColor: {r: 0.44877464, g: 0.4988324, b: 0.5756943, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1463,8 +1463,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   LevelName: GameLevel 1
   _Player_Assembler: {fileID: 1395036231}
-  currentLevelData: {fileID: 1395036226}
-  localTimer: {fileID: 1046821810}
+  LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
   WaveTimer: {fileID: 1046821810}
@@ -1519,7 +1518,6 @@ MonoBehaviour:
     type: 3}
   DiamondFigureSpawnChance: 0
   isActive: 0
-  EnemyCounter: 0
   stepType: 1
 --- !u!114 &1395036228
 MonoBehaviour:

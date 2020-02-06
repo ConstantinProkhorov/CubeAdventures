@@ -17,28 +17,17 @@ public class Player_Assembler : MonoBehaviour
     public GameObject Player_Creator(string s) // вызывается из игрового уровня   
     {
         _player = Resources.Load<GameObject>(s) as GameObject;
-        LeftEye = Resources.Load<GameObject>("Forms/NewLeftEye") as GameObject;
-        RightEye = Resources.Load<GameObject>("Forms/NewRightEye") as GameObject;
-        LeftFoot = Resources.Load<GameObject>("Forms/LeftFoot") as GameObject;
-        RightFoot = Resources.Load<GameObject>("Forms/RightFoot") as GameObject;
-
         _player = Instantiate(_player, new Vector3(0, ScreenBorders.Buttom + 3*_player.transform.lossyScale.x, 0), Quaternion.identity);
-        LeftEye = Instantiate(LeftEye, new Vector3(0.35f, -1.65f, -0.55f), Quaternion.identity, _player.transform);
-        RightEye = Instantiate(RightEye, new Vector3(-0.35f,-1.65f, -0.55f), Quaternion.identity, _player.transform);
-        LeftFoot = Instantiate(LeftFoot, new Vector3(0.25f,-2.75f, 0), Quaternion.identity, _player.transform);
-        RightFoot = Instantiate(RightFoot, new Vector3(-0.25f,-2.75f, 0), Quaternion.identity, _player.transform);
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
-
-        LeftEye.AddComponent<OpenCloseEye>();
-        RightEye.AddComponent<OpenCloseEye>();
-        LeftFoot.AddComponent<FootController>();
-        RightFoot.AddComponent<FootController>();
-
         _player.layer = 2; // установка слоя IgnoreRaycast 
         BoxCollider coll = _player.AddComponent<BoxCollider>();
         coll.size = new Vector3(1.0f, 1.0f, 1.0f);
         _player.AddComponent<SizeChange>();
         _player.AddComponent<OnCollision>();
+        
+        EyesAndLegsInstantiation();
+        AddLegsControllers();
+        
         return _player;
     }
     public void Player_Creator(Vector3 position, string s) //вызывается из меню
@@ -46,13 +35,16 @@ public class Player_Assembler : MonoBehaviour
         _player = Resources.Load<GameObject>(s) as GameObject;
         _player = Instantiate(_player, position, Quaternion.identity);
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
+        // размер фигуры игрока на старте
+        _player.transform.localScale = Vector3.one;
 
-        _player.transform.localScale = Vector3.one; // размер фигуры игрока на старте
-        // запуск анимации
+        //запуск анимации
         Animation anim = _player.AddComponent<Animation>();
         AnimationClip clip = Resources.Load<AnimationClip>("StartCubeAnimation") as AnimationClip;
         anim.AddClip(clip, "StartCubeAnimation");
         anim.Play("StartCubeAnimation", PlayMode.StopAll);
+
+        EyesAndLegsInstantiation();
     }
 
     public GameObject Player_Creator(Vector3 position, int i) //набор фигур для выбора из меню крафта
@@ -79,6 +71,9 @@ public class Player_Assembler : MonoBehaviour
         Debug.Log(playerSize);
         _player.transform.localScale = new Vector3(playerSize, playerSize, playerSize);
         _player.AddComponent<RotationControlls>();
+
+        EyesAndLegsInstantiation();
+
         return _player;
     }   
 
@@ -88,5 +83,33 @@ public class Player_Assembler : MonoBehaviour
         float rotationY = Random.Range(20.0f, 720.0f);
         float rotationZ = Random.Range(20.0f, 720.0f);
         return new Vector3(rotationX, rotationY, rotationZ);
+    }
+
+    private void EyesAndLegsInstantiation()
+    {
+        LeftEye = Resources.Load<GameObject>("Forms/NewLeftEye") as GameObject;
+        RightEye = Resources.Load<GameObject>("Forms/NewRightEye") as GameObject;
+        LeftFoot = Resources.Load<GameObject>("Forms/LeftFoot") as GameObject;
+        RightFoot = Resources.Load<GameObject>("Forms/RightFoot") as GameObject;
+
+        float EyesXPosition = _player.transform.position.x + _player.transform.lossyScale.x / 3f; // можно наверное заменить на просто числовые значения
+        float EyesYPosition = _player.transform.position.y + _player.transform.lossyScale.y / 3f;
+        float EyesZPosition = -0.55f;
+
+        float LegsXPosition = _player.transform.position.x - _player.transform.lossyScale.x / 3f;
+        float LegsYPosotion = _player.transform.position.y - _player.transform.lossyScale.y;
+
+        LeftEye = Instantiate(LeftEye, new Vector3(-EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
+        RightEye = Instantiate(RightEye, new Vector3(EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
+        LeftFoot = Instantiate(LeftFoot, new Vector3(LegsXPosition, LegsYPosotion, 0), Quaternion.identity, _player.transform);
+        RightFoot = Instantiate(RightFoot, new Vector3(-LegsXPosition, LegsYPosotion, 0), Quaternion.identity, _player.transform);
+
+        LeftEye.AddComponent<OpenCloseEye>();
+        RightEye.AddComponent<OpenCloseEye>();
+    }
+    private void AddLegsControllers()
+    {
+        LeftFoot.AddComponent<FootController>();
+        RightFoot.AddComponent<FootController>();
     }
 }
