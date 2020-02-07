@@ -15,7 +15,7 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
     float ymin = 2;
     float ymax = 0.85f;
     [SerializeField] float rotationSpeed = 0.01f;
-    Vector3 LeftFootPosition; 
+    Vector3 LeftFootPosition;
     Vector3 RightFootPosition;
 
     void Start()
@@ -31,6 +31,23 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
         LeftFootPosition = LeftFoot.position;
         RightFootPosition = RightFoot.position;
     }
+
+    void OnMouseDown()
+    {
+        if (!GameIsPaused)
+        {
+            Time.timeScale = 1.0f;
+        }
+    }
+    void OnMouseUp()
+    { 
+        if (!GameIsPaused)
+        {
+            Time.timeScale = 0.2f;
+        }
+    
+    }
+    
     void Update()
     {
         if (Player.transform.rotation.z < 0)
@@ -99,6 +116,7 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
         Player.transform.Rotate (Vector3.forward, -Input.GetAxis("Mouse X") * rotationSpeed, Space.World);
         Player.transform.Rotate(Vector3.left, -Input.GetAxis("Mouse Y") * rotationSpeed, Space.World);
     }
-    public void OnEndDrag(PointerEventData eventData){ }
+    public void OnEndDrag(PointerEventData eventData){
+    }
     public void OnBeginDrag(PointerEventData eventData) { }
 }
