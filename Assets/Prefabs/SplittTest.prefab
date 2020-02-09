@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
+  FallingSpeedMultiplier: 1
+  thisSceneController: {fileID: 0}
 --- !u!114 &-6875847888916451564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf602fd0a5040b4797081beea263dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplitPosition: 1
   SpawnNumber: 2
-  ChildFigure: {fileID: 1550654925732726866, guid: 75c6055b2b166fc45885327c1332d709,
+  ChildFigure: {fileID: 8935892655870133375, guid: a81bc390a83ccf741b31b0e0943147fe,
     type: 3}

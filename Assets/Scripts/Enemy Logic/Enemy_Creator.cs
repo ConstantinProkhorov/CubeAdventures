@@ -2,6 +2,8 @@
 using UnityEngine;
 public sealed class Enemy_Creator : EnemySpawnRandomizer 
 {
+    private LevelSceneController ThisLevelSceneController;
+    public SplitType SplitType;
     private IColorRandomizer ColorRandomizer;
     // фигуры врагов и шанс их появления
     #pragma warning disable 649
@@ -39,7 +41,8 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
     private float EnemySpawnInterval;
     private float SpawnIntervalStep;
     private void Start()
-    {
+    {       
+        ThisLevelSceneController = gameObject.GetComponent<LevelSceneController>();
         AllFigures = new Dictionary<GameObject, int>
         {
         { PointsFigure, 0 + PointsFigureSpawnChance },
@@ -87,11 +90,11 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
             if (enemy.Key != null && i < enemy.Value)
             {
                 Enemy = Instantiate(enemy.Key, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
+                Enemy.GetComponent<EnemyMovement>().thisSceneController = ThisLevelSceneController;
                 if (Enemy.name == "Sphere_Enemy(Clone)")
                 {
                     ColorRandomizer.AssignColor(Enemy);
                 }
-
                 return;
             }
         }

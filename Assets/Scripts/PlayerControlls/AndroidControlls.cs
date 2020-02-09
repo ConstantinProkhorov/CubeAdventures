@@ -31,12 +31,15 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
         LeftFootPosition = LeftFoot.position;
         RightFootPosition = RightFoot.position;
     }
-
+    // возникшее подлагивание скорее всего вызвана работой физики движка в fixedupdate. В данном случае, мне так сейчас кажется, было бы разумнее вызывать событие при 
+    // отрывании пальца от экрана. И можно было бы просто значения скорости падения домножать на 0,2, как и скорость работы таймера. Но при текущей "архитектуре" придется 
+    // подписывать на события десяток классов, если не больше. Что сделает связанность между классами просто невыносимой. 
     void OnMouseDown()
     {
         if (!GameIsPaused)
         {
             Time.timeScale = 1.0f;
+            Time.fixedDeltaTime = 0.02f;
         }
     }
     void OnMouseUp()
@@ -44,8 +47,8 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
         if (!GameIsPaused)
         {
             Time.timeScale = 0.2f;
-        }
-    
+            Time.fixedDeltaTime = Time.timeScale * 0.02f;
+        }    
     }
     
     void Update()
