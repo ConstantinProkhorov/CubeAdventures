@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
-  FallingSpeedMultiplier: 1
   thisSceneController: {fileID: 0}
 --- !u!114 &-6875847888916451564
 MonoBehaviour:
@@ -141,3 +140,4 @@ MonoBehaviour:
   SpawnNumber: 2
   ChildFigure: {fileID: 8935892655870133375, guid: a81bc390a83ccf741b31b0e0943147fe,
     type: 3}
+  thisSceneController: {fileID: 0}

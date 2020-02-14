@@ -1500,7 +1500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916b0f76fd9ae1641b8023de27e9aba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplitType: 0
+  ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 1550654925732726866, guid: 75c6055b2b166fc45885327c1332d709, type: 3}
   enemyASpawnChance: 0
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}

@@ -2,9 +2,8 @@
 using UnityEngine;
 public sealed class Enemy_Creator : EnemySpawnRandomizer 
 {
-    private LevelSceneController ThisLevelSceneController;
-    public SplitType SplitType;
     private IColorRandomizer ColorRandomizer;
+    [SerializeField] LevelSceneController ThisSceneController;
     // фигуры врагов и шанс их появления
     #pragma warning disable 649
     [SerializeField] private GameObject enemyA;
@@ -42,7 +41,6 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
     private float SpawnIntervalStep;
     private void Start()
     {       
-        ThisLevelSceneController = gameObject.GetComponent<LevelSceneController>();
         AllFigures = new Dictionary<GameObject, int>
         {
         { PointsFigure, 0 + PointsFigureSpawnChance },
@@ -58,10 +56,12 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
         positionArray = SpawnPositionCalculator();
         EnemySpawnInterval = ActiveLevelData.EnemySpawnInterval;
         SpawnIntervalStep = ActiveLevelData.SpawnIntervalStep;
-        ColorRandomizer = new EnemyColorRandomizer();
+        ColorRandomizer = new EnemyColorRandomizer(); //в условиях юнити, прикрывая класс абстракцие в виде интерфейса, я не разрываю зависимость и не ослабляю ее, так
+        // как все равно остается эта стрчка кода. В условиях юнити (и, возможно, не только в них) вероятно нужен третий скрипт, который бы назначал переменные.
     }
     void Update() // Ох, надо все это через события писать было... один таймер на уровне может считать время, и рассылать события о прошедшем времени. 
         // а у меня тут сколько раз время считается? три, может больше. 
+        // а если мне нужные несогласованные интервалы?
     {
         if (isActive)
         {
@@ -90,7 +90,7 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
             if (enemy.Key != null && i < enemy.Value)
             {
                 Enemy = Instantiate(enemy.Key, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
-                Enemy.GetComponent<EnemyMovement>().thisSceneController = ThisLevelSceneController;
+                Enemy.GetComponent<EnemyMovement>().thisSceneController = ThisSceneController;
                 if (Enemy.name == "Sphere_Enemy(Clone)")
                 {
                     ColorRandomizer.AssignColor(Enemy);

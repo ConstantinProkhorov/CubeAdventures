@@ -1,66 +1,67 @@
-﻿using UnityEngine;
-using GameWork.Unity.Directions;
+﻿using GameWork.Unity.Directions;
+using UnityEngine;
 
-public enum SplitType
-{
-    TwoFiguresWithHorizontalMovement
-    //ThreeFiguresWithDiagonalMovement
-}
 public class SplittingEnemy : MonoBehaviour
 {
     private float SplitPosition;
-    public SplitType SplitType;
     [SerializeField]
     private int SpawnNumber = 2;
-    public GameObject ChildFigure;
+    [SerializeField]private GameObject ChildFigure;
+    private GameObject SpawningFigure;
     [SerializeField]private LevelSceneController thisSceneController;
     private Transform ThisTransform;
+    private Vector3 SpawnPositionOffset;
     void Start()
     {
         GameObject ScriptHolder = GameObject.Find("ScriptHolder");
         thisSceneController = ScriptHolder.GetComponent<LevelSceneController>();
-        SplitType = thisSceneController.EnemyCreator.SplitType;
         SplitPosition = Random.Range(-2f, 2f);
         ThisTransform = gameObject.transform;
+        SpawnPositionOffset = new Vector3 (ChildFigure.transform.lossyScale.x / 2, 0, 0);
     }
     void Update()
     {
         if (transform.position.y <= SplitPosition)
         {
-            Split(SplitType);
+            Split();
             Destroy(gameObject);
             thisSceneController.DecrementEnemyCounter();
             thisSceneController.IncrementEnemyCounter((sbyte)SpawnNumber);
         }
     }
 
-    private void Split(SplitType splitType)
+    private void Split() //TODO: я думаю, что тут можно уменьшить объем повторения кода и засунуть все в цикл используя анонимные методы, надо попробовать.
     {
-        HorizontalEnemyMovement ChildFigureMovement;
-        switch (splitType)
-        {
-            case SplitType.TwoFiguresWithHorizontalMovement:
-                Instantiate(ChildFigure, ThisTransform.position, Quaternion.identity);
-                ChildFigureMovement = ChildFigure.GetComponent<HorizontalEnemyMovement>();
-                ChildFigureMovement.direction = (float)HorizontalDirection.left;
-                ChildFigureMovement.thisSceneController = thisSceneController;
+        DiagonalEnemyMovement ChildFigureMovement;
 
-                Instantiate(ChildFigure, ThisTransform.position, Quaternion.identity);
-                ChildFigureMovement = ChildFigure.GetComponent<HorizontalEnemyMovement>();
-                ChildFigureMovement.direction = (float)HorizontalDirection.right;
-                ChildFigureMovement.thisSceneController = thisSceneController;
+        SpawningFigure = Instantiate(ChildFigure as GameObject, ThisTransform.position - SpawnPositionOffset, Quaternion.identity);
+        ChildFigureMovement = SpawningFigure.AddComponent<DiagonalEnemyMovement>();     
+        ChildFigureMovement.direction = HorizontalDirection.left;
 
-                break;
-            //case SplitType.ThreeFiguresWithDiagonalMovement:
-            //    Instantiate(ChildFigure, ThisTransform.position, Quaternion.identity);
-            //    ChildFigure.GetComponent<HorizontalEnemyMovement>().direction = (float)HorizontalDirection.left;
-            //    Instantiate(ChildFigure, ThisTransform.position, Quaternion.identity);
-            //    ChildFigure.GetComponent<HorizontalEnemyMovement>().direction = (float)HorizontalDirection.right;
-            //    Instantiate(ChildFigure, ThisTransform.position, Quaternion.identity);
-            //    ChildFigure.GetComponent<HorizontalEnemyMovement>().direction = (float)HorizontalDirection.noDirection;
-            //    break;
-            //default:
-            //    break;
-        }
+        SpawningFigure = Instantiate(ChildFigure as GameObject, ThisTransform.position + SpawnPositionOffset, Quaternion.identity);
+        ChildFigureMovement = SpawningFigure.AddComponent<DiagonalEnemyMovement>();
+        ChildFigureMovement.direction = HorizontalDirection.right;
+
+        Time.timeScale = 0.0f;
     }
+    //private void TripleSplit() 
+    //{
+    // // добработать код
+    //    HorizontalEnemyMovement ChildFigureMovement;
+    //    SphereEnemyMovment sphereEnemyMovment;
+
+    //    SpawningFigure = Instantiate(ChildFigure as GameObject, ThisTransform.position - SpawnPositionOffset, Quaternion.identity);
+    //    ChildFigureMovement = SpawningFigure.AddComponent<HorizontalEnemyMovement>();
+    //    ChildFigureMovement.direction = (float)HorizontalDirection.right;
+
+    //    SpawningFigure = Instantiate(ChildFigure as GameObject, ThisTransform.position + SpawnPositionOffset, Quaternion.identity);
+    //    ChildFigureMovement = SpawningFigure.AddComponent<HorizontalEnemyMovement>();
+    //    ChildFigureMovement.direction = (float)HorizontalDirection.left;
+
+    //    SpawningFigure = Instantiate(ChildFigure as GameObject, ThisTransform.position, Quaternion.identity);
+    //    sphereEnemyMovment = SpawningFigure.AddComponent<SphereEnemyMovment>();
+
+    //    Time.timeScale = 0.0f;
+    //}
 }
+
