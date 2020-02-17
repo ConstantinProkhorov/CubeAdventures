@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 5970985109549252534}
   - component: {fileID: 1730834845868486129}
   - component: {fileID: -6875847888916451564}
+  - component: {fileID: -5486538191023467555}
   m_Layer: 0
-  m_Name: Splitting_Enemy
+  m_Name: SplittTest
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
+  thisSceneController: {fileID: 0}
 --- !u!114 &-6875847888916451564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +138,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf602fd0a5040b4797081beea263dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplitPosition: 1
-  SpawnNumber: 3
-  ChildFigure: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210,
+  SpawnNumber: 2
+  ChildFigure: {fileID: 8935892655870133375, guid: a81bc390a83ccf741b31b0e0943147fe,
     type: 3}
+  thisSceneController: {fileID: 0}
+  SplitStrategy: {fileID: 0}
+--- !u!114 &-5486538191023467555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2443867936017225212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44189896cc9d924e8102addd86d526b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
