@@ -7,7 +7,11 @@ public sealed class DiagonalEnemyMovement : EnemyMovement
     public HorizontalDirection direction;
     public float FallDirection;
     [Tooltip("Множитель скорости падения для определения угла падения")] // TODO: заменить на пересчет через синус, чтобы можно было вводить значение угла
-    [SerializeField] private float FallInclination = 2f;
+    [SerializeField] private float FallInclination = 0.2f;
+    public void Awake()
+    {
+        direction = GetRandomDirection();
+    }
     public new void Start()
     {
         base.Start();
@@ -21,5 +25,18 @@ public sealed class DiagonalEnemyMovement : EnemyMovement
     public override void Movement()
     {
         transform.Translate(FallDirection * Time.deltaTime, fallingSpeed * Time.deltaTime, 0, Space.World);
+    }
+
+    private HorizontalDirection GetRandomDirection()
+    {
+        int x = Random.Range(0, 2);
+        if (x == 0)
+        {
+            return HorizontalDirection.right;
+        }
+        else
+        {
+            return HorizontalDirection.left;
+        }
     }
 }

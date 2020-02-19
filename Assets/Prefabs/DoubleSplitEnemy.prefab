@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 5970985109549252534}
   - component: {fileID: 1730834845868486129}
   - component: {fileID: -6875847888916451564}
-  - component: {fileID: -5486538191023467555}
+  - component: {fileID: 8544642733123416940}
   m_Layer: 0
-  m_Name: SplittTest
+  m_Name: DoubleSplitEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,8 +142,7 @@ MonoBehaviour:
   ChildFigure: {fileID: 8935892655870133375, guid: a81bc390a83ccf741b31b0e0943147fe,
     type: 3}
   thisSceneController: {fileID: 0}
-  SplitStrategy: {fileID: 0}
---- !u!114 &-5486538191023467555
+--- !u!114 &8544642733123416940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,6 +151,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2443867936017225212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f44189896cc9d924e8102addd86d526b, type: 3}
+  m_Script: {fileID: 11500000, guid: a429893ed73c3f74d9971781bed41b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

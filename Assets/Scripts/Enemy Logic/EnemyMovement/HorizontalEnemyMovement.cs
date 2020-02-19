@@ -5,6 +5,17 @@ public class HorizontalEnemyMovement : EnemyMovement
 {
     public HorizontalDirection direction;
     private float FlyDirection;
+    public void Awake()
+    {
+        if (gameObject.transform.position.x < 0)
+        {
+            direction = HorizontalDirection.left;
+        }
+        else
+        {
+            direction = HorizontalDirection.right;
+        }
+    }
     public new void Start()
     {
         base.Start();

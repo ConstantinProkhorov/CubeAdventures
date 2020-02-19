@@ -5,6 +5,7 @@ public class TripleSplit : SplitStrategy
 {
     public override void Split(GameObject childFigure, Transform splittingFigureTransform, LevelSceneController levelSceneController)
     {
+        // нужно добавить установку угла падения для делящейся фигуры. 2f отлично работает. 
         DiagonalEnemyMovement ChildDiagonalMovement;
         VerticalEnemyMovement ChildVerticalMovement;
         SpawnPositionOffset = new Vector3(childFigure.transform.lossyScale.x, 0, 0);
