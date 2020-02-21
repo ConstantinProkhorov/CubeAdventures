@@ -1505,7 +1505,7 @@ MonoBehaviour:
   enemyASpawnChance: 0
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
   enemyBSpawnChance: 0
-  enemyC: {fileID: 2443867936017225212, guid: 92627038a22a09f40b464a9b99842aac, type: 3}
+  enemyC: {fileID: 8935892655870133375, guid: 6d001da693d20d34fbe1f2d2a74945af, type: 3}
   enemyCSpawnChance: 100
   enemyD: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
   enemyDSpawnChance: 0
