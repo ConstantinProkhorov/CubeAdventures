@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 1296888520616422959}
   - component: {fileID: 5676599215790824975}
   m_Layer: 0
-  m_Name: Cube_Enemy 1
-  m_TagString: Untagged
+  m_Name: PushEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,3 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
+  thisSceneController: {fileID: 0}

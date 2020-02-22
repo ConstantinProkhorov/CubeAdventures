@@ -12,10 +12,7 @@ public class DelayedBehaviourActivation : MonoBehaviour
 
     void Start()
     {
-        TimeCounter.TimerFinshed += delegate (object sender, EventArgs eventArgs)
-        {
-            Behaviour.enabled = true;
-        };
+        TimeCounter.TimerFinshed += (object sender, EventArgs eventArgs) => Behaviour.enabled = true;
         TimeCounter.TurnOn(DelayTime);
     }
 }

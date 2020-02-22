@@ -7,6 +7,7 @@ public class LevelOpenPriceDictionary : IPriceDictionary
         { "GameLevel 1", 0 },
         { "GameLevel 4", 0 },
         { "GameLevel 7", 0 },
+        { "GameLevel 8", 0 },
         { "GameLevel 10", 0 },
         { "GameLevel 13", 0 }
     };
