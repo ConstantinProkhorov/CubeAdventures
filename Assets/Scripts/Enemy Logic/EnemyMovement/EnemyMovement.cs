@@ -6,12 +6,10 @@ public abstract class EnemyMovement : MonoBehaviour
     private (float min, float max) destroyPosY;
     private (float min, float max) destroyPosX;
     protected float fallingSpeed;
-    [Tooltip("Used to alter falling speed for certain figure types. Not affected by level settings. Default is 1.")]
-    [SerializeField] protected float FallingSpeedMultiplier = 1;
     public LevelSceneController thisSceneController;
     protected void Start()
     {
-        fallingSpeed = ActiveLevelData.FallingSpeed * FallingSpeedMultiplier;
+        fallingSpeed = ActiveLevelData.FallingSpeed;
         destroyPosY = (ScreenBorders.Buttom + ScreenBorders.Buttom / 2, ScreenBorders.Top + ScreenBorders.Top / 2);       
         destroyPosX = (ScreenBorders.Left + ScreenBorders.Left / 2, ScreenBorders.Right + ScreenBorders.Right / 2);
     }

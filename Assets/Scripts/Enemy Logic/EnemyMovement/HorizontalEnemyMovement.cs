@@ -1,9 +1,26 @@
-﻿using GameWork.Unity.Directions;
-using UnityEngine;
+﻿using UnityEngine;
+using GameWork.Unity.Directions;
 
 public class HorizontalEnemyMovement : EnemyMovement
 {
-    public float direction = (float)HorizontalDirection.noDirection;
+    public HorizontalDirection direction;
+    private float FlyDirection;
+    public void Awake()
+    {
+        if (gameObject.transform.position.x < 0)
+        {
+            direction = HorizontalDirection.left;
+        }
+        else
+        {
+            direction = HorizontalDirection.right;
+        }
+    }
+    public new void Start()
+    {
+        base.Start();
+        FlyDirection = fallingSpeed * (float)direction;
+    }
     public void Update()
     {
         Movement();
@@ -13,6 +30,6 @@ public class HorizontalEnemyMovement : EnemyMovement
 
     public override void Movement()
     {
-        transform.Translate(fallingSpeed * Time.deltaTime * (float)direction, 0, 0, Space.World);
+        transform.Translate(FlyDirection * Time.deltaTime, 0, 0, Space.World);
     }
 }

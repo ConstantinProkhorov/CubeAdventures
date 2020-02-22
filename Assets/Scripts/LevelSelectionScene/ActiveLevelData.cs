@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-static class ActiveLevelData 
+static class ActiveLevelData
 {
     private static float fallingSpeed;
-    #pragma warning disable 649
-    private static float spawnIntervalStep; 
+#pragma warning disable 649
+    private static float spawnIntervalStep;
     //private static int EnemiesOnLevel;
 
     public static float FallingSpeed { get => -fallingSpeed; }
@@ -16,8 +16,7 @@ static class ActiveLevelData
     public static int PointsSubtractionAmount { get; private set; }
     public static int DiamondsSubtractAmount { get; private set; }
     public static int DifficultyIncreaseStep { get; private set; }
-    public static int Timer { get; private set; }
-
+    public static int Timer { get; private set; }   
     public static void Set(LevelDataInput data)
     {
         fallingSpeed = data.fallingSpeed;

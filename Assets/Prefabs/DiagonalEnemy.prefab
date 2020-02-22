@@ -124,7 +124,7 @@ Rigidbody:
   m_GameObject: {fileID: 1550654925732726866}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
-  FallingSpeedMultiplier: 1
   thisSceneController: {fileID: 0}
+  direction: 0
   FallDirection: 0
-  FallInclination: 0.4
+  FallInclination: 0.2

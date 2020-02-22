@@ -18,7 +18,6 @@ public sealed class Timer : MonoBehaviour
     public void TurnOff()
     {
         gameObject.SetActive(true);
-        timer = ActiveLevelData.Timer;
     }
 
     void FixedUpdate()

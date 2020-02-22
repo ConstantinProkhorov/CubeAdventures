@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-public sealed class Enemy_Creator : EnemySpawnRandomizer 
+public sealed class Enemy_Creator : MonoBehaviour
 {
-    private LevelSceneController ThisLevelSceneController;
-    public SplitType SplitType;
+    private EnemySpawnRandomizer EnemySpawnRandomizer;
     private IColorRandomizer ColorRandomizer;
+    [SerializeField] LevelSceneController ThisSceneController;
     // фигуры врагов и шанс их появления
     #pragma warning disable 649
     [SerializeField] private GameObject enemyA;
@@ -28,21 +28,13 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
     public bool isActive = false;
     public static float spawnInterval;
     private float timeCount = 0;
-
     public sbyte EnemyCounter { get; set; } = 0;
-
     public StepType stepType = StepType.FloatStep;
-
     public static float figuresize = 0.3f;
-    private float spawnPosY;
-
-    private float[] positionArray;
-
     private float EnemySpawnInterval;
     private float SpawnIntervalStep;
     private void Start()
     {       
-        ThisLevelSceneController = gameObject.GetComponent<LevelSceneController>();
         AllFigures = new Dictionary<GameObject, int>
         {
         { PointsFigure, 0 + PointsFigureSpawnChance },
@@ -54,15 +46,16 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
         { enemyE,PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance + enemyESpawnChance }
         };
         spawnInterval = GetNewSpawnInterval(stepType);
-        spawnPosY = ScreenBorders.Top + ScreenBorders.Top / 3f;
-        positionArray = SpawnPositionCalculator();
         EnemySpawnInterval = ActiveLevelData.EnemySpawnInterval;
         SpawnIntervalStep = ActiveLevelData.SpawnIntervalStep;
-        ColorRandomizer = new EnemyColorRandomizer();
+        ColorRandomizer = new EnemyColorRandomizer(); //в условиях юнити, прикрывая класс абстракцие в виде интерфейса, я не разрываю зависимость и не ослабляю ее, так
+        // как все равно остается эта строчка кода. В условиях юнити (и, возможно, не только в них) вероятно нужен третий скрипт, который бы назначал переменные.
+        EnemySpawnRandomizer = new EnemySpawnRandomizer();
     }
     void Update() // Ох, надо все это через события писать было... один таймер на уровне может считать время, и рассылать события о прошедшем времени. 
         // а у меня тут сколько раз время считается? три, может больше. 
-    {
+        // а если мне нужные несогласованные интервалы?
+    { // я так понимаю, что правильно решение здесь это использовать фабричный метод, TODO: вчитаться и если надо переписать весь класс
         if (isActive)
         {
             timeCount += Time.deltaTime;
@@ -89,8 +82,8 @@ public sealed class Enemy_Creator : EnemySpawnRandomizer
         {
             if (enemy.Key != null && i < enemy.Value)
             {
-                Enemy = Instantiate(enemy.Key, new Vector3(Position_Randomizer(positionArray), spawnPosY, 0), Quaternion.identity);
-                Enemy.GetComponent<EnemyMovement>().thisSceneController = ThisLevelSceneController;
+                Enemy = Instantiate(enemy.Key, EnemySpawnRandomizer.GetRandomSpawnPosition(enemy.Key.name), Quaternion.identity);
+                Enemy.GetComponent<EnemyMovement>().thisSceneController = ThisSceneController;
                 if (Enemy.name == "Sphere_Enemy(Clone)")
                 {
                     ColorRandomizer.AssignColor(Enemy);

@@ -1501,22 +1501,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916b0f76fd9ae1641b8023de27e9aba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
   enemyASpawnChance: 40
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
   enemyBSpawnChance: 15
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
   enemyCSpawnChance: 20
-  enemyD: {fileID: 2443867936017225212, guid: c565e46be0b51dc43960c8826c5771e5, type: 3}
+  enemyD: {fileID: 2443867936017225212, guid: 0b562261ede0df74e837f05830edfef2, type: 3}
   enemyDSpawnChance: 15
   enemyE: {fileID: 8930868702727515543, guid: 6b8808df5988af34a82609e363dcafca, type: 3}
   enemyESpawnChance: 0
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 8
+  PointsFigureSpawnChance: 10
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 2
+  DiamondFigureSpawnChance: 0
   isActive: 0
   stepType: 1
 --- !u!114 &1395036228

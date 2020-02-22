@@ -13,8 +13,11 @@ GameObject:
   - component: {fileID: 3978946674129420329}
   - component: {fileID: 6018687905257985596}
   - component: {fileID: 195150584700619206}
+  - component: {fileID: -1747655397932046761}
+  - component: {fileID: -1765585923308494936}
+  - component: {fileID: 240850926393390490}
   m_Layer: 0
-  m_Name: ChildTest
+  m_Name: HorizontalEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,3 +112,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
+--- !u!114 &-1747655397932046761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935892655870133375}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a886ed3710f0d54c8c5eb68461a6bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 1
+  thisSceneController: {fileID: 0}
+  direction: 0
+--- !u!114 &-1765585923308494936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935892655870133375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2071fcf962f1dc41a83fa84beb78293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &240850926393390490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935892655870133375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42225b4c363d0fb4596d63fea8e89310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalEnemyMovement: {fileID: -1747655397932046761}
+  DelayTime: 1.5
+  TimeCounter: {fileID: -1765585923308494936}

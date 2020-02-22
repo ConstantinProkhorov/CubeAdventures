@@ -6,6 +6,7 @@ public class LevelOpenCloseDictionary : IOpenCloseDictionary
         { "GameLevel 1", true },
         { "GameLevel 4", true },
         { "GameLevel 7", true },
+        { "GameLevel 8", true },
         { "GameLevel 10", true },
         { "GameLevel 13", true }
     };
