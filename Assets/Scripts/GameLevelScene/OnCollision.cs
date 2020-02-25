@@ -21,14 +21,14 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
         if (col.gameObject.CompareTag("Enemy") && (CurrentPlayerEffect != SpecialEffects.Invincibility)) 
         {
             ContinuePlayingWindow.OpenWindow(col.gameObject);
-            thisSceneController.DecrementEnemyCounter();
+            thisSceneController.DecrementEnemyCounter(col.gameObject);
         }
 
         else if (col.gameObject.CompareTag("pointsgiver"))
         {
             thisSceneController.ScoreGainedOnLevel.Add(/*pointsAdded =*/ 10);
             Destroy(col.gameObject);
-            thisSceneController.DecrementEnemyCounter();
+            thisSceneController.DecrementEnemyCounter(col.gameObject);
             PopUp.OnCollision(gameObject.transform.position);
             sizeChange.ChangeSize();
         }
@@ -36,7 +36,7 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
         else if (col.gameObject.CompareTag("transparent"))
         {
             SetEffect(col.gameObject);
-            thisSceneController.DecrementEnemyCounter();
+            thisSceneController.DecrementEnemyCounter(col.gameObject);
         }
 
         else if (col.gameObject.CompareTag("collectible"))
@@ -44,7 +44,7 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
             SceneController.diamonds++;
             Destroy(col.gameObject);
             sizeChange.ChangeSize();
-            thisSceneController.DecrementEnemyCounter();
+            thisSceneController.DecrementEnemyCounter(col.gameObject);
         }      
     }
 

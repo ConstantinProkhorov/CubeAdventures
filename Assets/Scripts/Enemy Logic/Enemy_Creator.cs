@@ -28,13 +28,13 @@ public sealed class Enemy_Creator : MonoBehaviour
     public bool isActive = false;
     public static float spawnInterval;
     private float timeCount = 0;
-    public sbyte EnemyCounter { get; set; } = 0;
+    public int EnemyCounter { get; set; } = 0;
     public StepType stepType = StepType.FloatStep;
     public static float figuresize = 0.3f;
     private float EnemySpawnInterval;
     private float SpawnIntervalStep;
     private void Start()
-    {       
+    {
         AllFigures = new Dictionary<GameObject, int>
         {
         { PointsFigure, 0 + PointsFigureSpawnChance },
@@ -62,15 +62,17 @@ public sealed class Enemy_Creator : MonoBehaviour
             if (timeCount > spawnInterval)
             {
                 Enemy_Spawner();
-                ++EnemyCounter;
+                ThisSceneController.IncrementEnemyCounter(gameObject);
                 timeCount = default;
-                if (EnemyCounter >= ActiveLevelData.DifficultyIncreaseStep)
-                {
-                    spawnInterval = GetNewSpawnInterval(stepType, ActiveLevelData.SpawnIntervalStep);
-                    EnemyCounter = default;
-                }
-                else
-                    spawnInterval = GetNewSpawnInterval(stepType);
+            }
+            if (EnemyCounter >= ActiveLevelData.DifficultyIncreaseStep) // 
+            {
+                spawnInterval = GetNewSpawnInterval(stepType, ActiveLevelData.SpawnIntervalStep);
+                //EnemyCounter = default;
+            }
+            else
+            { 
+                spawnInterval = GetNewSpawnInterval(stepType);
             }
         }
     }

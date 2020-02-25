@@ -14,7 +14,7 @@ public sealed class RotorEnemyMovement : EnemyMovement
         Rotation();
         Destroy();
     }
-    public override void Rotation()
+    protected override void Rotation()
     {
         transform.Rotate(0, 0, rotationSpeed * (float)RotationDirection);
     }

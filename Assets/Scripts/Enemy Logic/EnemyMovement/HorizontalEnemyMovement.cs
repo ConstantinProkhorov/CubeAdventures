@@ -28,7 +28,7 @@ public class HorizontalEnemyMovement : EnemyMovement
         Destroy();
     }
 
-    public override void Movement()
+    protected override void Movement()
     {
         transform.Translate(FlyDirection * Time.deltaTime, 0, 0, Space.World);
     }

@@ -4,7 +4,7 @@
     {
         Rotation();
     }
-    public override void Rotation()
+    protected override void Rotation()
     {
         transform.Rotate(0, 0, -rotationSpeed);
     }
