@@ -14,7 +14,7 @@ public class LevelDataInput : MonoBehaviour
     public int PointsSubtractionAmount;
     public int DiamondsSubtractAmount;
 
-    [Tooltip("After what amount of enemies spawntime will decrease")]
+    [Tooltip("After what amount of enemies spawntime will decrease")] // are you fucking SURE??!1
     public int DifficultyIncreaseStep;
     [Tooltip("In seconds")]
     public int Timer;

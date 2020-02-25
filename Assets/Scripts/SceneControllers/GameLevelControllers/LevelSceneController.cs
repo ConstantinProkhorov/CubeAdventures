@@ -31,21 +31,21 @@ public class LevelSceneController : BaseController
     {
         ScoreGainedOnLevel.SaveScore();
     }
-    public void DecrementEnemyCounter()
+    public void DecrementEnemyCounter(GameObject obj)
     {
         EnemyCreator.EnemyCounter--;
-        Display();
+        Display(obj);
     }
 
-    public void IncrementEnemyCounter(sbyte amount = 1)
+    public void IncrementEnemyCounter(GameObject obj, int amount = 1)
     {
         EnemyCreator.EnemyCounter += amount;
-        Display();
+        Display(obj);
     }
 
-    private void Display() // method for debugging
+    private void Display(GameObject obj) // method for debugging
     {
-        Debug.Log(EnemyCreator.EnemyCounter);
+        Debug.Log("Called by " + obj.name + " Enemy Count = " + EnemyCreator.EnemyCounter);
     }
 }
 

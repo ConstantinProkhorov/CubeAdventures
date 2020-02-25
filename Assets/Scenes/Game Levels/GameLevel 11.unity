@@ -1426,7 +1426,6 @@ GameObject:
   - component: {fileID: 1395036229}
   - component: {fileID: 1395036230}
   - component: {fileID: 1395036231}
-  - component: {fileID: 1395036232}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -1457,11 +1456,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395036223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c20eea2c83c0a54285e05ed3018b213, type: 3}
+  m_Script: {fileID: 11500000, guid: e90b36fc519abd8478eeb1791676d7cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  LevelName: GameLevel 1
+  LevelName: GameLevel 11
   _Player_Assembler: {fileID: 1395036231}
   LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
@@ -1480,15 +1479,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallingSpeed: 2
+  fallingSpeed: 2.9
   timerIsNeeded: 0
-  PointsPerSecond: 10
-  enemySpawnInterval: 1
+  PointsPerSecond: 0
+  enemySpawnInterval: 0.7
   SpawnIntervalStep: 0.1
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
   DifficultyIncreaseStep: 10
-  Timer: 60
+  Timer: 40
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1503,21 +1502,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 50
+  enemyASpawnChance: 24
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 20
-  enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
-  enemyCSpawnChance: 20
-  enemyD: {fileID: 2443867936017225212, guid: c565e46be0b51dc43960c8826c5771e5, type: 3}
-  enemyDSpawnChance: 0
-  enemyE: {fileID: 8930868702727515543, guid: 6b8808df5988af34a82609e363dcafca, type: 3}
-  enemyESpawnChance: 0
+  enemyBSpawnChance: 10
+  enemyC: {fileID: 1550654925732726866, guid: 75c6055b2b166fc45885327c1332d709, type: 3}
+  enemyCSpawnChance: 25
+  enemyD: {fileID: 2443867936017225212, guid: 92627038a22a09f40b464a9b99842aac, type: 3}
+  enemyDSpawnChance: 20
+  enemyE: {fileID: 7978840948680416844, guid: 010460f0fd3fc604baee316ae11bd494, type: 3}
+  enemyESpawnChance: 10
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
   PointsFigureSpawnChance: 10
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 0
+  DiamondFigureSpawnChance: 1
   isActive: 0
   stepType: 1
 --- !u!114 &1395036228
@@ -1580,19 +1579,6 @@ MonoBehaviour:
   RightEye: {fileID: 0}
   LeftFoot: {fileID: 0}
   RightFoot: {fileID: 0}
---- !u!114 &1395036232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395036223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79cde8e7f3f50409398b90776e65c54a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelFallInclination: 0
 --- !u!1 &1402234593
 GameObject:
   m_ObjectHideFlags: 0

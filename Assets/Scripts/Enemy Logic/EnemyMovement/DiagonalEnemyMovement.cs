@@ -10,7 +10,7 @@ public sealed class DiagonalEnemyMovement : EnemyMovement
     [SerializeField] private float FallInclination = 0.2f;
     public void Awake()
     {
-        direction = GetRandomDirection();
+        direction = direction.GetRandom();
     }
     public new void Start()
     {
@@ -22,21 +22,8 @@ public sealed class DiagonalEnemyMovement : EnemyMovement
         Movement();
         Destroy();
     }
-    public override void Movement()
+    protected override void Movement()
     {
         transform.Translate(FallDirection * Time.deltaTime, fallingSpeed * Time.deltaTime, 0, Space.World);
-    }
-
-    private HorizontalDirection GetRandomDirection()
-    {
-        int x = Random.Range(0, 2);
-        if (x == 0)
-        {
-            return HorizontalDirection.right;
-        }
-        else
-        {
-            return HorizontalDirection.left;
-        }
     }
 }

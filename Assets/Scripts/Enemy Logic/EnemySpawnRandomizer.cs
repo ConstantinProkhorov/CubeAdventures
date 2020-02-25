@@ -26,7 +26,6 @@ public class EnemySpawnRandomizer
     }
     public Vector3 GetRandomSpawnPosition(string enemyName)
     {
-        Debug.Log(enemyName);
         if (enemyName == "HorizontalEnemy") //TODO: подумать. Сравнение строк не оптимально. На что я могу это заменть?
         {
             return new Vector3(GetRandomSpawnSide(), Random.Range(VerticalSpawnBorders.bottom, VerticalSpawnBorders.top), 0);

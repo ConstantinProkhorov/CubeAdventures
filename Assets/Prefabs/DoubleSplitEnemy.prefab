@@ -142,6 +142,8 @@ MonoBehaviour:
   ChildFigure: {fileID: 8935892655870133375, guid: a81bc390a83ccf741b31b0e0943147fe,
     type: 3}
   thisSceneController: {fileID: 0}
+  MaxAllowedSplitPosition: 1.5
+  MinAllowedSplitPosition: -2
 --- !u!114 &8544642733123416940
 MonoBehaviour:
   m_ObjectHideFlags: 0
