@@ -35,6 +35,8 @@ public sealed class Enemy_Creator : MonoBehaviour
     private float SpawnIntervalStep;
     private void Start()
     {
+
+        Debug.Log(EnemyCounter);
         AllFigures = new Dictionary<GameObject, int>
         {
         { PointsFigure, 0 + PointsFigureSpawnChance },

@@ -34,11 +34,13 @@ public class LevelSceneController : BaseController
     public void DecrementEnemyCounter(GameObject obj)
     {
         EnemyCreator.EnemyCounter--;
+        Display(obj);
     }
 
     public void IncrementEnemyCounter(GameObject obj, int amount = 1)
     {
         EnemyCreator.EnemyCounter += amount;
+        Display(obj);
     }
 
     private void Display(GameObject obj) // method for debugging
