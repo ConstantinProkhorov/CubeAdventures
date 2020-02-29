@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 public sealed class Enemy_Creator : MonoBehaviour
-{
+{//mm
     private EnemySpawnRandomizer EnemySpawnRandomizer;
     private IColorRandomizer ColorRandomizer;
-    [SerializeField] LevelSceneController ThisSceneController;
+    [SerializeField] GameLevelSceneController ThisSceneController;
     // фигуры врагов и шанс их появления
     #pragma warning disable 649
     [SerializeField] private GameObject enemyA;
@@ -98,33 +98,34 @@ public sealed class Enemy_Creator : MonoBehaviour
     }
     public float GetNewSpawnInterval(StepType stepType)
     {
-        if (stepType == StepType.NoStep)
-        {
-            return EnemySpawnInterval;
-        }
-        int i = Random.Range(0, 2);
-        if (stepType == StepType.FloatStep)
-        {
-            if (i == 0)
-            {
-                return EnemySpawnInterval += Random.Range(0, SpawnIntervalStep);
-            }
-            else
-            {
-                return EnemySpawnInterval -= Random.Range(0, SpawnIntervalStep);
-            }
-        }
-        else
-        {
-            if (i == 0)
-            {
-                return EnemySpawnInterval += SpawnIntervalStep;
-            }
-            else
-            {
-                return EnemySpawnInterval -= SpawnIntervalStep;
-            }
-        }
+        return ActiveLevelData.EnemySpawnInterval;
+        //if (stepType == StepType.NoStep)
+        //{
+        //    return EnemySpawnInterval;
+        //}
+        //int i = Random.Range(0, 2);
+        //if (stepType == StepType.FloatStep)
+        //{
+        //    if (i == 0)
+        //    {
+        //        return EnemySpawnInterval += Random.Range(0, SpawnIntervalStep);
+        //    }
+        //    else
+        //    {
+        //        return EnemySpawnInterval -= Random.Range(0, SpawnIntervalStep);
+        //    }
+        //}
+        //else
+        //{
+        //    if (i == 0)
+        //    {
+        //        return EnemySpawnInterval += SpawnIntervalStep;
+        //    }
+        //    else
+        //    {
+        //        return EnemySpawnInterval -= SpawnIntervalStep;
+        //    }
+        //}
     }
     public float GetNewSpawnInterval(StepType stepType, float delta)
     {

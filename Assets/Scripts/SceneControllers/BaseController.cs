@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class BaseController : MonoBehaviour
 {
-    public void thisSetActive(byte index)
+    public void thisSetActive(int index)
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(index));
     }

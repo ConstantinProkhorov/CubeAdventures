@@ -3,7 +3,7 @@ using GameWork.Unity.Directions;
 
 public class TripleSplit : SplitStrategy
 {
-    public override void Split(GameObject childFigure, Transform splittingFigureTransform, LevelSceneController levelSceneController)
+    public override void Split(GameObject childFigure, Transform splittingFigureTransform, GameLevelSceneController levelSceneController)
     {
         // нужно добавить установку угла падения для делящейся фигуры. 2f отлично работает. 
         DiagonalEnemyMovement ChildDiagonalMovement;

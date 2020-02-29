@@ -4,7 +4,7 @@ public class SplittingEnemy : MonoBehaviour
 {
     [SerializeField] private int SpawnNumber = 2;
     [SerializeField] private GameObject ChildFigure;
-    [SerializeField] private LevelSceneController thisSceneController;    
+    [SerializeField] private GameLevelSceneController thisSceneController;    
     private SplitStrategy SplitStrategy;
 
     private float SplitPosition;

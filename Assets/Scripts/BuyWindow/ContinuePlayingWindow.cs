@@ -5,7 +5,7 @@ public class ContinuePlayingWindow : MonoBehaviour
 {
     public GameObject continuePlayingWindowBlur;
     public Text PriceText;
-    public LevelSceneController thisSceneController;
+    public GameLevelSceneController thisSceneController;
 
     private int Price;
     private GameObject CollidingGameObject;

@@ -1420,13 +1420,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1395036224}
   - component: {fileID: 1395036227}
+  - component: {fileID: 1395036233}
   - component: {fileID: 1395036225}
   - component: {fileID: 1395036226}
   - component: {fileID: 1395036228}
   - component: {fileID: 1395036229}
   - component: {fileID: 1395036230}
   - component: {fileID: 1395036231}
-  - component: {fileID: 1395036232}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395036223}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6785a3b25d1f1e04db1d8a98ac390f0e, type: 3}
   m_Name: 
@@ -1480,6 +1480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneBuildIndex: 20
   fallingSpeed: 2
   timerIsNeeded: 0
   PointsPerSecond: 10
@@ -1488,7 +1489,7 @@ MonoBehaviour:
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
   DifficultyIncreaseStep: 10
-  Timer: 30
+  Timer: 10
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1501,7 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916b0f76fd9ae1641b8023de27e9aba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisSceneController: {fileID: 1395036225}
+  ThisSceneController: {fileID: 1395036233}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
   enemyASpawnChance: 0
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
@@ -1562,7 +1563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   continuePlayingWindowBlur: {fileID: 907990983}
   PriceText: {fileID: 1349701794}
-  thisSceneController: {fileID: 1395036225}
+  thisSceneController: {fileID: 1395036233}
 --- !u!114 &1395036231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1580,7 +1581,7 @@ MonoBehaviour:
   RightEye: {fileID: 0}
   LeftFoot: {fileID: 0}
   RightFoot: {fileID: 0}
---- !u!114 &1395036232
+--- !u!114 &1395036233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1589,9 +1590,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395036223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79cde8e7f3f50409398b90776e65c54a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bfd2e66a32666942a1b44b6c089d38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  levelName: GameLevel X
+  PlayerAssembler: {fileID: 0}
+  LevelDataInput: {fileID: 1395036226}
+  EnemyCreator: {fileID: 1395036227}
+  LevelStartUpTimer: {fileID: 365924853}
+  WaveTimer: {fileID: 1046821810}
+  TimerReplacementText: {fileID: 1846552778}
 --- !u!1 &1402234593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb915ee76f2c05f4ead7f8ca48a4a9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LevelSceneController: {fileID: 1395036225}
+  _LevelSceneController: {fileID: 1395036233}
   Sens: 100
   rotationSpeed: 1
 --- !u!1 &1546879070
@@ -2250,7 +2259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 1954486034}
-  thisSceneController: {fileID: 1395036225}
+  thisSceneController: {fileID: 1395036233}
 --- !u!114 &1954486034
 MonoBehaviour:
   m_ObjectHideFlags: 0

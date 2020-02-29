@@ -6,7 +6,7 @@ public abstract class EnemyMovement : MonoBehaviour
     private (float min, float max) destroyPosY;
     private (float min, float max) destroyPosX;
     protected float fallingSpeed;
-    public LevelSceneController thisSceneController;
+    public GameLevelSceneController thisSceneController;
     protected void Start()
     {
         fallingSpeed = ActiveLevelData.FallingSpeed;
