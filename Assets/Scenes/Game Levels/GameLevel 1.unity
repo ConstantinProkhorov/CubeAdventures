@@ -1483,7 +1483,7 @@ MonoBehaviour:
   fallingSpeed: 2
   timerIsNeeded: 0
   PointsPerSecond: 10
-  enemySpawnInterval: 1
+  EnemySpawnInterval: 2.4
   SpawnIntervalStep: 0.1
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
@@ -1519,7 +1519,6 @@ MonoBehaviour:
     type: 3}
   DiamondFigureSpawnChance: 0
   isActive: 0
-  stepType: 1
 --- !u!114 &1395036228
 MonoBehaviour:
   m_ObjectHideFlags: 0

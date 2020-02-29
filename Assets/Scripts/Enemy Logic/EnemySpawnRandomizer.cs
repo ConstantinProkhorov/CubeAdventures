@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-
 public class EnemySpawnRandomizer
 {
     private float[] TopSpawnPositions;
     private readonly float SpawnPositionY;
     private (float left, float right) SpawnPositionX;
     private readonly (float bottom, float top) VerticalSpawnBorders = (-3.5f, 3.0f);
+    private readonly float SpawnStep = 0.6f;
     public EnemySpawnRandomizer()
     {
         CalculateTopSpawnPositions();
@@ -14,13 +14,13 @@ public class EnemySpawnRandomizer
         SpawnPositionX.left = -SpawnPositionX.right;
     }
     private float[] CalculateTopSpawnPositions() // расчет возможных позиций для создания фигур
-    {
-        float figuresize = Enemy_Creator.figuresize * 2;
-        int length = (int)((ScreenBorders.HalfCamWidth * 2) / figuresize);
+    { 
+        int length = (int)((ScreenBorders.HalfCamWidth * 2) / SpawnStep);
         TopSpawnPositions = new float[length];
         for (int i = 1; i < TopSpawnPositions.Length; i++)
         {
-            TopSpawnPositions[i] = ScreenBorders.Left + figuresize * i;
+            TopSpawnPositions[i] = ScreenBorders.Left + SpawnStep * i;
+            Debug.Log(TopSpawnPositions[i]);
         }
         return TopSpawnPositions;
     }
@@ -37,7 +37,6 @@ public class EnemySpawnRandomizer
             return new Vector3(position, SpawnPositionY, 0);
         }
     }
-
     private float GetRandomSpawnSide()
     {
         int x = Random.Range(0, 2);
