@@ -7,13 +7,13 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
     private SizeChange sizeChange;
     private ContinuePlayingWindow ContinuePlayingWindow;
     private SpecialEffects CurrentPlayerEffect;
-    [SerializeField] private LevelSceneController thisSceneController;
+    [SerializeField] private GameLevelSceneController thisSceneController;
     void Start()
     {
         GameObject ScriptHolder = GameObject.Find("ScriptHolder");
         PopUp = ScriptHolder.GetComponent<PointPopUp>();
         ContinuePlayingWindow = ScriptHolder.GetComponent<ContinuePlayingWindow>();
-        thisSceneController = ScriptHolder.GetComponent<LevelSceneController>();
+        thisSceneController = ScriptHolder.GetComponent<GameLevelSceneController>();
         sizeChange = gameObject.GetComponent<SizeChange>();
     }
     void OnCollisionEnter(Collision col)

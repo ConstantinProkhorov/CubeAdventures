@@ -16,6 +16,7 @@ public class ContinuePlayingDictionary : IPriceDictionary
         { "GameLevel 10", 8 },
         { "GameLevel 11", 8 },
         { "GameLevel 12", 8 },
+        { "TestLevel", 0 },
         { "GameLevel 13", 8 }
 
     };

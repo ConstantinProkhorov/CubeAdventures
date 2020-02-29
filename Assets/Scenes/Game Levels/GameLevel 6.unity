@@ -1426,7 +1426,6 @@ GameObject:
   - component: {fileID: 1395036229}
   - component: {fileID: 1395036230}
   - component: {fileID: 1395036231}
-  - component: {fileID: 1395036232}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -1457,12 +1456,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395036223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 291989b5846d044498f653cf9ba55b51, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bfd2e66a32666942a1b44b6c089d38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  LevelName: GameLevel 6
-  _Player_Assembler: {fileID: 1395036231}
+  levelName: GameLevel 6
+  PlayerAssembler: {fileID: 1395036231}
   LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
@@ -1480,6 +1479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneBuildIndex: 13
   fallingSpeed: 2.5
   timerIsNeeded: 0
   PointsPerSecond: 10
@@ -1580,19 +1580,6 @@ MonoBehaviour:
   RightEye: {fileID: 0}
   LeftFoot: {fileID: 0}
   RightFoot: {fileID: 0}
---- !u!114 &1395036232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395036223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79cde8e7f3f50409398b90776e65c54a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelFallInclination: 0
 --- !u!1 &1402234593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb915ee76f2c05f4ead7f8ca48a4a9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LevelSceneController: {fileID: 1395036225}
+  _LevelSceneController: {fileID: 0}
   Sens: 100
   rotationSpeed: 1
 --- !u!1 &1546879070

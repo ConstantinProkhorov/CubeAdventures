@@ -4,7 +4,7 @@ using GameWork.Unity.Directions;
 public class DoubleSplitHorizontalFlight : SplitStrategy
 {
     //TODO: я думаю, что тут можно уменьшить объем повторения кода и засунуть все в цикл используя анонимные методы, надо попробовать.
-    public override void Split(GameObject childFigure, Transform splittingFigureTransform, LevelSceneController levelSceneController)
+    public override void Split(GameObject childFigure, Transform splittingFigureTransform, GameLevelSceneController levelSceneController)
     {
         HorizontalEnemyMovement ChildFigureMovement;
         SpawnPositionOffset = new Vector3(childFigure.transform.lossyScale.x / 2, 0, 0);        

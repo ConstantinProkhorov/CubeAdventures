@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ScoreDisplay : MonoBehaviour
 {
     public Text scoreDisplay;
-    public LevelSceneController thisSceneController;
+    public GameLevelSceneController thisSceneController;
     private string TotalScore;
 
     void Start()

@@ -2,7 +2,7 @@
 
 public class TapControlls : MonoBehaviour
 {
-    public LevelSceneController thisSceneController;
+    public GameLevelSceneController thisSceneController;
     private GameObject player;
     public static bool GameIsPaused = false;
     private float playerRadius;

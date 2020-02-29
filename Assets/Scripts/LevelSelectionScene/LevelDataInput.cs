@@ -2,6 +2,7 @@
 
 public class LevelDataInput : MonoBehaviour
 {
+    public int SceneBuildIndex;
     public float fallingSpeed;
     public bool timerIsNeeded;
     public int PointsPerSecond;

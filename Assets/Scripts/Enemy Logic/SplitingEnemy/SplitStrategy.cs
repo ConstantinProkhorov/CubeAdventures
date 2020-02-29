@@ -4,5 +4,5 @@ public abstract class SplitStrategy : MonoBehaviour
 {
     protected GameObject SpawningFigure;
     protected Vector3 SpawnPositionOffset;
-    public abstract void Split(GameObject childFigure, Transform splittingFigureTransform, LevelSceneController levelSceneController);
+    public abstract void Split(GameObject childFigure, Transform splittingFigureTransform, GameLevelSceneController levelSceneController);
 }

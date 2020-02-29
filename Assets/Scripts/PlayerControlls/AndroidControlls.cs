@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class AndroidControlls : MonoBehaviour, IDragHandler
 
 {
-    public LevelSceneController _LevelSceneController;
+    public GameLevelSceneController _LevelSceneController;
     float PlayerRadius;
     float minX, maxX, minY, maxY;
     public static bool GameIsPaused = false;
