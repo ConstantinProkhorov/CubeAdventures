@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 916b0f76fd9ae1641b8023de27e9aba6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cube_enemy: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25,
+      type: 3}
+  - sphere_enemy: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210,
+      type: 3}
+  - cylinder_enemy: {fileID: 6253845944097791448, guid: ae85952e18ff4e74f97890367206856f,
+      type: 3}
+  - points_figure: {fileID: 5276298626076990846, guid: ea04830503f95cb4799c4554e01da944,
+      type: 3}
+  - for_collection: {instanceID: 0}
+  - enemy: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
