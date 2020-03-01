@@ -23,9 +23,9 @@ public class ContinuePlayingWindow : MonoBehaviour
     public void ContinuePlaying()
     {
         Destroy(CollidingGameObject);
-        if (SceneController.diamonds >= Price)
+        if (SceneController.Diamonds >= Price)
         {
-            SceneController.diamonds -= Price;
+            SceneController.Diamonds -= Price;
             continuePlayingWindowBlur.SetActive(false);
             AndroidControlls.GameIsPaused = false;
             TapControlls.GameIsPaused = false;

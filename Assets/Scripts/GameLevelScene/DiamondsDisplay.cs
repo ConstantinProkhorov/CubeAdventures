@@ -7,6 +7,6 @@ public class DiamondsDisplay : MonoBehaviour
 
     void Update()
     {
-        diamondsDisplay.text = SceneController.diamonds.ToString();
+        diamondsDisplay.text = SceneController.Diamonds.ToString();
     }
 }

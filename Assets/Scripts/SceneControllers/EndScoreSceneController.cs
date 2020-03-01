@@ -20,8 +20,8 @@ public class EndScoreSceneController : BaseController
     }
     private void ScoreSubtraction() // вычитание очков при проигрыше
     {
-        int diamonds = SceneController.diamonds - ActiveLevelData.DiamondsSubtractAmount;
-        SceneController.diamonds = diamonds < 0 ? 0 : diamonds;
+        int diamonds = SceneController.Diamonds - ActiveLevelData.DiamondsSubtractAmount;
+        SceneController.Diamonds = diamonds < 0 ? 0 : diamonds;
     }
     private void SubstractionInfoDisplay()
     {
@@ -31,7 +31,7 @@ public class EndScoreSceneController : BaseController
     }
     private void ResultsDisplay()
     {
-        scoreNumberDisplay.text = SceneController.score.ToString();
-        diamondsNumberDisplay.text = SceneController.diamonds.ToString();
+        scoreNumberDisplay.text = SceneController.Score.ToString();
+        diamondsNumberDisplay.text = SceneController.Diamonds.ToString();
     }
 }

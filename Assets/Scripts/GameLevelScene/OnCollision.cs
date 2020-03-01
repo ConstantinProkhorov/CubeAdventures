@@ -41,7 +41,7 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
 
         else if (col.gameObject.CompareTag("collectible"))
         {
-            SceneController.diamonds++;
+            SceneController.Diamonds++;
             Destroy(col.gameObject);
             sizeChange.ChangeSize();
             thisSceneController.DecrementEnemyCounter(col.gameObject);

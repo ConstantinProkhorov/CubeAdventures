@@ -1488,7 +1488,7 @@ MonoBehaviour:
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
   DifficultyIncreaseStep: 10
-  Timer: 60
+  Timer: 10
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0

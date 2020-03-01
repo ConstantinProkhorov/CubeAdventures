@@ -9,7 +9,7 @@ public class ScoreDisplay : MonoBehaviour
 
     void Start()
     {
-        TotalScore = SceneController.score.ToString();
+        TotalScore = SceneController.Score.ToString();
     }
     void Update()
     {
