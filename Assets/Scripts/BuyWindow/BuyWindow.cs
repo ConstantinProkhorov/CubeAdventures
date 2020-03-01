@@ -38,9 +38,9 @@ public class BuyWindow : MonoBehaviour
     }
     public void UnlockLevel()
     {
-        if (SceneController.score >= Price)
+        if (SceneController.Score >= Price)
         {
-            SceneController.score -= Price;
+            SceneController.Score -= Price;
             thisSceneController.UnlockDictionary.ChangeState(Name);
             Button.GetComponent<AvaliabilityDisplay>().IconeChange();
             CloseBuyWindow();

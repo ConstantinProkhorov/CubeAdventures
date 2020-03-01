@@ -3,10 +3,11 @@ using UnityEngine.UI;
 
 public class ScoreSceneController : BaseController
 {
-    [SerializeField] private byte buildIndex = 4;
-
-    public Text scoreNumberDisplay;
-    public Text diamondsNumberDisplay;
+    [SerializeField] private int buildIndex = 4;
+    public Text TotalWavesDisplay;
+    //public Text HardestWaveDoneDisplay;
+    public Text ScoreNumberDisplay;
+    public Text DiamondsNumberDisplay;
 
     public GameObject PointsFigure;
     public GameObject DiamondsFigure;
@@ -18,18 +19,18 @@ public class ScoreSceneController : BaseController
     }
     private void ResultsDisplay()
     {
-        scoreNumberDisplay.text = SceneController.score.ToString();
-        diamondsNumberDisplay.text = SceneController.diamonds.ToString();
+        ScoreNumberDisplay.text = SceneController.Score.ToString();
+        DiamondsNumberDisplay.text = SceneController.Diamonds.ToString();
+        TotalWavesDisplay.text = SceneController.CurrentSessionPlayerData.TotalWavesCleared.ToString();
     }   
-
     private void FiguresInstansiation()
     {
         // загрузка фигуры для очков
-        Transform transform = scoreNumberDisplay.GetComponent<Transform>();
+        Transform transform = ScoreNumberDisplay.GetComponent<Transform>();
         transform.position = transform.TransformPoint(transform.position);
         PointsFigure = Instantiate(PointsFigure, new Vector3(transform.position.x - transform.localScale.x, transform.position.y, 0), Quaternion.identity);
         // загрузка фигуры для брилиантов
-        transform = diamondsNumberDisplay.GetComponent<Transform>();
+        transform = DiamondsNumberDisplay.GetComponent<Transform>();
         transform.position = transform.TransformPoint(transform.position);
         DiamondsFigure = Instantiate(DiamondsFigure, new Vector3(transform.position.x - transform.localScale.x, transform.position.y, 0), Quaternion.Euler(255f, -1f, 0f));
     }

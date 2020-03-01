@@ -7,6 +7,6 @@ public class StartSceneController : BaseController
     void Start()
     {
         thisSetActive(buildIndex); //установка данной сцены активной методом из наследуемого класса
-        PlayerAssembler.Player_Creator(new Vector3(0, 1, 0), SceneController.lastForm);
+        PlayerAssembler.Player_Creator(new Vector3(0, 1, 0), SceneController.LastForm);
     }
 }

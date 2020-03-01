@@ -23,13 +23,13 @@ public class ScoreGainedOnLevel
     [Obsolete("Was used for mechanic of points substraction. Use void SaveScore() instead.")]
     public void Save()
     {
-        int temp = SceneController.score + Score;
-        SceneController.score = temp < 0 ? 0 : temp;
+        int temp = SceneController.Score + Score;
+        SceneController.Score = temp < 0 ? 0 : temp;
         SceneController.ScoreGainedOnLevel = Score;
     }
     public void SaveScore()
     {
-        SceneController.score += Score;
+        SceneController.Score += Score;
     } 
     public override string ToString()
     {

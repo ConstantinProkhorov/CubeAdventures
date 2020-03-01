@@ -22,7 +22,7 @@ public class GameLevelSceneController : BaseController
         thisSetActive(LevelDataInput.SceneBuildIndex);                       //установка данной сцены активной методом из наследуемого класса
         ActiveLevelData.Set(LevelDataInput);
         SceneController.LastLevel = LevelName;                               // перезапись последнего уровня в который играл игрок
-        Player = PlayerAssembler.Player_Creator(SceneController.lastForm);
+        Player = PlayerAssembler.Player_Creator(SceneController.LastForm);
         ScoreGainedOnLevel = new ScoreGainedOnLevel();
         Dictionary = new ContinuePlayingDictionary(); 
         LevelStartUpTimer.TimerEnded += () => 
@@ -46,6 +46,7 @@ public class GameLevelSceneController : BaseController
     {
         if (LevelIsEnding & EnemyCreator.EnemyCounter <= 0)
         {
+            SceneController.CurrentSessionPlayerData.TotalWavesCleared++;
             SceneLoad("WinScore");
         }
     }

@@ -18,7 +18,7 @@ public class SelectForm : MonoBehaviour
                     FigureName = hit.collider.gameObject.name;
                     Destroy(CraftSceneController.player);
                     CraftSceneController.player = _Player_Assembler.Player_Creator(new Vector3(0, 2, 2), FigureName, 2);
-                    SceneController.lastForm = FigureName;
+                    SceneController.LastForm = FigureName;
                 } 
             }
         }
