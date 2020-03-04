@@ -5,7 +5,7 @@ public class SelectColor : MonoBehaviour
 {
     private Color CurrentColor, TargetColor;
     private MeshRenderer PlayerMeshRendere;
-    public BaseController InspectorAssignmentSceneController;
+    public CraftSceneController InspectorAssignmentSceneController;
     private IDictionarySupport thisSceneController;
     public BuyWindow buyWindow;
     private bool LerpOn = false;

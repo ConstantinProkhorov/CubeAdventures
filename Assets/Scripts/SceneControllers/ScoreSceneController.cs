@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class ScoreSceneController : BaseController
+public class ScoreSceneController : MonoBehaviour
 {
-    [SerializeField] private int buildIndex = 4;
     public Text TotalWavesDisplay;
     //public Text HardestWaveDoneDisplay;
     public Text ScoreNumberDisplay;
@@ -13,7 +13,7 @@ public class ScoreSceneController : BaseController
     public GameObject DiamondsFigure;
     void Start()
     {
-        thisSetActive(buildIndex); //установка данной сцены активной методом из наследуемого класса 
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
         ResultsDisplay();
         FiguresInstansiation();
     }

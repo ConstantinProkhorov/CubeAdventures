@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class GameLevelSceneController : BaseController
+public class GameLevelSceneController : MonoBehaviour
 {
     [Header("Autoassigned")]
     public GameObject Player;
@@ -19,7 +20,7 @@ public class GameLevelSceneController : BaseController
     public string LevelName { get => levelName; private set => levelName = value; }
     public void Start()
     {
-        thisSetActive(LevelDataInput.SceneBuildIndex);                       //установка данной сцены активной методом из наследуемого класса
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
         ActiveLevelData.Set(LevelDataInput);
         SceneController.LastLevel = LevelName;                               // перезапись последнего уровня в который играл игрок
         Player = PlayerAssembler.Player_Creator(SceneController.LastForm);
@@ -47,11 +48,10 @@ public class GameLevelSceneController : BaseController
         if (LevelIsEnding & EnemyCreator.EnemyCounter <= 0)
         {
             SceneController.CurrentSessionPlayerData.TotalWavesCleared++;
-            SceneLoad("WinScore");
+            SceneLoadManager.SceneLoad("WinScore");
         }
     }
     public void OnDisable() => ScoreGainedOnLevel.SaveScore();
-
     // параметры GameObject в этих методах временные, удалить вместе с методом Display();
     public void DecrementEnemyCounter(GameObject obj) => EnemyCreator.EnemyCounter--;
 

@@ -13,7 +13,6 @@ public class Player_Assembler : MonoBehaviour
     {
         get { return Figures.Length; }
     }
-
     public GameObject Player_Creator(string s) // вызывается из игрового уровня   
     {
         _player = Resources.Load<GameObject>(s) as GameObject;
@@ -46,7 +45,6 @@ public class Player_Assembler : MonoBehaviour
 
         EyesAndLegsInstantiation();
     }
-
     public GameObject Player_Creator(Vector3 position, int i) //набор фигур для выбора из меню крафта
     {
         _player = Resources.Load<GameObject>(Figures[i]) as GameObject;
@@ -76,7 +74,6 @@ public class Player_Assembler : MonoBehaviour
 
         return _player;
     }   
-
     public Vector3 RandomRotation()
     {
         float rotationX = Random.Range(20.0f, 720.0f);
@@ -84,7 +81,6 @@ public class Player_Assembler : MonoBehaviour
         float rotationZ = Random.Range(20.0f, 720.0f);
         return new Vector3(rotationX, rotationY, rotationZ);
     }
-
     private void EyesAndLegsInstantiation()
     {
         LeftEye = Resources.Load<GameObject>("Forms/NewLeftEye") as GameObject;

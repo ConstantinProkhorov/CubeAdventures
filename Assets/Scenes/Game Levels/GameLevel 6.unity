@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 365924854}
   - component: {fileID: 365924853}
   - component: {fileID: 365924857}
+  - component: {fileID: 365924858}
   m_Layer: 5
   m_Name: LevelStartUpText
   m_TagString: Untagged
@@ -431,6 +432,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextSizeIncrement: 2
+--- !u!114 &365924858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365924851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7edf6d0252f3448b1e6020b3097060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelStartText: {fileID: 365924855}
+  LevelDataInput: {fileID: 1395036226}
 --- !u!1 &387312994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,15 +1494,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneBuildIndex: 13
+  WaveName: Sigma Wave
   fallingSpeed: 2.5
   timerIsNeeded: 0
   PointsPerSecond: 10
-  enemySpawnInterval: 0.8
-  SpawnIntervalStep: 0.1
+  EnemySpawnInterval: 0
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
-  DifficultyIncreaseStep: 10
   Timer: 40
 --- !u!114 &1395036227
 MonoBehaviour:
@@ -1519,7 +1532,6 @@ MonoBehaviour:
     type: 3}
   DiamondFigureSpawnChance: 0
   isActive: 0
-  stepType: 1
 --- !u!114 &1395036228
 MonoBehaviour:
   m_ObjectHideFlags: 0

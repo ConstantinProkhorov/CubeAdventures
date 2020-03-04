@@ -1,18 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BaseController : MonoBehaviour
+public static class SceneLoadManager
 {
-    public void thisSetActive(int index) => SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(index));
-    protected void LoadMenuScene()
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        if (scene.buildIndex == 0)
-        {
-            SceneManager.LoadScene(1, LoadSceneMode.Additive);
-        }
-    }
-    public void SceneLoad(string sceneName)
+    public static void SceneLoad(string sceneName)
     {
         Scene activeScene = SceneManager.GetActiveScene();
         SaveFileManager.Save(new PlayerData(SceneController.CurrentSessionPlayerData));
@@ -24,7 +15,6 @@ public class BaseController : MonoBehaviour
         PauseButton.PauseClick = false;        // убирает меню  
         Time.timeScale = 1;                    // восстанавливаем ход времени
         AndroidControlls.GameIsPaused = false; // разблокируем управление    
-
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);                 
     }
 }

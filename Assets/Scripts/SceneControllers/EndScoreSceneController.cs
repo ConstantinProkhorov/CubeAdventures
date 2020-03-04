@@ -1,19 +1,17 @@
-﻿using UnityEngine.UI;
-
-public class EndScoreSceneController : BaseController 
+﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+public class EndScoreSceneController : MonoBehaviour
 {     
-    private const byte buildIndex = 3;
-
     public Text scoreNumberDisplay;
     public Text diamondsNumberDisplay;
 
     public Text scoreSubstractedDisplay;
     public Text diamondsSubstractedDisplay;
     public Text PointsGainedOnLevel;
-
     void Start()
     {
-        thisSetActive(buildIndex);      
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
         ScoreSubtraction();
         SubstractionInfoDisplay();
         ResultsDisplay();

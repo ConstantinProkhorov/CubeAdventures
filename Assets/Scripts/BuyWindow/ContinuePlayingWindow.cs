@@ -19,7 +19,6 @@ public class ContinuePlayingWindow : MonoBehaviour
         AndroidControlls.GameIsPaused = true;
         TapControlls.GameIsPaused = true;
     }
-
     public void ContinuePlaying()
     {
         Destroy(CollidingGameObject);
@@ -36,11 +35,9 @@ public class ContinuePlayingWindow : MonoBehaviour
             PriceText.text = "Not enough diamonds!";
         }
     }
-
     public void CloseWindow()
     {
         continuePlayingWindowBlur.SetActive(false);
-        thisSceneController.SceneLoad("EndScore");
-        TapControlls.GameIsPaused = true;
+        SceneLoadManager.SceneLoad("EndScore");
     }
 }
