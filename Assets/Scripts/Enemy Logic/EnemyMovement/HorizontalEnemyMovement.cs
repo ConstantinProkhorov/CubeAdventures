@@ -19,7 +19,7 @@ public class HorizontalEnemyMovement : EnemyMovement
     public new void Start()
     {
         base.Start();
-        FlyDirection = fallingSpeed * (float)direction;
+        FlyDirection = FallingSpeed * (float)direction;
     }
     public void Update()
     {

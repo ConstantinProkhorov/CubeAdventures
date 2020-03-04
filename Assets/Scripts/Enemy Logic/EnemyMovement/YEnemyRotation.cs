@@ -7,6 +7,6 @@
     }
     protected override void Rotation()
     {
-        transform.Rotate(0, -rotationSpeed, 0);
+        transform.Rotate(0, -RotationSpeed, 0);
     }
 }

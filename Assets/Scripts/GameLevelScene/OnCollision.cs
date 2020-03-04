@@ -33,12 +33,6 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
             sizeChange.ChangeSize();
         }
 
-        else if (col.gameObject.CompareTag("transparent"))
-        {
-            SetEffect(col.gameObject);
-            thisSceneController.DecrementEnemyCounter(col.gameObject);
-        }
-
         else if (col.gameObject.CompareTag("collectible"))
         {
             SceneController.Diamonds++;
@@ -47,46 +41,12 @@ public class OnCollision : MonoBehaviour // TODO: Класс слишком бо
             thisSceneController.DecrementEnemyCounter(col.gameObject);
         }      
     }
-
-    private void SetEffect(GameObject figure)
-    {
-        TransparentFigureEffect data = figure.GetComponent<TransparentFigureEffect>();
-        switch (data.FigureEffect)
-        {            
-            case SpecialEffects.Invincibility:
-                StartCoroutine(SetInvincibility(data.EffectDuration));
-                Destroy(figure);
-                break;
-            case SpecialEffects.Explosion:
-                Explosion(figure);
-                Destroy(figure);
-                break;
-            default:
-                break;
-        }
-    }
-
+    // TODO: оставленно тут временно, убрать.
     private IEnumerator SetInvincibility(byte duration)
     {
         CurrentPlayerEffect = SpecialEffects.Invincibility;
         yield return new WaitForSeconds(duration);
         CurrentPlayerEffect = SpecialEffects.NoEffect;
-    }
-
-    private void Explosion(GameObject _figure) // метод вызывающий взрыв, расталкивающий фигуры.
-    {
-        float radius = 5.0F;
-        float power = 300.0F;
-        Vector3 explosionPos = _figure.transform.position;
-        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
-        foreach (Collider hit in colliders)
-        {
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.AddExplosionForce(power, explosionPos, radius);
-            }
-        }
     }
 }
 

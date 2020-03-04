@@ -31,7 +31,7 @@ public static class SaveFileManager
         }
         else
         {
-            PlayerData data = SaveFileManager.FirstLoad();
+            PlayerData data = FirstLoad();
             return data;
         }
     }
