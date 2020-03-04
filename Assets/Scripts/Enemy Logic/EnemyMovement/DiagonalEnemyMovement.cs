@@ -15,7 +15,7 @@ public sealed class DiagonalEnemyMovement : EnemyMovement
     public new void Start()
     {
         base.Start();
-        FallDirection = FallInclination * fallingSpeed * (float)direction;
+        FallDirection = FallInclination * FallingSpeed * (float)direction;
     }
     public void Update()
     {
@@ -24,6 +24,6 @@ public sealed class DiagonalEnemyMovement : EnemyMovement
     }
     protected override void Movement()
     {
-        transform.Translate(FallDirection * Time.deltaTime, fallingSpeed * Time.deltaTime, 0, Space.World);
+        transform.Translate(FallDirection * Time.deltaTime, FallingSpeed * Time.deltaTime, 0, Space.World);
     }
 }

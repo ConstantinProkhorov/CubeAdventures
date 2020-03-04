@@ -12,7 +12,6 @@ public class Buttons : MonoBehaviour
     void OnMouseDown()
     {
         transform.localScale = new Vector3(x1+5f, y1+5f, z1);
-
     }
     void OnMouseUp()
     {

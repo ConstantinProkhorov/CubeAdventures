@@ -4,7 +4,8 @@ public class PlayerData
     public int TotalWavesCleared;
     public int TotalScore;
     public int Diamonds;
-    public string lastForm;
+    public int Dynamite;
+    public string LastForm;
     public float r, g, b;
     public string lastLevelPlayed = "GameLevel 1";
     public int[] avaliableFigures;
@@ -13,9 +14,11 @@ public class PlayerData
     public bool[] colorOpenCloseDictionary;
     public PlayerData()
     {
+        TotalWavesCleared = 0;
         TotalScore = 0;
-        lastForm = "Forms/Cube";
         Diamonds = 0;
+        Dynamite = 100;
+        LastForm = "Forms/Cube";
         r = 0;
         g = 0;
         b = 0;
@@ -27,8 +30,9 @@ public class PlayerData
     {
         TotalWavesCleared = currentState.TotalWavesCleared;
         TotalScore = currentState.TotalScore;
-        lastForm = currentState.lastForm;
+        LastForm = currentState.LastForm;
         Diamonds = currentState.Diamonds;
+        Dynamite = currentState.Dynamite;
         r = currentState.r;
         g = currentState.g;
         b = currentState.b;

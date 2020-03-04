@@ -1,24 +1,16 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
-{ // Класс хранящий данные игрока после загрузки в едином месте и предоставляющий к ним доступ // функции загрузки сейвов должны быть отсюда убраны.
+{ // Класс хранящий данные игрока после загрузки в едином месте и предоставляющий к ним доступ 
     public static PlayerData CurrentSessionPlayerData { get; set; }
-    //==================================== 
-    //TODO: разгрести радиоактивный каолоотствойник ниже
-    // Этот кошмар из кода ниже остаток первых заходов. Приводится в порядок, оставлено, чтобы не ломать нынешний код. Вокруг старых статических переменных
-    // создана оболочка из свойств. После разгребания надо подумать, хорошо ли вообще получать доступ к данным через статические переменные или есть способ лучше.
-    // Блин, а если я удалю эти свойства, то отслеживать обращения к данным в этом классе станет очень сложно. Хм. 
-    [Obsolete("Access this data throuh CurrentSessionPlayerData.* instead")]
+    // Доступ к членам PlayerData через оболочку свойств. Сделал так, чтобы было удобнее отслеживать доступ к данным. Не могу сказать, хорошее ли это 
+    // решение, но буду смотреть на результат.
+    public static int TotalWavesCleared { get => CurrentSessionPlayerData.TotalWavesCleared; set => CurrentSessionPlayerData.TotalWavesCleared = value; }
     public static int Score { get => CurrentSessionPlayerData.TotalScore; set => CurrentSessionPlayerData.TotalScore = value; }
-    [Obsolete("Access this data throuh CurrentSessionPlayerData.* instead")]
     public static int Diamonds { get => CurrentSessionPlayerData.Diamonds; set => CurrentSessionPlayerData.Diamonds = value; }
-    [Obsolete("Access this data throuh CurrentSessionPlayerData.* instead")]
-    public static string LastForm { get => CurrentSessionPlayerData.lastForm; set => CurrentSessionPlayerData.lastForm = value; }
-    [Obsolete("Access this data throuh CurrentSessionPlayerData.* instead")]
+    public static int Dynamite { get => CurrentSessionPlayerData.Dynamite; set => CurrentSessionPlayerData.Dynamite = value < 0 ? 0 : value; }
+    public static string LastForm { get => CurrentSessionPlayerData.LastForm; set => CurrentSessionPlayerData.LastForm = value; }
     public static string LastLevel { get => CurrentSessionPlayerData.lastLevelPlayed; set => CurrentSessionPlayerData.lastLevelPlayed = value; }
-    //конец ада под разгребание
-    //====================================  
     public static Color PlayerCurrentColor
     {
         get { return new Color(CurrentSessionPlayerData.r, CurrentSessionPlayerData.g, CurrentSessionPlayerData.b); }

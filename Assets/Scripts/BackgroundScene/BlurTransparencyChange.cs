@@ -10,7 +10,6 @@ public class BlurTransparencyChange : MonoBehaviour
     {
         color = matt.color;
     }
-
     void Update() 
     {
         if (ButtonClicked && color.a < 0.7f)
@@ -31,7 +30,6 @@ public class BlurTransparencyChange : MonoBehaviour
             }
         }
     }
-
     public void ResetColor()
     {
         color.a = 0.0f;
