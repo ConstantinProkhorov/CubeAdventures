@@ -1,11 +1,12 @@
-﻿public class RestartButton : BaseController
+﻿using UnityEngine;
+public class RestartButton : MonoBehaviour
 {
     public void SceneRestart(bool b)
     {
-        if (b) SceneLoad(SceneController.LastLevel);
+        if (b) SceneLoadManager.SceneLoad(SceneController.LastLevel);
     }
     public void HomeSceneLoad(bool b)
     {
-        if (b) SceneLoad("SelectLevel");
+        if (b) SceneLoadManager.SceneLoad("SelectLevel");
     }
 }

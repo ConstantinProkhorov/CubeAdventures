@@ -1,6 +1,7 @@
-﻿public class SelectLevelController : BaseController, IDictionarySupport
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+public class SelectLevelController : MonoBehaviour, IDictionarySupport
 {
-    public const byte buildIndex = 5;
     public IOpenCloseDictionary UnlockDictionary { get; set; }
     public IPriceDictionary PriceDictionary { get; set; }
     public SelectLevelController()
@@ -8,9 +9,8 @@
         UnlockDictionary = SceneController.LevelStateDictionary;
         PriceDictionary = SceneController.LevelPriceDictionary;
     }
-
     void Start()
     {
-        thisSetActive(buildIndex);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
     }
 }

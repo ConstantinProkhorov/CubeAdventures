@@ -1,5 +1,6 @@
-﻿// Handles transition to GameLevelScene from WinScore scene on tap
-public class TapToContinue : BaseController
+﻿using UnityEngine;
+// Handles transition to GameLevelScene from WinScore scene on tap
+public class TapToContinue : MonoBehaviour
 {
     private ListOfGameLevels ListOfGameLevels = new ListOfGameLevels();
     void OnMouseDown()
@@ -7,7 +8,7 @@ public class TapToContinue : BaseController
         if (!PauseButton.PauseClick) // блокировка при нажатой кнопке паузы (при открытом меню).
         {
             string LastLevel = SceneController.LastLevel ?? "GameLevel 1";
-            SceneLoad(ListOfGameLevels.GetNextLevel(LastLevel));
+            SceneLoadManager.SceneLoad(ListOfGameLevels.GetNextLevel(LastLevel));
         }
     }
 }

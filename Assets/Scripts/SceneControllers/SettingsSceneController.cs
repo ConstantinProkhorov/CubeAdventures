@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-public class SettingsSceneController : BaseController
-{
-    private const byte buildIndex = 6;  
+using UnityEngine.SceneManagement;
+public class SettingsSceneController : MonoBehaviour
+{  
     void Start()
     {
-        thisSetActive(buildIndex);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
     }
-
     public void Reset() // временный метод для сброса настроек.
     {
         GameObject temp = GameObject.Find("MainScriptHolder");

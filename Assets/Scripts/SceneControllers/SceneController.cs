@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
-public class SceneController : BaseController
+using UnityEngine.SceneManagement;
+public class SceneController : MonoBehaviour
 { // Класс хранящий данные игрока после загрузки в едином месте и предоставляющий к ним доступ // функции загрузки сейвов должны быть отсюда убраны.
     public static PlayerData CurrentSessionPlayerData { get; set; }
     //==================================== 
@@ -30,12 +31,8 @@ public class SceneController : BaseController
     public static LevelOpenPriceDictionary LevelPriceDictionary { get; private set; }
     public static ColorOpenPriceDictionary ColorPriceDictionary { get; private set; }
     public static int ScoreGainedOnLevel { get; set; }
-
-
-    public void PlayerDataReset() // временный метод для отладки игры
-    {
-        LoadBlanckSaveFile();
-    }
+    // временный метод для отладки игры
+    public void PlayerDataReset() => LoadBlanckSaveFile();
     void Start()
     {
         LevelStateDictionary = new LevelOpenCloseDictionary();
@@ -57,4 +54,9 @@ public class SceneController : BaseController
     void OnApplicationQuit() => SaveFileManager.Save(new PlayerData(CurrentSessionPlayerData));
     private void LoadSaveFile() => CurrentSessionPlayerData = SaveFileManager.Load();
     private void LoadBlanckSaveFile() => CurrentSessionPlayerData = new PlayerData();
+    private void LoadMenuScene()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            SceneManager.LoadScene(1, LoadSceneMode.Additive);
+    }
 }
