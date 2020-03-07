@@ -16,6 +16,6 @@ public class CraftSceneController : BaseController, IDictionarySupport
         PriceDictionary = SceneController.ColorPriceDictionary;
 
         //загрузка фигуры игрока  
-        player = _Player_Assembler.Player_Creator(new Vector3(0, 3, 2), SceneController.lastForm, playerSize);
+        player = _Player_Assembler.Player_Creator(new Vector3(0, 3, 4), SceneController.lastForm, playerSize);
     }
 }
