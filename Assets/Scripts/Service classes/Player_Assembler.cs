@@ -62,7 +62,7 @@ public class Player_Assembler : MonoBehaviour
     }
     public GameObject Player_Creator(Vector3 position, string lastForm, float playerSize) //вызывается из сцены крафта
     {
-        _player = Resources.Load<GameObject>(lastForm) as GameObject ?? Resources.Load <GameObject>(SceneController.lastForm) as GameObject ;
+        _player = Resources.Load<GameObject>(lastForm) as GameObject ?? Resources.Load <GameObject>(SceneController.LastForm) as GameObject ;
         _player = Instantiate(_player, position, Quaternion.identity);
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
 
