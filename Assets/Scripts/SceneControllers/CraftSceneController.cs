@@ -12,7 +12,7 @@ public class CraftSceneController : MonoBehaviour, IDictionarySupport
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
         UnlockDictionary = SceneController.ColorStateDictionary;
         PriceDictionary = SceneController.ColorPriceDictionary;
-        //загрузка фигуры игрока  
-        player = _Player_Assembler.Player_Creator(new Vector3(0, 3, 2), SceneController.LastForm, playerSize);
+        //загрузка фигуры игрока
+        player = _Player_Assembler.Player_Creator(new Vector3(0, 3, 4), SceneController.lastForm, playerSize);
     }
 }

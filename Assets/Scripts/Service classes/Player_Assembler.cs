@@ -38,10 +38,10 @@ public class Player_Assembler : MonoBehaviour
         _player.transform.localScale = Vector3.one;
 
         //запуск анимации
-        Animation anim = _player.AddComponent<Animation>();
-        AnimationClip clip = Resources.Load<AnimationClip>("StartCubeAnimation") as AnimationClip;
-        anim.AddClip(clip, "StartCubeAnimation");
-        anim.Play("StartCubeAnimation", PlayMode.StopAll);
+        //Animation anim = _player.AddComponent<Animation>();
+        //AnimationClip clip = Resources.Load<AnimationClip>("StartCubeAnimation") as AnimationClip;
+        //anim.AddClip(clip, "StartCubeAnimation");
+        //anim.Play("StartCubeAnimation", PlayMode.StopAll);
 
         EyesAndLegsInstantiation();
     }
@@ -62,13 +62,13 @@ public class Player_Assembler : MonoBehaviour
     }
     public GameObject Player_Creator(Vector3 position, string lastForm, float playerSize) //вызывается из сцены крафта
     {
-        _player = Resources.Load<GameObject>(lastForm) as GameObject ?? Resources.Load <GameObject>(SceneController.LastForm) as GameObject ;
-        _player = Instantiate(_player, position, Quaternion.Euler(RandomRotation()));
+        _player = Resources.Load<GameObject>(lastForm) as GameObject ?? Resources.Load <GameObject>(SceneController.lastForm) as GameObject ;
+        _player = Instantiate(_player, position, Quaternion.identity);
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
 
         Debug.Log(playerSize);
         _player.transform.localScale = new Vector3(playerSize, playerSize, playerSize);
-        _player.AddComponent<RotationControlls>();
+        //_player.AddComponent<RotationControlls>();
 
         EyesAndLegsInstantiation();
 
