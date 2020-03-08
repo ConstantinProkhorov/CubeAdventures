@@ -772,16 +772,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150334098}
     m_Modifications:
-    - target: {fileID: 772846411634691866, guid: 1443df7035bd45447b39e8bc21ba800d,
-        type: 3}
-      propertyPath: TimeDilation
-      value: 
-      objectReference: {fileID: 1402234599}
-    - target: {fileID: 772846411634691866, guid: 1443df7035bd45447b39e8bc21ba800d,
-        type: 3}
-      propertyPath: thisSceneController
-      value: 
-      objectReference: {fileID: 1395036225}
     - target: {fileID: 4940937076230201189, guid: 1443df7035bd45447b39e8bc21ba800d,
         type: 3}
       propertyPath: m_Name
@@ -792,6 +782,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 772846411634691866, guid: 1443df7035bd45447b39e8bc21ba800d,
+        type: 3}
+      propertyPath: TimeDilation
+      value: 
+      objectReference: {fileID: 1402234599}
+    - target: {fileID: 772846411634691866, guid: 1443df7035bd45447b39e8bc21ba800d,
+        type: 3}
+      propertyPath: thisSceneController
+      value: 
+      objectReference: {fileID: 1395036225}
     - target: {fileID: 7221216099349159823, guid: 1443df7035bd45447b39e8bc21ba800d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1859,7 +1859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb915ee76f2c05f4ead7f8ca48a4a9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelSceneController: {fileID: 0}
+  LevelSceneController: {fileID: 1395036225}
   Sens: 100
   rotationSpeed: 1
 --- !u!114 &1402234599

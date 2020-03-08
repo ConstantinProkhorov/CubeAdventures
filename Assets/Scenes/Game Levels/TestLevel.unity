@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44877464, g: 0.4988324, b: 0.5756943, a: 1}
+  m_IndirectSpecularColor: {r: 0.44877416, g: 0.49883157, b: 0.5756931, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb915ee76f2c05f4ead7f8ca48a4a9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LevelSceneController: {fileID: 1395036233}
+  LevelSceneController: {fileID: 1395036233}
   Sens: 100
   rotationSpeed: 1
 --- !u!114 &1402234599
