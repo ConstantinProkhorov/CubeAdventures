@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class AvaliabilityDisplay : MonoBehaviour
 {
-    //public Sprite LockedIcon;
-    //public Sprite UnlockedIcon;
+    public Sprite LockedIcon;
+    public Sprite UnlockedIcon;
     public Button thisButton;
     public Component InspectorAssignmentSceneController;
     private IDictionarySupport thisSceneController;
@@ -23,7 +22,6 @@ public class AvaliabilityDisplay : MonoBehaviour
     }
     public void IconeChange()
     {
-        thisButton.transform.GetChild(0).gameObject.SetActive(false);
-        //thisButton.image.overrideSprite = UnlockedIcon;
+        thisButton.image.overrideSprite = UnlockedIcon;
     }
 }

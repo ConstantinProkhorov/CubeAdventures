@@ -21,7 +21,7 @@ public class BlurTransparencyChange : MonoBehaviour
         }
         else if (!ButtonClicked)
         {
-            if (color.a > 0.3f)
+            if (color.a > 0.0f)
             {
                 color.a -= TransperensyStep;
                 GetComponent<Image>().color = color;
