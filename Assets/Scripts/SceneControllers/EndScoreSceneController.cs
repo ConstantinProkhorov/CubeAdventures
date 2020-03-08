@@ -1,27 +1,25 @@
-﻿using UnityEngine.UI;
-
-public class EndScoreSceneController : BaseController 
+﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+public class EndScoreSceneController : MonoBehaviour
 {     
-    private const byte buildIndex = 3;
-
     public Text scoreNumberDisplay;
     public Text diamondsNumberDisplay;
 
     public Text scoreSubstractedDisplay;
     public Text diamondsSubstractedDisplay;
     public Text PointsGainedOnLevel;
-
     void Start()
     {
-        thisSetActive(buildIndex);      
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
         ScoreSubtraction();
         SubstractionInfoDisplay();
         ResultsDisplay();
     }
     private void ScoreSubtraction() // вычитание очков при проигрыше
     {
-        int diamonds = SceneController.diamonds - ActiveLevelData.DiamondsSubtractAmount;
-        SceneController.diamonds = diamonds < 0 ? 0 : diamonds;
+        int diamonds = SceneController.Diamonds - ActiveLevelData.DiamondsSubtractAmount;
+        SceneController.Diamonds = diamonds < 0 ? 0 : diamonds;
     }
     private void SubstractionInfoDisplay()
     {
@@ -31,7 +29,7 @@ public class EndScoreSceneController : BaseController
     }
     private void ResultsDisplay()
     {
-        scoreNumberDisplay.text = SceneController.score.ToString();
-        diamondsNumberDisplay.text = SceneController.diamonds.ToString();
+        scoreNumberDisplay.text = SceneController.Score.ToString();
+        diamondsNumberDisplay.text = SceneController.Diamonds.ToString();
     }
 }

@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 365924854}
   - component: {fileID: 365924853}
   - component: {fileID: 365924857}
+  - component: {fileID: 365924858}
   m_Layer: 5
   m_Name: LevelStartUpText
   m_TagString: Untagged
@@ -431,7 +432,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextSizeIncrement: 2
---- !u!1 &368242504
+--- !u!114 &365924858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365924851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7edf6d0252f3448b1e6020b3097060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelStartText: {fileID: 365924855}
+  LevelDataInput: {fileID: 1395036226}
+--- !u!1 &387312994
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1262,7 +1277,6 @@ GameObject:
   - component: {fileID: 1395036229}
   - component: {fileID: 1395036230}
   - component: {fileID: 1395036231}
-  - component: {fileID: 1395036232}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -1293,12 +1307,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395036223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 291989b5846d044498f653cf9ba55b51, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bfd2e66a32666942a1b44b6c089d38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  LevelName: GameLevel 6
-  _Player_Assembler: {fileID: 1395036231}
+  levelName: GameLevel 6
+  PlayerAssembler: {fileID: 1395036231}
   LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
@@ -1316,14 +1330,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaveName: Sigma Wave
   fallingSpeed: 2.5
   timerIsNeeded: 0
   PointsPerSecond: 10
-  enemySpawnInterval: 0.8
-  SpawnIntervalStep: 0.1
+  EnemySpawnInterval: 0
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
-  DifficultyIncreaseStep: 10
   Timer: 40
 --- !u!114 &1395036227
 MonoBehaviour:
@@ -1337,14 +1350,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916b0f76fd9ae1641b8023de27e9aba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplitType: 0
+  ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 35
+  enemyASpawnChance: 38
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
   enemyBSpawnChance: 10
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
   enemyCSpawnChance: 5
-  enemyD: {fileID: 2443867936017225212, guid: c565e46be0b51dc43960c8826c5771e5, type: 3}
+  enemyD: {fileID: 2443867936017225212, guid: 0b562261ede0df74e837f05830edfef2, type: 3}
   enemyDSpawnChance: 15
   enemyE: {fileID: 7978840948680416844, guid: 010460f0fd3fc604baee316ae11bd494, type: 3}
   enemyESpawnChance: 20
@@ -1353,9 +1366,8 @@ MonoBehaviour:
   PointsFigureSpawnChance: 12
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 3
+  DiamondFigureSpawnChance: 0
   isActive: 0
-  stepType: 1
 --- !u!114 &1395036228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,19 +1428,6 @@ MonoBehaviour:
   RightEye: {fileID: 0}
   LeftFoot: {fileID: 0}
   RightFoot: {fileID: 0}
---- !u!114 &1395036232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395036223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79cde8e7f3f50409398b90776e65c54a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelFallInclination: 0
 --- !u!1 &1402234593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1441,7 @@ GameObject:
   - component: {fileID: 1402234595}
   - component: {fileID: 1402234594}
   - component: {fileID: 1402234598}
+  - component: {fileID: 1402234599}
   m_Layer: 0
   m_Name: ForRay
   m_TagString: Untagged
@@ -1534,10 +1534,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb915ee76f2c05f4ead7f8ca48a4a9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LevelSceneController: {fileID: 1395036225}
+  _LevelSceneController: {fileID: 0}
   Sens: 100
   rotationSpeed: 1
---- !u!1 &1555726711
+--- !u!114 &1402234599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402234593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af59d3666531d4a4d975a81cc9b029f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1546879070
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

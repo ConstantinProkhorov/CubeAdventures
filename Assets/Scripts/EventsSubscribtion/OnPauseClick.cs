@@ -4,12 +4,11 @@ using UnityEngine.UI;
 public class OnPauseClick : MonoBehaviour
 {
     public BuyWindow buyWindow;
-    public GameObject _Button;
     void Start()
     {
         // для кнопки паузы
-        _Button = GameObject.Find("Pause");
-        _Button.GetComponent<PauseButton>().PauseButtonClicked += BlockButton;
+        GameObject PauseButton = GameObject.Find("Pause");
+        PauseButton.GetComponent<PauseButton>().PauseButtonClicked += BlockButton;
         // для интерфейса покупок
         buyWindow.BuyWindowOpen += BlockButton;
     }

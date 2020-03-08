@@ -11,7 +11,6 @@ public class BlurTransparencyChange : MonoBehaviour
     {
         color = GetComponent<Image>().color;
     }
-
     void Update() 
     {
         if (ButtonClicked && color.a < 0.9f)
@@ -32,7 +31,6 @@ public class BlurTransparencyChange : MonoBehaviour
             }
         }
     }
-
     public void ResetColor()
     {
         color.a = 0.0f;

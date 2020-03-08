@@ -1,11 +1,12 @@
 ﻿public sealed class YEnemyRotation : EnemyMovement
 {
+    // used for UICoin
     public void Update()
     {
         Rotation();
     }
-    public override void Rotation()
+    protected override void Rotation()
     {
-        transform.Rotate(0, -rotationSpeed, 0);
+        transform.Rotate(0, -RotationSpeed, 0);
     }
 }

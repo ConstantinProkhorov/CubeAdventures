@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
 public class ScoreDisplay : MonoBehaviour
 {
     public Text scoreDisplay;
-    public LevelSceneController thisSceneController;
+    public GameLevelSceneController thisSceneController;
     private string TotalScore;
-
     void Start()
     {
-        TotalScore = SceneController.score.ToString();
+        TotalScore = SceneController.Score.ToString();
     }
     void Update()
     {

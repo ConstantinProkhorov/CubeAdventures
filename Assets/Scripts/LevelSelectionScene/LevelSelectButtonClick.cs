@@ -2,11 +2,10 @@
 // обрабатывает клик по кнопке c запуском окна разблокировки за очки
 public class LevelSelectButtonClick : MonoBehaviour
 {
-    public BaseController InspectorAssignmentSceneController;
+    public SelectLevelController InspectorAssignmentSceneController;
     private IDictionarySupport thisSceneController;
     public BuyWindow buyWindow;
     private string ButtonName;
-
     public void Start()
     {
         thisSceneController = InspectorAssignmentSceneController as IDictionarySupport;
@@ -17,7 +16,7 @@ public class LevelSelectButtonClick : MonoBehaviour
         if (thisSceneController.UnlockDictionary.GetState(ButtonName)) 
         {
             SceneController.LastLevel = ButtonName;
-            InspectorAssignmentSceneController.SceneLoad(ButtonName);
+            SceneLoadManager.SceneLoad(ButtonName);
         }
         else
         {

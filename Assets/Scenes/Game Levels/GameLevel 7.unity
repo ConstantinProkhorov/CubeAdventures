@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 365924854}
   - component: {fileID: 365924853}
   - component: {fileID: 365924857}
+  - component: {fileID: 365924858}
   m_Layer: 5
   m_Name: LevelStartUpText
   m_TagString: Untagged
@@ -565,7 +566,116 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextSizeIncrement: 2
---- !u!1 &413150212
+--- !u!114 &365924858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365924851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7edf6d0252f3448b1e6020b3097060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelStartText: {fileID: 365924855}
+  LevelDataInput: {fileID: 1395036226}
+--- !u!1 &387312994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387312995}
+  - component: {fileID: 387312997}
+  - component: {fileID: 387312996}
+  - component: {fileID: 387312998}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &387312995
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387312994}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 432153501}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -48}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &387312996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387312994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7221cf02553d44bd8ad920032c4d2734, type: 3}
+    m_FontSize: 13
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Quit Level
+--- !u!222 &387312997
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387312994}
+  m_CullTransparentMesh: 0
+--- !u!114 &387312998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387312994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!1 &432153500
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1385,12 +1495,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395036223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703b6af2aa806c84ebe88a7cc3b09e72, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bfd2e66a32666942a1b44b6c089d38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  LevelName: GameLevel 7
-  _Player_Assembler: {fileID: 1395036231}
+  levelName: GameLevel 7
+  PlayerAssembler: {fileID: 1395036231}
   LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
@@ -1408,14 +1518,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallingSpeed: 2.4
+  WaveName: Rho Wave
+  fallingSpeed: 2.6
   timerIsNeeded: 0
   PointsPerSecond: 10
-  enemySpawnInterval: 2
-  SpawnIntervalStep: 0.1
+  EnemySpawnInterval: 0
   PointsSubtractionAmount: 20
   DiamondsSubtractAmount: 0
-  DifficultyIncreaseStep: 10
   Timer: 40
 --- !u!114 &1395036227
 MonoBehaviour:
@@ -1429,25 +1538,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916b0f76fd9ae1641b8023de27e9aba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplitType: 0
-  enemyA: {fileID: 1550654925732726866, guid: 75c6055b2b166fc45885327c1332d709, type: 3}
-  enemyASpawnChance: 0
+  ThisSceneController: {fileID: 1395036225}
+  enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
+  enemyASpawnChance: 38
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 0
-  enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
-  enemyCSpawnChance: 0
+  enemyBSpawnChance: 10
+  enemyC: {fileID: 2443867936017225212, guid: 0b562261ede0df74e837f05830edfef2, type: 3}
+  enemyCSpawnChance: 20
   enemyD: {fileID: 2443867936017225212, guid: 92627038a22a09f40b464a9b99842aac, type: 3}
-  enemyDSpawnChance: 100
+  enemyDSpawnChance: 5
   enemyE: {fileID: 7978840948680416844, guid: 010460f0fd3fc604baee316ae11bd494, type: 3}
-  enemyESpawnChance: 0
+  enemyESpawnChance: 15
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 0
+  PointsFigureSpawnChance: 12
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
   DiamondFigureSpawnChance: 0
   isActive: 0
-  stepType: 1
 --- !u!114 &1395036228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,6 +1629,7 @@ GameObject:
   - component: {fileID: 1402234595}
   - component: {fileID: 1402234594}
   - component: {fileID: 1402234598}
+  - component: {fileID: 1402234599}
   m_Layer: 0
   m_Name: ForRay
   m_TagString: Untagged
@@ -1616,7 +1725,19 @@ MonoBehaviour:
   _LevelSceneController: {fileID: 1395036225}
   Sens: 100
   rotationSpeed: 1
---- !u!1 &1510804523
+--- !u!114 &1402234599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402234593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af59d3666531d4a4d975a81cc9b029f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1546879070
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
