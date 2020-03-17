@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 public class GameLevelSceneController : MonoBehaviour
 {
     [Header("Autoassigned")]
@@ -41,6 +42,7 @@ public class GameLevelSceneController : MonoBehaviour
             EnemyCreator.isActive = false;
             TimerReplacementText.gameObject.SetActive(true);
             LevelIsEnding = true;
+            StartCoroutine(EndLevel());
         };
     }
     public void Update()
@@ -50,6 +52,11 @@ public class GameLevelSceneController : MonoBehaviour
             SceneController.CurrentSessionPlayerData.TotalWavesCleared++;
             SceneLoadManager.SceneLoad("WinScore");
         }
+    }
+    private IEnumerator EndLevel()
+    {
+        yield return new WaitForSecondsRealtime(5.0f);
+        SceneLoadManager.SceneLoad("WinScore");
     }
     public void OnDisable() => ScoreGainedOnLevel.SaveScore();
     // параметры GameObject в этих методах временные, удалить вместе с методом Display();
