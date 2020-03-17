@@ -3,6 +3,5 @@
         public void Update()
         {
             Movement();
-            Destroy();
         }
 }
