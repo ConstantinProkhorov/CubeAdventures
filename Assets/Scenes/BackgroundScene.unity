@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43904606, g: 0.48728663, b: 0.56754404, a: 1}
+  m_IndirectSpecularColor: {r: 0.43904573, g: 0.4872859, b: 0.5675428, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rec: {fileID: 219611817}
-  speed: 7
+  speed: 15
   checkPosON: 0
   checkPosDown: -150
 --- !u!114 &219611819
@@ -541,7 +541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.67666674, y: 0.075}
   m_AnchorMax: {x: 0.98, y: 0.11062498}
-  m_AnchoredPosition: {x: 16, y: -13}
+  m_AnchoredPosition: {x: 16, y: -13.000015}
   m_SizeDelta: {x: -32, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403860495
@@ -930,7 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rec: {fileID: 520804225}
-  speed: 7
+  speed: 15
   checkPosON: -250
   checkPosDown: -400
 --- !u!114 &520804227
@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rec: {fileID: 612958412}
-  speed: 7
+  speed: 15
   checkPosON: 0
   checkPosLeft: -150
 --- !u!114 &612958414
@@ -1793,7 +1793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rec: {fileID: 1344969208}
-  speed: 7
+  speed: 15
   checkPosON: 0
   checkPosDown: -150
 --- !u!1 &1402635311

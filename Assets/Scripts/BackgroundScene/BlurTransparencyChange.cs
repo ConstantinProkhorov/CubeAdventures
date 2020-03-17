@@ -20,14 +20,11 @@ public class BlurTransparencyChange : MonoBehaviour
         }
         else if (!ButtonClicked)
         {
-            if (color.a > 0.3f)
+            gameObject.SetActive(false);
+            if (color.a > 0.2f)
             {
                 color.a -= TransperensyStep;
                 GetComponent<Image>().color = color;
-            }
-            else
-            {
-                gameObject.SetActive(false);
             }
         }
     }
