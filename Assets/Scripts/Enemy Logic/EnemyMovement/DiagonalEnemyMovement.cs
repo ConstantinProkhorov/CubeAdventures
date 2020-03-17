@@ -20,7 +20,6 @@ public sealed class DiagonalEnemyMovement : EnemyMovement
     public void Update()
     {
         Movement();
-        Destroy();
     }
     protected override void Movement()
     {

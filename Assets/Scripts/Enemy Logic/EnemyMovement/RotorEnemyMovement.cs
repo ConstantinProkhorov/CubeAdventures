@@ -12,7 +12,6 @@ public sealed class RotorEnemyMovement : EnemyMovement
     {
         Movement();
         Rotation();
-        Destroy();
     }
     protected override void Rotation()
     {

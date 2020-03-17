@@ -4,6 +4,5 @@
     {
         Movement();
         Rotation();
-        Destroy();
     }
 }

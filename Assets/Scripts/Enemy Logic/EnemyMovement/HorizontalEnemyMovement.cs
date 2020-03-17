@@ -25,7 +25,6 @@ public class HorizontalEnemyMovement : EnemyMovement
     {
         Movement();
         Rotation();
-        Destroy();
     }
 
     protected override void Movement()
