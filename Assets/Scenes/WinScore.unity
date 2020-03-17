@@ -796,8 +796,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalWavesDisplay: {fileID: 0}
-  ScoreNumberDisplay: {fileID: 0}
-  DiamondsNumberDisplay: {fileID: 0}
+  ScoreNumberDisplay: {fileID: 1860917263}
+  DiamondsNumberDisplay: {fileID: 383067022}
   PointsFigure: {fileID: 1359475967480626477, guid: 4608e6b3b1d79ea468e702bf693ecc38,
     type: 3}
   DiamondsFigure: {fileID: 6160203548483444539, guid: 91c78b4c9d7ef1440850a54d98b3cf31,
