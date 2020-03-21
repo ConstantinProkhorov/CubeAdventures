@@ -9,7 +9,7 @@ public class ScoreDisplay : MonoBehaviour
     {
         TotalScore = SceneController.Score.ToString();
     }
-    void Update()
+    void FixedUpdate()
     {
         scoreDisplay.text = $"{TotalScore} (+{thisSceneController.ScoreGainedOnLevel})";
     }

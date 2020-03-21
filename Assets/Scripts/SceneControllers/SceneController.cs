@@ -31,7 +31,6 @@ public class SceneController : MonoBehaviour
         LevelPriceDictionary = new LevelOpenPriceDictionary();
         ColorStateDictionary = new СolorOpenCloseDictionary();
         ColorPriceDictionary = new ColorOpenPriceDictionary();
-        ScreenBorders.CalculateScreenBorders();
         try
         {
             LoadSaveFile();
@@ -42,7 +41,7 @@ public class SceneController : MonoBehaviour
         }
         LoadMenuScene();
     }
-    // сохранение только при выходе и при загрузке новой сцены в BaseController, в остальных случаях происходит точечное переписывание переменных этого класса
+    // сохранение только при выходе и при загрузке новой сцены в SceneLoadManager, в остальных случаях происходит точечное переписывание переменных этого класса
     void OnApplicationQuit() => SaveFileManager.Save(new PlayerData(CurrentSessionPlayerData));
     private void LoadSaveFile() => CurrentSessionPlayerData = SaveFileManager.Load();
     private void LoadBlanckSaveFile() => CurrentSessionPlayerData = new PlayerData();
