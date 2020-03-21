@@ -17,7 +17,6 @@ public class ContinuePlayingWindow : MonoBehaviour
         PriceText.text = $"{Price.ToString()} diamonds";       
         Time.timeScale = 0.0f;
         AndroidControlls.GameIsPaused = true;
-        TapControlls.GameIsPaused = true;
     }
     public void ContinuePlaying()
     {
@@ -27,7 +26,6 @@ public class ContinuePlayingWindow : MonoBehaviour
             SceneController.Diamonds -= Price;
             continuePlayingWindowBlur.SetActive(false);
             AndroidControlls.GameIsPaused = false;
-            TapControlls.GameIsPaused = false;
             Time.timeScale = 1.0f;
         }
         else

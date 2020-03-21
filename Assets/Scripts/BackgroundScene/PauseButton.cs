@@ -23,7 +23,6 @@ public class PauseButton : MonoBehaviour
             {
                 Time.timeScale = 0.0f;
                 AndroidControlls.GameIsPaused = true;
-                TapControlls.GameIsPaused = true;
             }
         }
         else if (PauseClick)
@@ -34,7 +33,6 @@ public class PauseButton : MonoBehaviour
             {
                 Time.timeScale = 1.0f;
                 AndroidControlls.GameIsPaused = false;
-                TapControlls.GameIsPaused = false;
             }
         }
     }
