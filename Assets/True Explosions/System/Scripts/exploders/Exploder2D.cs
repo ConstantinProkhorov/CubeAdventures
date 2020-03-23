@@ -28,8 +28,9 @@ public class Exploder2D : Exploder {
 		init();
 		power *= 10;
 	}
+    
 
-	private void shootRay(Ray2D testRay, float estimatedRadius) {
+    private void shootRay(Ray2D testRay, float estimatedRadius) {
 		RaycastHit2D hit = Physics2D.Raycast(testRay.origin, testRay.direction, estimatedRadius);
 		if (hit.collider != null) {
 			if (hit.rigidbody != null) {

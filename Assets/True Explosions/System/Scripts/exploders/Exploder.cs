@@ -63,14 +63,19 @@ public class Exploder : MonoBehaviour {
 		init();
 	}
 
-	void FixedUpdate() {
-		if (Time.time > explosionTime && !exploded) {
-			exploded = true;
-			StartCoroutine("explode");
-		}
-	}
+    public void StartOnClick()
+    {
+        StartCoroutine("explode");
+    }
 
-	private void shootRay(Ray testRay, float estimatedRadius) {
+    //void FixedUpdate() {
+    //	if (Time.time > explosionTime && !exploded) {
+    //		exploded = true;
+    //		StartCoroutine("explode");
+    //	}
+    //}
+
+    private void shootRay(Ray testRay, float estimatedRadius) {
 		RaycastHit hit;
 		if (Physics.Raycast(testRay, out hit, estimatedRadius)) {
 			if (hit.rigidbody != null) {
