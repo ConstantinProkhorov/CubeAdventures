@@ -16,22 +16,20 @@ public class OpenCloseEye : MonoBehaviour // открывает и закрыв�
         
         StartCoroutine(EyeChange());
     }
-
     public IEnumerator EyeChange()
     {
-        int a = 1;
-        while (a > 0)
+        for(; ; )
         {
-            int n = 1;
-            while (n < 3)
+            int BlinkNumber = 1;
+            while (BlinkNumber < 3)
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = ClosedEyeRenderrer;
                 yield return new WaitForSeconds(0.1f);
                 gameObject.GetComponent<SpriteRenderer>().sprite = OpenEyeRenderrer;
                 yield return new WaitForSeconds(3f);
-                n += 1;
+                BlinkNumber += 1;
             }
-            while (n > 2 & n < 5)
+            while (BlinkNumber > 2 & BlinkNumber < 5)
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = ClosedEyeRenderrer;
                 yield return new WaitForSeconds(0.1f);
@@ -41,7 +39,7 @@ public class OpenCloseEye : MonoBehaviour // открывает и закрыв�
                 yield return new WaitForSeconds(0.1f);
                 gameObject.GetComponent<SpriteRenderer>().sprite = OpenEyeRenderrer;
                 yield return new WaitForSeconds(2f);
-                n += 1;
+                BlinkNumber += 1;
             }
         }
     }

@@ -4,17 +4,13 @@ using UnityEngine.UI;
 
 public class TimerAnimation : MonoBehaviour
 {
-    public int TextSizeIncrement = 3;
-
-    public void RunAnimation(Text text)
-    {
-        StartCoroutine(TextSizeChange(text));
-    }
-
+    [SerializeField] private int TextSizeIncrement = 3;
+    [SerializeField] private float Duration = 0.5f;
+    public void RunAnimation(Text text) => StartCoroutine(TextSizeChange(text));
     private IEnumerator TextSizeChange(Text text)
     {
         text.fontSize += TextSizeIncrement;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(Duration);
         text.fontSize -= TextSizeIncrement;
     }
 }
