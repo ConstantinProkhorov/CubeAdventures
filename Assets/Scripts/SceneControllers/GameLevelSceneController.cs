@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
+
 public class GameLevelSceneController : MonoBehaviour
 {
     [Header("Autoassigned")]
@@ -15,7 +15,6 @@ public class GameLevelSceneController : MonoBehaviour
     [SerializeField]private Timer WaveTimer;
     [SerializeField]private Text TimerReplacementText;
     //Assigned or changed in runtime
-    public IPriceDictionary Dictionary { get; private set; }
     public ScoreGainedOnLevel ScoreGainedOnLevel { get; private set; }
     private bool LevelIsEnding { get; set; } = false;
     public string LevelName { get => levelName; private set => levelName = value; }
@@ -26,7 +25,6 @@ public class GameLevelSceneController : MonoBehaviour
         SceneController.LastLevel = LevelName;                               // перезапись последнего уровня в который играл игрок
         Player = PlayerAssembler.Player_Creator(SceneController.LastForm);
         ScoreGainedOnLevel = new ScoreGainedOnLevel();
-        Dictionary = new ContinuePlayingDictionary(); 
         LevelStartUpTimer.TimerEnded += () => 
         {        
             //выключение текста через его внутренний метод
@@ -42,30 +40,27 @@ public class GameLevelSceneController : MonoBehaviour
             EnemyCreator.isActive = false;
             TimerReplacementText.gameObject.SetActive(true);
             LevelIsEnding = true;
-            StartCoroutine(EndLevel());
+            InvokeRepeating(nameof(EndLevel), 0.0f, 1.0f);
         };
     }
-    public void Update()
+    private void EndLevel()
     {
-        if (LevelIsEnding & EnemyCreator.EnemyCounter <= 0)
+        if (LevelIsEnding & !AnyEnemiesLeft())
         {
             SceneController.CurrentSessionPlayerData.TotalWavesCleared++;
             SceneLoadManager.SceneLoad("WinScore");
         }
-    }
-    private IEnumerator EndLevel()
-    {
-        yield return new WaitForSecondsRealtime(5.0f);
-        SceneLoadManager.SceneLoad("WinScore");
+        bool AnyEnemiesLeft()
+        {
+            if (GameObject.FindGameObjectWithTag("Enemy") != null) 
+                return true;
+            else if (GameObject.FindGameObjectWithTag("pointsgiver") != null) 
+                return true;
+            else if (GameObject.FindGameObjectWithTag("collectible") != null) 
+                return true;
+            else 
+                return false;
+        }
     }
     public void OnDisable() => ScoreGainedOnLevel.SaveScore();
-    // параметры GameObject в этих методах временные, удалить вместе с методом Display();
-    public void DecrementEnemyCounter(GameObject obj) => EnemyCreator.EnemyCounter--;
-
-    public void IncrementEnemyCounter(GameObject obj, int amount = 1) => EnemyCreator.EnemyCounter += amount;
-
-    private void Display(GameObject obj) // method for debugging
-    {
-        Debug.Log("Called by " + obj.name + " Enemy Count = " + EnemyCreator.EnemyCounter);
-    }
 }

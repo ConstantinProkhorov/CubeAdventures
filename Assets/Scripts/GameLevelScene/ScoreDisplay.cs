@@ -2,15 +2,11 @@
 using UnityEngine.UI;
 public class ScoreDisplay : MonoBehaviour
 {
+    //TODO: переписать через события
     public Text scoreDisplay;
     public GameLevelSceneController thisSceneController;
-    private string TotalScore;
-    void Start()
+    void Update()
     {
-        TotalScore = SceneController.Score.ToString();
-    }
-    void FixedUpdate()
-    {
-        scoreDisplay.text = $"{TotalScore} (+{thisSceneController.ScoreGainedOnLevel})";
+        scoreDisplay.text = $"+{thisSceneController.ScoreGainedOnLevel}";
     }
 }

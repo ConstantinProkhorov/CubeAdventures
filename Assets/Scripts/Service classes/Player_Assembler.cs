@@ -25,8 +25,6 @@ public class Player_Assembler : MonoBehaviour
         _player.AddComponent<OnCollision>();
         
         EyesAndLegsInstantiation();
-        AddLegsControllers();
-        
         return _player;
     }
     public void Player_Creator(Vector3 position, string s) //вызывается из меню
@@ -65,11 +63,7 @@ public class Player_Assembler : MonoBehaviour
         _player = Resources.Load<GameObject>(lastForm) as GameObject ?? Resources.Load <GameObject>(SceneController.LastForm) as GameObject ;
         _player = Instantiate(_player, position, Quaternion.identity);
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
-
-        Debug.Log(playerSize);
         _player.transform.localScale = new Vector3(playerSize, playerSize, playerSize);
-        //_player.AddComponent<RotationControlls>();
-
         EyesAndLegsInstantiation();
 
         return _player;
@@ -102,10 +96,5 @@ public class Player_Assembler : MonoBehaviour
 
         LeftEye.AddComponent<OpenCloseEye>();
         RightEye.AddComponent<OpenCloseEye>();
-    }
-    private void AddLegsControllers()
-    {
-        LeftFoot.AddComponent<FootController>();
-        RightFoot.AddComponent<FootController>();
     }
 }
