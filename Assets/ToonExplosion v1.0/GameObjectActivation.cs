@@ -9,18 +9,16 @@ public class GameObjectActivation : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         StartCoroutine("Activate");
         StartCoroutine("Inactivate");
-
     }
     
     private IEnumerator Activate()
     {
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(1.5f);
         transform.GetChild(0).gameObject.SetActive(true);
-        GetComponent<Image>().enabled = false;
     }
     private IEnumerator Inactivate()
     {
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(2.4f);
         gameObject.SetActive(false);
     }
 }

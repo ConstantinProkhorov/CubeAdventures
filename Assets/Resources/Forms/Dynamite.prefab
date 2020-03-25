@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb508a698c2102478d2cfa8312cda3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionRadius: 3
-  ExplosionPower: 1000
+  ExplosionRadius: 4
+  ExplosionPower: 2000
 --- !u!114 &8072182023735281761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,3 +242,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DynamiteSpeed: 3
   RotationSpeed: 3
+  ScaleSpeed: 100
