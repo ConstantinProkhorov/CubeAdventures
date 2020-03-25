@@ -17,10 +17,6 @@ public abstract class EnemyMovement : MonoBehaviour
     {
         transform.Rotate(0, -RotationSpeed, -RotationSpeed);
     }
-    public void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-        thisSceneController.DecrementEnemyCounter(gameObject);
-    }
+    public void OnBecameInvisible() => Destroy(gameObject);
     public void StopMovement() => FallingSpeed = 0.0f;
 }

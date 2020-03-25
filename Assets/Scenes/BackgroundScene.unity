@@ -1906,8 +1906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c29e67f404e4db19998ed98370cae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt: {fileID: 1760939404}
-  oLine: {fileID: 1760939403}
+  Text: {fileID: 1760939404}
+  Outline: {fileID: 1760939403}
 --- !u!114 &1760939403
 MonoBehaviour:
   m_ObjectHideFlags: 0

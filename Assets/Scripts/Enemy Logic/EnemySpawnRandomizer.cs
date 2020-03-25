@@ -20,7 +20,6 @@ public class EnemySpawnRandomizer
         for (int i = 1; i < TopSpawnPositions.Length; i++)
         {
             TopSpawnPositions[i] = ScreenBorders.Left + SpawnStep * i;
-            Debug.Log(TopSpawnPositions[i]);
         }
         return TopSpawnPositions;
     }

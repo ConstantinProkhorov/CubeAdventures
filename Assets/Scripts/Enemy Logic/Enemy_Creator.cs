@@ -2,6 +2,7 @@
 using UnityEngine;
 public sealed class Enemy_Creator : MonoBehaviour
 {
+    #region Variables Declaration
     private EnemySpawnRandomizer EnemySpawnRandomizer;
     private IColorRandomizer ColorRandomizer;
     [SerializeField] GameLevelSceneController ThisSceneController;
@@ -28,10 +29,9 @@ public sealed class Enemy_Creator : MonoBehaviour
     public bool isActive = false;
     private float SpawnInterval;
     private float timeCount = 0;
-    public int EnemyCounter { get; set; } = 0;
+    #endregion
     private void Start()
     {
-        Debug.Log(EnemyCounter);
         AllFigures = new Dictionary<GameObject, int>
         {
         { PointsFigure, 0 + PointsFigureSpawnChance },
@@ -60,7 +60,6 @@ public sealed class Enemy_Creator : MonoBehaviour
             if (timeCount > SpawnInterval)
             {
                 Enemy_Spawner();
-                ThisSceneController.IncrementEnemyCounter(gameObject);
                 SpawnInterval = GetNewSpawnInterval();
                 timeCount = default;
             }

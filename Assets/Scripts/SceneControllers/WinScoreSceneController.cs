@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ScoreSceneController : MonoBehaviour
+public class WinScoreSceneController : MonoBehaviour
 {
     public Text TotalWavesDisplay;
     //public Text HardestWaveDoneDisplay;
