@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DynamiteExplosion : MonoBehaviour
 {
@@ -13,8 +14,10 @@ public class DynamiteExplosion : MonoBehaviour
     private IEnumerator ExplosionDelay()
 
     {
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(1.5f);
         Explode();
+        GetComponent<Image>().enabled = false;
+        GetComponent<DynamiteMovement>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
     }
