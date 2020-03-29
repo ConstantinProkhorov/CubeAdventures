@@ -8,8 +8,8 @@ public class ButtonsSlideY : MonoBehaviour
     private Vector2 DefaultOffsetMin, DefaultOffsetMax;
 
     public float speed;
-    public float checkPosON = -250f;
-    public float checkPosDown = -380f;
+    public float checkPosON;
+    public float checkPosDown = -150f;
 
 	void Start()
     {
