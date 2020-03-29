@@ -34,29 +34,7 @@ public class Player_Assembler : MonoBehaviour
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
         // размер фигуры игрока на старте
         _player.transform.localScale = Vector3.one;
-
-        //запуск анимации
-        //Animation anim = _player.AddComponent<Animation>();
-        //AnimationClip clip = Resources.Load<AnimationClip>("StartCubeAnimation") as AnimationClip;
-        //anim.AddClip(clip, "StartCubeAnimation");
-        //anim.Play("StartCubeAnimation", PlayMode.StopAll);
-
         EyesAndLegsInstantiation();
-    }
-    public GameObject Player_Creator(Vector3 position, int i) //набор фигур для выбора из меню крафта
-    {
-        _player = Resources.Load<GameObject>(Figures[i]) as GameObject;
-        _player = Instantiate(_player, position, Quaternion.Euler(RandomRotation()));
-        _player.name = Figures[i];
-
-        _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
-
-        _player.transform.localScale = Vector3.one; // размер фигуры игрока на старте
-
-        _player.AddComponent<FormsSlide>(); 
-        _player.AddComponent<BoxCollider>();
-
-        return _player;
     }
     public GameObject Player_Creator(Vector3 position, string lastForm, float playerSize) //вызывается из сцены крафта
     {

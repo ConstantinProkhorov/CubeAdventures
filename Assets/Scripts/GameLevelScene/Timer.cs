@@ -19,7 +19,6 @@ public sealed class Timer : MonoBehaviour
     {
         gameObject.SetActive(true);
     }
-
     void FixedUpdate()
     {
         if (timer > 0)
@@ -28,7 +27,8 @@ public sealed class Timer : MonoBehaviour
             timerDisplay.text = String.Format("{0:00}:{1:00}", (int)timer / 60, (int)timer % 60);
         }
         else if(timer < 0)
-        {
+        {    //ААААААААААААААААААА 
+             //TODO: срочно переписать. 
             TimerEnded();
         }
     }

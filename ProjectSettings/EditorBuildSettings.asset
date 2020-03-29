@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 46abb30bc7488644499f5ca7e5bbc8be
   - enabled: 1
-    path: Assets/Scenes/Craft.unity
+    path: Assets/Scenes/Store.unity
     guid: d482e63e3a9d1544ca79ba2eb3b331dd
   - enabled: 1
     path: Assets/Scenes/EndScore.unity
