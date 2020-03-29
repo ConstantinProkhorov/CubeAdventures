@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 public class DynamiteMovement : MonoBehaviour
 {
     [SerializeField] float DynamiteSpeed;
     [SerializeField] float RotationSpeed;
+    private GameObject ForRay;
 
     private void Start()
     {
         StartCoroutine(SlowScale());
-        Time.timeScale = 1.0f;
+        ForRay = GameObject.Find("ForRay");
+        ForRay.GetComponent<TimeDilation>().Fast();
     }
     void Update()
     {

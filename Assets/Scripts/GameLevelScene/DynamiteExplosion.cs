@@ -19,7 +19,7 @@ public class DynamiteExplosion : MonoBehaviour
         GetComponent<Image>().enabled = false;
         GetComponent<DynamiteMovement>().enabled = false;
         yield return new WaitForSeconds(0.5f);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
 
