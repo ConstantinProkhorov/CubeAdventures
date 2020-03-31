@@ -816,7 +816,7 @@ MonoBehaviour:
   WaveName: Omega Wave
   FallingSpeed: 1.8
   EnemySpawnInterval: 1.5
-  LevelDuration: 5
+  LevelDuration: 60
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,21 +831,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 0
+  enemyASpawnChance: 10
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 0
+  enemyBSpawnChance: 25
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
-  enemyCSpawnChance: 0
+  enemyCSpawnChance: 20
   enemyD: {fileID: 2443867936017225212, guid: 0b562261ede0df74e837f05830edfef2, type: 3}
-  enemyDSpawnChance: 0
+  enemyDSpawnChance: 10
   enemyE: {fileID: 8935892655870133375, guid: 6d001da693d20d34fbe1f2d2a74945af, type: 3}
-  enemyESpawnChance: 0
+  enemyESpawnChance: 10
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 50
+  PointsFigureSpawnChance: 20
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 50
+  DiamondFigureSpawnChance: 5
   isActive: 0
 --- !u!114 &1395036228
 MonoBehaviour:
@@ -887,9 +887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f80c2171cadf66488e73d22dd50d15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuePlayingWindowBlur: {fileID: 907990983}
-  PriceText: {fileID: 1349701794}
-  thisSceneController: {fileID: 1395036225}
 --- !u!114 &1395036231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1433,16 +1430,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5536087100810597282, guid: 5e9638b126157004ebfd812247172d92,
-        type: 3}
-      propertyPath: thisSceneController
-      value: 
-      objectReference: {fileID: 1395036225}
-    - target: {fileID: 5536087102101755562, guid: 5e9638b126157004ebfd812247172d92,
-        type: 3}
-      propertyPath: thisSceneController
-      value: 
-      objectReference: {fileID: 1395036225}
     - target: {fileID: 567114974056160489, guid: 5e9638b126157004ebfd812247172d92,
         type: 3}
       propertyPath: EventsHolder
@@ -1458,6 +1445,16 @@ PrefabInstance:
       propertyPath: Score
       value: 
       objectReference: {fileID: 5536087102750393528}
+    - target: {fileID: 5536087100810597282, guid: 5e9638b126157004ebfd812247172d92,
+        type: 3}
+      propertyPath: thisSceneController
+      value: 
+      objectReference: {fileID: 1395036225}
+    - target: {fileID: 5536087102101755562, guid: 5e9638b126157004ebfd812247172d92,
+        type: 3}
+      propertyPath: thisSceneController
+      value: 
+      objectReference: {fileID: 1395036225}
     m_RemovedComponents:
     - {fileID: 4350511360622148268, guid: 5e9638b126157004ebfd812247172d92, type: 3}
     - {fileID: 7731071717480628434, guid: 5e9638b126157004ebfd812247172d92, type: 3}
