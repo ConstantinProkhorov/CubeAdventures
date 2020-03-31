@@ -1,10 +1,12 @@
 ﻿using System;
 using UnityEngine;
-public class TimeDilation : MonoBehaviour
+using UnityEngine.EventSystems;
+
+public class TimeDilation : MonoBehaviour, IDragHandler
 {
     public event Action TimeScaleSlowed;
     public event Action TimeScaleNormalized;
-    void OnMouseDown()
+    public void OnDrag(PointerEventData eventData)
     {
         Fast();
     }
@@ -33,4 +35,6 @@ public class TimeDilation : MonoBehaviour
 
         }
     }
+    public void OnEndDrag(PointerEventData eventData) { }
+    public void OnBeginDrag(PointerEventData eventData) { }
 }

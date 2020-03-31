@@ -1,27 +1,19 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class DisablePauseOnStartScene : MonoBehaviour
 {
     public void DisablePauseButton()
     {
-        StartCoroutine(DisableDelay());
-        
+        GetComponent<Image>().enabled = false;
+        GetComponent<Button>().enabled = false;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
     }
     public void EnablePauseButton()
     {
         GetComponent<Image>().enabled = true;
         GetComponent<Button>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
-    }
-    
-    IEnumerator DisableDelay()
-    {
-        yield return new WaitForSeconds(0.1f);
-        GetComponent<Image>().enabled = false;
-        GetComponent<Button>().enabled = false;
-        GetComponentInChildren<SpriteRenderer>().enabled = false;
     }
     private void Start()
     {
