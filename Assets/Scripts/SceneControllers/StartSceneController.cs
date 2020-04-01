@@ -18,4 +18,10 @@ public class StartSceneController : MonoBehaviour, IInfoPanel
         DiamondsChanged?.Invoke(SceneController.Diamonds);
         DynamiteChanged?.Invoke(SceneController.Dynamite);
     }
+    public void ReloadDisplayAmmounts()
+    {
+        ScoreChanged?.Invoke(SceneController.Score);
+        DiamondsChanged?.Invoke(SceneController.Diamonds);
+        DynamiteChanged?.Invoke(SceneController.Dynamite);
+    }
 }

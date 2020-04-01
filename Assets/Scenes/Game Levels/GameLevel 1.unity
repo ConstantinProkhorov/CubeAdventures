@@ -814,7 +814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveName: Omega Wave
   FallingSpeed: 1.8
-  EnemySpawnInterval: 1.5
+  EnemySpawnInterval: 0.5
   LevelDuration: 60
 --- !u!114 &1395036227
 MonoBehaviour:

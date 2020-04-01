@@ -12,18 +12,16 @@ public class TimeDilation : MonoBehaviour, IDragHandler
     }
     void OnMouseUp()
     {
-        
-        Slow();
-        
+        Slow();   
     }
     public void Fast()
     {
-    if (!AndroidControlls.GameIsPaused)
-    {
-        Time.timeScale = 1.0f;
-        Time.fixedDeltaTime = 0.02f;
-        TimeScaleNormalized();
-    }
+       if (!AndroidControlls.GameIsPaused)
+        {
+            Time.timeScale = 1.0f;
+            Time.fixedDeltaTime = 0.02f;
+            TimeScaleNormalized();
+        }
     }
     public void Slow()
     {
