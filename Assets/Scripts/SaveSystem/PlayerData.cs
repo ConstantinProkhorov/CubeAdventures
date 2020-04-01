@@ -18,9 +18,9 @@ public class PlayerData
         TotalScore = 0;
         Diamonds = 0;
         Dynamite = 100;
-        LastForm = "Forms/Cube";
+        LastForm = "Forms/Sphere";
         r = 0;
-        g = 0;
+        g = 20;
         b = 0;
         lastLevelPlayed = "GameLevel 1";
         levelOpenCloseDictionary = new bool[] { true, false, false, false };

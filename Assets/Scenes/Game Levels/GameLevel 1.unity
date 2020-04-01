@@ -759,7 +759,6 @@ GameObject:
   - component: {fileID: 1395036228}
   - component: {fileID: 1395036229}
   - component: {fileID: 1395036231}
-  - component: {fileID: 1395036230}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -875,18 +874,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneSkybox: {fileID: 2100000, guid: 41a9b9c7bd86645a2a8e2bae2163d0bf, type: 2}
---- !u!114 &1395036230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395036223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f80c2171cadf66488e73d22dd50d15a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1395036231
 MonoBehaviour:
   m_ObjectHideFlags: 0
