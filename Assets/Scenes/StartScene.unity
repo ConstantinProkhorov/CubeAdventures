@@ -1209,8 +1209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291360b1a1e784e9094a3c2dcdc4abc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DynamitePrice: 90
+  DynamitePrice: 10
   DynamitePriceText: {fileID: 674050821}
+  startSceneController: {fileID: 494165857}
 --- !u!114 &1507554573
 MonoBehaviour:
   m_ObjectHideFlags: 0
