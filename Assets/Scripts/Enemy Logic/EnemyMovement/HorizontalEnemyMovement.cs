@@ -20,6 +20,7 @@ public class HorizontalEnemyMovement : EnemyMovement
     {
         base.Start();
         FlyDirection = FallingSpeed * (float)direction;
+        GetComponent<SphereCollider>().enabled = true;
     }
     public void Update()
     {

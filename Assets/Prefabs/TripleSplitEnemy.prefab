@@ -94,7 +94,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.10242641, y: 0.102426395, z: 0.08485279}
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5970985109549252534
 Rigidbody:
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a14db67d324a29479650d11b6eb1d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  RotationSpeed: 1
   thisSceneController: {fileID: 0}
 --- !u!114 &-6875847888916451564
 MonoBehaviour:
@@ -138,7 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf602fd0a5040b4797081beea263dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnNumber: 3
   ChildFigure: {fileID: 8935892655870133375, guid: a81bc390a83ccf741b31b0e0943147fe,
     type: 3}
   thisSceneController: {fileID: 0}
