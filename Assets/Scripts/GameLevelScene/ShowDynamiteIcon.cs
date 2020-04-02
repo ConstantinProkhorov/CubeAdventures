@@ -7,11 +7,11 @@ public class ShowDynamiteIcon : MonoBehaviour
     [SerializeField] private GameLevelSceneController thisSceneController;
   void Start()
     {
+        
         TimeDilation.TimeScaleSlowed += () =>
         {
             if (SceneController.Dynamite > 0)
-            {
-                gameObject.SetActive(true);
+            { 
                 Vector3 position = thisSceneController.Player.transform.position - thisSceneController.Player.transform.lossyScale / 2;
                 gameObject.transform.position = position;
             }
@@ -22,6 +22,6 @@ public class ShowDynamiteIcon : MonoBehaviour
     private IEnumerator DelayedGameObjestDeactivation() 
     {
         yield return new WaitForEndOfFrame();
-        gameObject.SetActive(false);
+        gameObject.transform.position = new Vector3(200,200,200);
     }
 }

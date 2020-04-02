@@ -15,12 +15,4 @@ public class DisablePauseOnStartScene : MonoBehaviour
         GetComponent<Button>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
     }
-    private void Start()
-    {
-        if (SceneManager.GetActiveScene().buildIndex < 2)
-        {
-            DisablePauseButton();
-        }
-    }
-    
 }

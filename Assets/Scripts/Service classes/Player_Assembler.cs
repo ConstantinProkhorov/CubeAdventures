@@ -20,7 +20,7 @@ public class Player_Assembler : MonoBehaviour
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
         _player.layer = 2; // установка слоя IgnoreRaycast 
         BoxCollider coll = _player.AddComponent<BoxCollider>();
-        coll.size = new Vector3(1.0f, 1.0f, 1.0f);
+        coll.size = new Vector3(0.6f, 0.6f, 0.6f);
         _player.AddComponent<SizeChange>();
         _player.AddComponent<OnCollision>();
         
