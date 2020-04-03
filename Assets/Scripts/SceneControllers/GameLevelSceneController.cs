@@ -23,6 +23,7 @@ public class GameLevelSceneController : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
         ActiveLevelData.Set(LevelDataInput);
         SceneController.LastLevel = LevelName;                               // перезапись последнего уровня в который играл игрок
+        SceneController.CurrentWaveName = GetComponent<LevelDataInput>().WaveName;
         Player = PlayerAssembler.Player_Creator(SceneController.LastForm);
         ScoreGainedOnLevel = new ScoreGainedOnLevel();
         LevelStartUpTimer.TimerEnded += () => 

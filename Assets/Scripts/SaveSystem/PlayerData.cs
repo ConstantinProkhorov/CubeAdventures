@@ -2,6 +2,7 @@
 public class PlayerData 
 {
     public int TotalWavesCleared;
+    public string CurrentWaveName;
     public int TotalScore;
     public int Diamonds;
     public int Dynamite;
@@ -14,6 +15,7 @@ public class PlayerData
     public bool[] colorOpenCloseDictionary;
     public PlayerData()
     {
+        CurrentWaveName = "ALFA Wave";
         TotalWavesCleared = 0;
         TotalScore = 0;
         Diamonds = 0;
@@ -29,6 +31,7 @@ public class PlayerData
     public PlayerData(PlayerData currentState)
     {
         TotalWavesCleared = currentState.TotalWavesCleared;
+        CurrentWaveName = currentState.CurrentWaveName;
         TotalScore = currentState.TotalScore;
         LastForm = currentState.LastForm;
         Diamonds = currentState.Diamonds;
