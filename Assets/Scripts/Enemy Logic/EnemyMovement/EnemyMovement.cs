@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public abstract class EnemyMovement : MonoBehaviour
 {
@@ -18,5 +19,18 @@ public abstract class EnemyMovement : MonoBehaviour
         transform.Rotate(0, -RotationSpeed, -RotationSpeed);
     }
     public void OnBecameInvisible() => Destroy(gameObject);
-    public void StopMovement() => FallingSpeed = 0.0f;
+    public void StopMovement()
+    {
+        StartCoroutine(GravityForcedFall());
+    }
+    private IEnumerator GravityForcedFall()
+    {
+        FallingSpeed = 0.0f;
+        yield return new WaitForSeconds(2.0f);
+        gameObject.GetComponent<Rigidbody>().useGravity = true;
+    }
+        
+        
+        
+
 }

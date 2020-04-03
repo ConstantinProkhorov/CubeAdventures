@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,9 +12,8 @@ public class GameLevelSceneController : MonoBehaviour
     [SerializeField] private LevelDataInput LevelDataInput;
     [SerializeField] private Enemy_Creator EnemyCreator;
     [SerializeField] private LevelStartUpTimer LevelStartUpTimer;
-    [SerializeField] private Timer WaveTimer;
+    [SerializeField] private TimerInterface WaveTimer;
     [SerializeField] private Text WaveTimerText;
-    private Color WaveTimerEndedColor = new Color32(9, 173, 41, 255);
     //Assigned or changed in runtime
     public ScoreGainedOnLevel ScoreGainedOnLevel { get; private set; }
     private bool LevelIsEnding { get; set; } = false;
@@ -40,7 +38,6 @@ public class GameLevelSceneController : MonoBehaviour
         {
             WaveTimer.TurnOff();
             EnemyCreator.isActive = false;
-            WaveTimerText.color = WaveTimerEndedColor;
             LevelIsEnding = true;
             InvokeRepeating(nameof(EndLevel), 2.0f, 2.0f);
         };

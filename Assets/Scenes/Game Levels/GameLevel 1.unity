@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44877416, g: 0.49883157, b: 0.5756931, a: 1}
+  m_IndirectSpecularColor: {r: 0.44877464, g: 0.4988324, b: 0.5756943, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -550,6 +550,7 @@ GameObject:
   - component: {fileID: 1046821809}
   - component: {fileID: 1046821808}
   - component: {fileID: 1046821810}
+  - component: {fileID: 1046821811}
   m_Layer: 5
   m_Name: TimerImage
   m_TagString: Untagged
@@ -626,7 +627,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5b043fa553ac641a11070d7df7fd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDisplay: {fileID: 55712582}
+  TimerDisplay: {fileID: 55712582}
+--- !u!114 &1046821811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046821806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53342444f5741c4ab36f31f7071d61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveTimer: {fileID: 1046821810}
+  TimerDisplay: {fileID: 55712582}
 --- !u!1 &1150334094
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +813,7 @@ MonoBehaviour:
   LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
-  WaveTimer: {fileID: 1046821810}
+  WaveTimer: {fileID: 1046821811}
   WaveTimerText: {fileID: 55712582}
 --- !u!114 &1395036226
 MonoBehaviour:
@@ -1792,16 +1807,6 @@ PrefabInstance:
       propertyPath: m_FontData.m_MaxSize
       value: 55
       objectReference: {fileID: 0}
-    - target: {fileID: 5536087100810597282, guid: 5e9638b126157004ebfd812247172d92,
-        type: 3}
-      propertyPath: thisSceneController
-      value: 
-      objectReference: {fileID: 1395036225}
-    - target: {fileID: 5536087102101755562, guid: 5e9638b126157004ebfd812247172d92,
-        type: 3}
-      propertyPath: thisSceneController
-      value: 
-      objectReference: {fileID: 1395036225}
     - target: {fileID: 1775211949598553966, guid: 5e9638b126157004ebfd812247172d92,
         type: 3}
       propertyPath: m_RootOrder
@@ -1867,6 +1872,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5536087100810597282, guid: 5e9638b126157004ebfd812247172d92,
+        type: 3}
+      propertyPath: thisSceneController
+      value: 
+      objectReference: {fileID: 1395036225}
+    - target: {fileID: 5536087102101755562, guid: 5e9638b126157004ebfd812247172d92,
+        type: 3}
+      propertyPath: thisSceneController
+      value: 
+      objectReference: {fileID: 1395036225}
     m_RemovedComponents:
     - {fileID: 4350511360622148268, guid: 5e9638b126157004ebfd812247172d92, type: 3}
     - {fileID: 7731071717480628434, guid: 5e9638b126157004ebfd812247172d92, type: 3}
