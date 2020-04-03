@@ -29,8 +29,4 @@ public abstract class EnemyMovement : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         gameObject.GetComponent<Rigidbody>().useGravity = true;
     }
-        
-        
-        
-
 }

@@ -628,6 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerDisplay: {fileID: 55712582}
+  TimerCountdownStep: 1
 --- !u!114 &1046821811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,7 +814,7 @@ MonoBehaviour:
   LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
-  WaveTimer: {fileID: 1046821811}
+  WaveTimer: {fileID: 1046821810}
   WaveTimerText: {fileID: 55712582}
 --- !u!114 &1395036226
 MonoBehaviour:

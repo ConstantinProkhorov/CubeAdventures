@@ -6,8 +6,7 @@ public class ShowDynamiteIcon : MonoBehaviour
     [SerializeField] private TimeDilation TimeDilation;
     [SerializeField] private GameLevelSceneController thisSceneController;
   void Start()
-    {
-        
+    {   
         TimeDilation.TimeScaleSlowed += () =>
         {
             if (SceneController.Dynamite > 0)

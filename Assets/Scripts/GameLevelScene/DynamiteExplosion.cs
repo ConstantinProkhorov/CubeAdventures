@@ -8,7 +8,7 @@ public class DynamiteExplosion : MonoBehaviour
     [SerializeField]private float ExplosionPower = 5000.0f;
     private void Start()
     {
-        StartCoroutine("ExplosionDelay");
+        StartCoroutine(ExplosionDelay());
     }
     private IEnumerator ExplosionDelay()
     {
