@@ -15,6 +15,9 @@ public class DynamiteMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(0, DynamiteSpeed * Time.deltaTime, 0, Space.World);
+    }
+    void FixedUpdate()
+    {
         transform.Rotate(0, 0, RotationSpeed);
     }
     IEnumerator SlowScale()

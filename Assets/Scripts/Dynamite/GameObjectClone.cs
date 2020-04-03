@@ -13,7 +13,7 @@ public class GameObjectClone : MonoBehaviour
         clone = Instantiate(clone, PlayerTransform.position - PlayerTransform.lossyScale / 2, Quaternion.identity) as GameObject;
         Explosion = Instantiate(Explosion, PlayerTransform.position, Quaternion.identity) as GameObject;
 
-        clone.transform.SetParent(canvas.transform);
+        clone.transform.SetParent(canvas.transform); //TODO: убрать за фон или убрать из  canvas 
         Explosion.transform.SetParent(clone.transform);
 
         clone.transform.localScale = new Vector3(1,1,1);
