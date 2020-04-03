@@ -6,6 +6,7 @@ public class SceneController : MonoBehaviour
     // Доступ к членам PlayerData через оболочку свойств. Сделал так, чтобы было удобнее отслеживать доступ к данным. Не могу сказать, хорошее ли это 
     // решение, но буду смотреть на результат.
     public static int TotalWavesCleared { get => CurrentSessionPlayerData.TotalWavesCleared; set => CurrentSessionPlayerData.TotalWavesCleared = value; }
+    public static string CurrentWaveName { get => CurrentSessionPlayerData.CurrentWaveName; set => CurrentSessionPlayerData.CurrentWaveName = value; }
     public static int Score { get => CurrentSessionPlayerData.TotalScore; set => CurrentSessionPlayerData.TotalScore = value; }
     public static int Diamonds { get => CurrentSessionPlayerData.Diamonds; set => CurrentSessionPlayerData.Diamonds = value; }
     public static int Dynamite { get => CurrentSessionPlayerData.Dynamite; set => CurrentSessionPlayerData.Dynamite = value < 0 ? 0 : value; }
