@@ -42,6 +42,15 @@ public class GameLevelSceneController : MonoBehaviour
             LevelIsEnding = true;
             InvokeRepeating(nameof(EndLevel), 2.0f, 2.0f);
         };
+        // подписка на события OnCollision для проигрывания звуков в нужный момент
+        // идея в том, что soundmanager & oncollision не зависят ни от кого, не имеют связей друг с другом и по идеи независыми. Единственное, 
+        // что этот класс очень сильные связи с ними имеет, они не разорваны никаким интерфейсом. Первое правило солид нарушено. Я буду додумывать результат по 
+        // факту написания всей системы. Но я не понимаю как разорвать эту связь интерфейсом. как сделать эти части независимыми от конкретной реализации???
+        // может быть я просто тупой?
+        // какой опысный и неоптимальный код...
+        OnCollision onCollision = Player.GetComponent<OnCollision>();
+        SoundHolder soundHolder = GameObject.Find("SoundHolder").GetComponent<SoundHolder>();
+        onCollision.CoinCollision += () => soundHolder.PlayCoinSound();
     }
     private void EndLevel()
     {
