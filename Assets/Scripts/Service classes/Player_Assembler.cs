@@ -23,6 +23,7 @@ public class Player_Assembler : MonoBehaviour
         coll.size = new Vector3(0.6f, 0.6f, 0.6f);
         _player.AddComponent<SizeChange>();
         _player.AddComponent<OnCollision>();
+        _player.AddComponent<AudioSource>();
         
         EyesAndLegsInstantiation();
         return _player;
