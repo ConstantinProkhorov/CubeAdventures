@@ -48,9 +48,9 @@ public class GameLevelSceneController : MonoBehaviour
         // факту написания всей системы. Но я не понимаю как разорвать эту связь интерфейсом. как сделать эти части независимыми от конкретной реализации???
         // может быть я просто тупой?
         // какой опысный и неоптимальный код...
-        OnCollision onCollision = Player.GetComponent<OnCollision>();
-        SoundHolder soundHolder = GameObject.Find("SoundHolder").GetComponent<SoundHolder>();
-        onCollision.CoinCollision += () => soundHolder.PlayCoinSound();
+        //OnCollision onCollision = Player.GetComponent<OnCollision>();
+        //SoundHolder soundHolder = GameObject.Find("SoundHolder").GetComponent<SoundHolder>();
+        //onCollision.CoinCollision += () => soundHolder.PlayCoinSound();
     }
     private void EndLevel()
     {
