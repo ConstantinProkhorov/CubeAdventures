@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5049334521897098061}
   - component: {fileID: 2944883336692362254}
   - component: {fileID: 1171161795589423060}
+  - component: {fileID: 2929843718183600282}
   m_Layer: 0
   m_Name: Coin
   m_TagString: pointsgiver
@@ -222,3 +223,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2929843718183600282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073581005837902107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a7e0be5e4558c4b9b4d56b50c5abc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 2944883336692362254}
+  MeshRenderer: {fileID: 358600206761399751}
+  EnemyMovement: {fileID: -9168591268082879120}
+  Delay: 2

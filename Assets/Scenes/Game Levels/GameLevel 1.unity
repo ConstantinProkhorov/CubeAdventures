@@ -830,7 +830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveName: Omega Wave
   FallingSpeed: 1.8
-  EnemySpawnInterval: 0.5
+  EnemySpawnInterval: 2
   LevelDuration: 10
 --- !u!114 &1395036227
 MonoBehaviour:
@@ -846,21 +846,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 19
+  enemyASpawnChance: 0
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 25
+  enemyBSpawnChance: 0
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
-  enemyCSpawnChance: 20
+  enemyCSpawnChance: 0
   enemyD: {fileID: 2443867936017225212, guid: 0b562261ede0df74e837f05830edfef2, type: 3}
-  enemyDSpawnChance: 15
+  enemyDSpawnChance: 0
   enemyE: {fileID: 8935892655870133375, guid: 6d001da693d20d34fbe1f2d2a74945af, type: 3}
-  enemyESpawnChance: 10
+  enemyESpawnChance: 0
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 10
+  PointsFigureSpawnChance: 100
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 1
+  DiamondFigureSpawnChance: 0
   isActive: 0
 --- !u!114 &1395036228
 MonoBehaviour:
