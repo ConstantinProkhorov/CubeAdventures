@@ -1,24 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-
+/// <summary>
+/// Physics part of dynamite explosion
+/// </summary>
 public class DynamiteExplosion : MonoBehaviour
 {
-    [SerializeField]private float ExplosionRadius = 5.0f;
-    [SerializeField]private float ExplosionPower = 5000.0f;
-    private void Start()
-    {
-        StartCoroutine(ExplosionDelay());
-    }
-    private IEnumerator ExplosionDelay()
-    {
-        yield return new WaitForSeconds(1.0f);
-        Explode();
-        GetComponent<Image>().enabled = false;
-        GetComponent<DynamiteMovement>().enabled = false;
-        yield return new WaitForSeconds(0.5f);
-        Destroy(gameObject);
-    }
+    [SerializeField] private float ExplosionRadius = 5.0f;
+    [SerializeField] private float ExplosionPower = 5000.0f;
+    //public IEnumerator Start()
+    //{
+    //    //Explode();
+    //    //GetComponent<Image>().enabled = false;
+    //    //GetComponent<DynamiteMovement>().enabled = false;
+    //    //yield return new WaitForSeconds(0.5f);
+    //    //Destroy(gameObject);
+    //}
     public void Explode() 
     {
         Vector3 ExplosionPosition = gameObject.transform.position;
@@ -33,6 +29,5 @@ public class DynamiteExplosion : MonoBehaviour
                 enemyMovement.StopMovement();
             }
         }
-        SceneController.Dynamite--;
     }
 }
