@@ -14,12 +14,12 @@ public sealed class TimerRealisation : TimerInterface
     public override void TurnOn()
     {
         timer = ActiveLevelData.LevelDuration;
-        StartCoroutine(OutputTime());
+        StartCoroutine(nameof(OutputTime));
     }
     /// <summary>
     /// Deactivates whole gameobject of this timer. For better or worse.
     /// </summary>
-    public override void TurnOff() => gameObject.SetActive(false);
+    public override void TurnOff() => StopCoroutine(nameof(OutputTime));
     IEnumerator OutputTime()
     {
         for (; ; )

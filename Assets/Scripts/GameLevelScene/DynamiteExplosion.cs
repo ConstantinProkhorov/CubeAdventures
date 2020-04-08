@@ -12,7 +12,7 @@ public class DynamiteExplosion : MonoBehaviour
     }
     private IEnumerator ExplosionDelay()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
         Explode();
         GetComponent<Image>().enabled = false;
         GetComponent<DynamiteMovement>().enabled = false;

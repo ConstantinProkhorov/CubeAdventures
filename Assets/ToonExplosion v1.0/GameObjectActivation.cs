@@ -13,7 +13,7 @@ public class GameObjectActivation : MonoBehaviour
     
     private IEnumerator Activate()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
         transform.GetChild(0).gameObject.SetActive(true);
     }
     private IEnumerator Inactivate()
