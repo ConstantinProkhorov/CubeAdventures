@@ -138,8 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf602fd0a5040b4797081beea263dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChildFigure: {fileID: 8935892655870133375, guid: a81bc390a83ccf741b31b0e0943147fe,
-    type: 3}
+  ChildFigure: {fileID: 0}
   thisSceneController: {fileID: 0}
   MaxAllowedSplitPosition: 3
   MinAllowedSplitPosition: -1
