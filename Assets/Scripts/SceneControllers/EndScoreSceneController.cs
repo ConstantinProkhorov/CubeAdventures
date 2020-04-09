@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class EndScoreSceneController : MonoBehaviour
 {     
     public Text ScoreGainedDisplay;
-    public Text DiamondsNumberDisplay;
-
+    public Text DiamondsGainedDisplay;
+    public Text DiamondsNeededToRestart;
     void Start()
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
@@ -13,7 +13,8 @@ public class EndScoreSceneController : MonoBehaviour
     }
     private void ResultsDisplay()
     {
-        ScoreGainedDisplay.text = SceneController.ScoreGainedOnLevel.ToString();
-        DiamondsNumberDisplay.text = SceneController.Diamonds.ToString();
+        ScoreGainedDisplay.text = $"+{SceneController.ScoreGainedOnLevel.ToString()}";
+        DiamondsGainedDisplay.text = $"+{SceneController.DiamondsGainedOnLevel.ToString()}";
+        DiamondsNeededToRestart.text = $"-{GameData.RestartLevelPrice.Get(SceneController.LastLevel)}";
     }
 }

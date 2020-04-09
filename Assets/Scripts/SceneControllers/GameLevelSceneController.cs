@@ -17,7 +17,8 @@ public class GameLevelSceneController : MonoBehaviour
     [SerializeField] private TimerInterface WaveTimer;
     [SerializeField] private Text WaveTimerText;
     //Assigned or changed in runtime
-    public ScoreGainedOnLevel ScoreGainedOnLevel { get; private set; }
+    public CurrencyGainedOnLevel ScoreGainedOnLevel { get; private set; }
+    public CurrencyGainedOnLevel DiamondsGainedOnLevel { get; private set; }
     private bool LevelIsEnding { get; set; } = false;
     public string LevelName { get => levelName; private set => levelName = value; }
     public void Start()
@@ -26,8 +27,8 @@ public class GameLevelSceneController : MonoBehaviour
         Player = PlayerAssembler.Player_Creator(SceneController.LastForm);
         ActiveLevelData.Set(LevelDataInput);
         SceneController.LastLevel = LevelName;                               // перезапись последнего уровня в который играл игрок
-        SceneController.CurrentWaveName = GetComponent<LevelDataInput>().WaveName;
-        ScoreGainedOnLevel = new ScoreGainedOnLevel();
+        ScoreGainedOnLevel = new CurrencyGainedOnLevel();
+        DiamondsGainedOnLevel = new CurrencyGainedOnLevel();
         LevelStartUpTimer.TimerEnded += () => 
         {        
             //выключение текста через его внутренний метод
@@ -64,5 +65,9 @@ public class GameLevelSceneController : MonoBehaviour
                 return false;
         }
     }
-    public void OnDisable() => ScoreGainedOnLevel.SaveScore();
+    public void OnDisable() 
+    {
+        ScoreGainedOnLevel.Save(ref SceneController.ScoreGainedOnLevel);
+        DiamondsGainedOnLevel.Save(ref SceneController.DiamondsGainedOnLevel);
+    }
 }

@@ -12,8 +12,8 @@ public sealed class InfoPanelAdapter : MonoBehaviour, IInfoPanel
     #endregion
     void FixedUpdate()
     {
-        ScoreChanged?.Invoke(gameLevelSceneController.ScoreGainedOnLevel.Score);
-        DiamondsChanged?.Invoke(SceneController.Diamonds);
+        ScoreChanged?.Invoke(gameLevelSceneController.ScoreGainedOnLevel.Amount);
+        DiamondsChanged?.Invoke(gameLevelSceneController.DiamondsGainedOnLevel.Amount);
         DynamiteChanged?.Invoke(SceneController.Dynamite);
     }
 }

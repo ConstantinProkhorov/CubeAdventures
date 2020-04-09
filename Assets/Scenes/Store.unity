@@ -3243,7 +3243,7 @@ GameObject:
   - component: {fileID: 1797352950}
   - component: {fileID: 1797352949}
   m_Layer: 5
-  m_Name: Back
+  m_Name: BackButton
   m_TagString: MainUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

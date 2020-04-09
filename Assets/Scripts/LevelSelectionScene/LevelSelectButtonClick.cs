@@ -15,7 +15,7 @@ public class LevelSelectButtonClick : MonoBehaviour
     {
         if (thisSceneController.UnlockDictionary.GetState(ButtonName)) 
         {
-            SceneController.LastLevel = ButtonName;
+            //SceneController.LastLevel = ButtonName; //последняя сцена сохраняется при загрузке нового игрового уровня
             SceneLoadManager.SceneLoad(ButtonName);
         }
         else
