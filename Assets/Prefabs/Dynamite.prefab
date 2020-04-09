@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb82748c4f3c43448b0eb6480b5d243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionDelay: 2
+  ExplosionDelay: 1.2
   DynamiteExplosion: {fileID: -3345172854019621868}
   ExplosionSound: {fileID: 7925272653354643541}
   ExplosionEffect: {fileID: 6959051841186390178}
@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e787c888af37457e8b68e07313395f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlySpeed: 2
-  RotationSpeed: 1
+  FlySpeed: 3
+  RotationSpeed: 2.5
 --- !u!114 &2220612825468903563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58aa4a953467e04b9e1d7bb0a3f764c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SizeIncraseIncrement: 3
-  MaxSize: 1.3
-  ResultingSize: 2
+  SizeIncraseIncrement: 1.5
+  MaxSize: 1.2
+  ResultingSize: 1
 --- !u!114 &-3345172854019621868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +299,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 465054083254881123}
     m_Modifications:
+    - target: {fileID: 9510688, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_Name
       value: Explosion
@@ -351,8 +355,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9510688, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 444620, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 444620, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21253170, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21253170, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21253170, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
