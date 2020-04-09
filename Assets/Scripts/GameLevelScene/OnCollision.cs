@@ -36,6 +36,7 @@ public class OnCollision : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("collectible"))
         {
+            GameLevelSceneController.DiamondsGainedOnLevel.Add(1);
             SceneController.Diamonds++;
             sizeChange.ChangeSize();
         }

@@ -440,7 +440,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Get Ready for
+  m_Text: ///startuptext
 --- !u!222 &365924856
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -476,7 +476,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelStartText: {fileID: 365924855}
-  LevelDataInput: {fileID: 1395036226}
+  Prefix: 
+  Postfix: ' incomming!!!'
 --- !u!1 &440750581
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +692,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150334098}
     m_Modifications:
+    - target: {fileID: 5097041261705123347, guid: 60495999651486b4f9e366e7241704f5,
+        type: 3}
+      propertyPath: m_Name
+      value: DynamiteButton
+      objectReference: {fileID: 0}
     - target: {fileID: -4556867887745548017, guid: 60495999651486b4f9e366e7241704f5,
         type: 3}
       propertyPath: TimeDilation
@@ -701,11 +707,6 @@ PrefabInstance:
       propertyPath: thisSceneController
       value: 
       objectReference: {fileID: 1395036225}
-    - target: {fileID: 5097041261705123347, guid: 60495999651486b4f9e366e7241704f5,
-        type: 3}
-      propertyPath: m_Name
-      value: DynamiteButton
-      objectReference: {fileID: 0}
     - target: {fileID: 6214731550470562053, guid: 60495999651486b4f9e366e7241704f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -920,7 +921,7 @@ MonoBehaviour:
   WaveName: Omega Wave
   FallingSpeed: 1.8
   EnemySpawnInterval: 1
-  LevelDuration: 20
+  LevelDuration: 15
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,7 +936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 0
+  enemyASpawnChance: 50
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
   enemyBSpawnChance: 0
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
@@ -946,10 +947,10 @@ MonoBehaviour:
   enemyESpawnChance: 0
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 100
+  PointsFigureSpawnChance: 25
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 0
+  DiamondFigureSpawnChance: 25
   isActive: 0
 --- !u!114 &1395036228
 MonoBehaviour:

@@ -23,7 +23,8 @@ public class SceneController : MonoBehaviour
     // словари для хранения цен разблокировки
     public static LevelOpenPriceDictionary LevelPriceDictionary { get; private set; }
     public static ColorOpenPriceDictionary ColorPriceDictionary { get; private set; }
-    public static int ScoreGainedOnLevel { get; set; }
+    public static int ScoreGainedOnLevel;
+    public static int DiamondsGainedOnLevel;
     // временный метод для отладки игры
     public void PlayerDataReset() => LoadBlanckSaveFile();
     void Start()
