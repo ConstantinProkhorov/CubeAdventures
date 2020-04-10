@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartSceneController : MonoBehaviour, IInfoPanel
+public class StartSceneController : MonoBehaviour
 {
     #region IInfoPanel implementation
     public event Action<int> ScoreChanged;
@@ -14,12 +14,5 @@ public class StartSceneController : MonoBehaviour, IInfoPanel
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
         PlayerAssembler.Player_Creator(new Vector3(0, 1, 0), SceneController.LastForm);
-        ReloadDisplayAmmounts();
-    }
-    public void ReloadDisplayAmmounts()
-    {
-        ScoreChanged?.Invoke(SceneController.Score);
-        DiamondsChanged?.Invoke(SceneController.Diamonds);
-        DynamiteChanged?.Invoke(SceneController.Dynamite);
     }
 }

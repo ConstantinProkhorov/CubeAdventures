@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class CraftSceneController : MonoBehaviour, IDictionarySupport, IInfoPanel
+public class CraftSceneController : MonoBehaviour, IDictionarySupport
 {
     #region IInfoPanel implementation
     public event Action<int> ScoreChanged;

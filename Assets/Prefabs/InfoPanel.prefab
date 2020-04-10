@@ -9,13 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1775211949598553966}
-  - component: {fileID: 567114974056160489}
-  - component: {fileID: 4350511360622148268}
-  - component: {fileID: 7731071717480628434}
-  - component: {fileID: 3014898537083540354}
-  - component: {fileID: 4288921902104962556}
-  - component: {fileID: 123683209473815586}
-  - component: {fileID: 7198553432453004551}
+  - component: {fileID: -1190997749491127254}
   m_Layer: 0
   m_Name: InfoPanel
   m_TagString: Untagged
@@ -48,7 +42,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &567114974056160489
+--- !u!114 &-1190997749491127254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,109 +51,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1155865657669503410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf5b3cca45b932849bd8dc8a9e8c8122, type: 3}
+  m_Script: {fileID: 11500000, guid: 51e68986b2395884e996b525b9980f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EventsHolder: {fileID: 0}
-  Score: {fileID: 4288921902104962556}
-  Diamonds: {fileID: 7731071717480628434}
-  Dynamite: {fileID: 3014898537083540354}
---- !u!114 &4350511360622148268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155865657669503410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e54e909fb45c84396b756d71b5f56b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OptionalDescription: 'Enter an optional description for this component.
-
-    This is for convinience only.'
-  Display: {fileID: 5536087100810597281}
---- !u!114 &7731071717480628434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155865657669503410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e54e909fb45c84396b756d71b5f56b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OptionalDescription: 'Enter an optional description for this component.
-
-    This is for convinience only.'
-  Display: {fileID: 5536087101035188080}
---- !u!114 &3014898537083540354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155865657669503410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e54e909fb45c84396b756d71b5f56b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OptionalDescription: 'Enter an optional description for this component.
-
-    This is for convinience only.'
-  Display: {fileID: 5536087102101755561}
---- !u!114 &4288921902104962556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155865657669503410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 115c6093e7b476146bc69cff635de8de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OptionalDescription: 'Enter an optional description for this component.
-
-    This is for convinience only.'
-  Display: {fileID: 5536087100810597281}
---- !u!114 &123683209473815586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155865657669503410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 115c6093e7b476146bc69cff635de8de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OptionalDescription: 'Enter an optional description for this component.
-
-    This is for convinience only.'
-  Display: {fileID: 5536087101035188080}
---- !u!114 &7198553432453004551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155865657669503410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 115c6093e7b476146bc69cff635de8de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OptionalDescription: 'Enter an optional description for this component.
-
-    This is for convinience only.'
-  Display: {fileID: 5536087102101755561}
+  ScoreDisplay: {fileID: 5536087100810597281}
+  DiamondsDisplay: {fileID: 5536087101035188080}
+  DynamiteDisplay: {fileID: 5536087102101755561}
 --- !u!1 &5536087100810597308
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,8 +90,8 @@ RectTransform:
   m_Father: {fileID: 1775211949598553966}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.11, y: 0}
-  m_AnchorMax: {x: 0.31, y: 1}
+  m_AnchorMin: {x: 0.120000005, y: 0}
+  m_AnchorMax: {x: 0.39, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -231,8 +128,8 @@ MonoBehaviour:
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 2
-    m_MaxSize: 55
+    m_MinSize: 10
+    m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -287,8 +184,8 @@ RectTransform:
   m_Father: {fileID: 1775211949598553966}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.32, y: 0}
-  m_AnchorMax: {x: 0.41, y: 1}
+  m_AnchorMin: {x: 0.39, y: 0}
+  m_AnchorMax: {x: 0.47, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -363,8 +260,8 @@ RectTransform:
   m_Father: {fileID: 1775211949598553966}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.42, y: 0}
-  m_AnchorMax: {x: 0.62, y: 1}
+  m_AnchorMin: {x: 0.47, y: 0}
+  m_AnchorMax: {x: 0.67, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -401,8 +298,8 @@ MonoBehaviour:
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 2
-    m_MaxSize: 55
+    m_MinSize: 10
+    m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -457,10 +354,10 @@ RectTransform:
   m_Father: {fileID: 1775211949598553966}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.63, y: 0}
-  m_AnchorMax: {x: 0.71, y: 1}
-  m_AnchoredPosition: {x: 0, y: 7}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.68, y: 0}
+  m_AnchorMax: {x: 0.755, y: 1}
+  m_AnchoredPosition: {x: 1.5, y: 0}
+  m_SizeDelta: {x: -3, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5536087101732902578
 CanvasRenderer:
@@ -532,7 +429,7 @@ RectTransform:
   m_Father: {fileID: 1775211949598553966}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.01, y: 0}
+  m_AnchorMin: {x: 0.02, y: 0}
   m_AnchorMax: {x: 0.1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -565,7 +462,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0d1b42473e3635f4aaa7ee2accdf99e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9729975bbbf4d74d9a2bff6bb51612a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -608,10 +505,10 @@ RectTransform:
   m_Father: {fileID: 1775211949598553966}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.72, y: 0}
-  m_AnchorMax: {x: 0.92, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.755, y: 0}
+  m_AnchorMax: {x: 0.95, y: 1}
+  m_AnchoredPosition: {x: 1.5, y: 0}
+  m_SizeDelta: {x: 3, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5536087102101755560
 CanvasRenderer:
@@ -646,8 +543,8 @@ MonoBehaviour:
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 2
-    m_MaxSize: 55
+    m_MinSize: 10
+    m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0

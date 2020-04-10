@@ -67,6 +67,8 @@ public class GameLevelSceneController : MonoBehaviour
     }
     public void OnDisable() 
     {
+        // то есть у нас получается двухступенчатое сохранение значений. Сначала я сохраняю их в SceneController, а потом он уже записывает их в сейвы.
+        // не уверен, что это нормальное решение. 
         ScoreGainedOnLevel.Save(ref SceneController.ScoreGainedOnLevel);
         DiamondsGainedOnLevel.Save(ref SceneController.DiamondsGainedOnLevel);
     }
