@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1570,7 +1570,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 992607522}
-  - {fileID: 1425685242}
+  - {fileID: 1863830448}
   - {fileID: 543885827}
   - {fileID: 219611817}
   - {fileID: 520804225}
@@ -1946,7 +1946,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1425685241
+--- !u!1001 &1863830447
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2041,7 +2041,7 @@ PrefabInstance:
     - target: {fileID: 1775211949598553966, guid: 5e9638b126157004ebfd812247172d92,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.95
+      value: 0.95300007
       objectReference: {fileID: 0}
     - target: {fileID: 1775211949598553966, guid: 5e9638b126157004ebfd812247172d92,
         type: 3}
@@ -2065,11 +2065,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9638b126157004ebfd812247172d92, type: 3}
---- !u!224 &1425685242 stripped
+--- !u!224 &1863830448 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1775211949598553966, guid: 5e9638b126157004ebfd812247172d92,
     type: 3}
-  m_PrefabInstance: {fileID: 1425685241}
+  m_PrefabInstance: {fileID: 1863830447}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2017568818
 GameObject:

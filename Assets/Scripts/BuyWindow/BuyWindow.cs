@@ -26,7 +26,7 @@ public class BuyWindow : MonoBehaviour
         blurTransparencyChange.ButtonClicked = true;
         Name = name;
         Price = thisSceneController.PriceDictionary.GetPrice(name);
-        PriceText.text = $"{Price.ToString()} points";
+        PriceText.text = $"{Price.ToString()}";
         Button = _button;
         pauseButton.PauseButtonClicked += CloseBuyWindow;
     }
@@ -45,10 +45,10 @@ public class BuyWindow : MonoBehaviour
             Button.GetComponent<AvaliabilityDisplay>().IconeChange();
             CloseBuyWindow();
         }
-        else
-        {
-            PriceText.text = "Not enough points!";
-        }
+        //else
+        //{
+           // PriceText.text = "Not enough points!";
+        //}
     }
     void OnDisable() 
     {
