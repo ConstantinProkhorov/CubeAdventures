@@ -21,7 +21,6 @@ public class MusicPlayer : MonoBehaviour
             //загрузка сценю меню после игровой сцены
             else if (SceneLoadManager.IsGameLevel(currentActiveScent))
             {
-                Debug.Log("in");
                 StartCoroutine(FadeAudioSource.StartFade(GameLevelMusic, FadeDuration, FadeTargetVolume));
                 MenuMusic.Play();
             }

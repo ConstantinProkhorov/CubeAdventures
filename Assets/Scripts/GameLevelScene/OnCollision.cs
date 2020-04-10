@@ -30,13 +30,14 @@ public class OnCollision : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("pointsgiver"))
         {
-            GameLevelSceneController.ScoreGainedOnLevel.Add();
+            GameLevelSceneController.ScoreGainedOnLevel.AddToAmount();
+            SceneController.Score += 10;
             PopUp.OnCollision(gameObject.transform.position);
             sizeChange.ChangeSize();
         }
         else if (col.gameObject.CompareTag("collectible"))
         {
-            GameLevelSceneController.DiamondsGainedOnLevel.Add(1);
+            GameLevelSceneController.DiamondsGainedOnLevel.AddToAmount(1);
             SceneController.Diamonds++;
             sizeChange.ChangeSize();
         }
