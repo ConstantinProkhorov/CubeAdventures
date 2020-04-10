@@ -237,6 +237,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6459679700775771691, guid: 403b4467b5321d34bb2687465c222677,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459679700698817618, guid: 403b4467b5321d34bb2687465c222677,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 403b4467b5321d34bb2687465c222677, type: 3}
 --- !u!224 &43076161 stripped
@@ -865,7 +875,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0d1b42473e3635f4aaa7ee2accdf99e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9729975bbbf4d74d9a2bff6bb51612a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1078,7 +1088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 320}
   m_AnchorMin: {x: 0.2, y: 0.2}
   m_AnchorMax: {x: 0.8, y: 0.8}
-  m_AnchoredPosition: {x: -14.7, y: -0.8}
+  m_AnchoredPosition: {x: -14.699997, y: -0.80000305}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &503730894
@@ -2567,6 +2577,12 @@ PrefabInstance:
       propertyPath: amountToBuy
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6459679700775771860, guid: 403b4467b5321d34bb2687465c222677,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f9729975bbbf4d74d9a2bff6bb51612a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 403b4467b5321d34bb2687465c222677, type: 3}
 --- !u!224 &1260669581 stripped
