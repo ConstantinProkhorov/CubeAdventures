@@ -16,7 +16,6 @@ public class ListOfGameLevels
                 "GameLevel 10",
                 "GameLevel 11",
                 "GameLevel 12",
-                "GameLevel 13",
             };
 
     public string GetNextLevel(string levelName) => ListOfLevels[ListOfLevels.IndexOf(levelName) + 1];

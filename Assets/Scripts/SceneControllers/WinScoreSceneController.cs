@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class WinScoreSceneController : MonoBehaviour
 {
-    public Text TotalWavesDisplay;
+    [SerializeField] private Text TotalWavesDisplay;
     //public Text HardestWaveDoneDisplay;
-    public Text ScoreNumberDisplay;
-    public Text DiamondsNumberDisplay;
+    [SerializeField] private Text ScoreGainedDisplay;
+    [SerializeField] private Text DiamondsGainedDisplay;
 
     void Start()
     {
@@ -16,8 +16,8 @@ public class WinScoreSceneController : MonoBehaviour
     }
     private void ResultsDisplay()
     {
-        ScoreNumberDisplay.text = SceneController.Score.ToString();
-        DiamondsNumberDisplay.text = SceneController.Diamonds.ToString();
+        ScoreGainedDisplay.text = $"+{SceneController.ScoreGainedOnLevel.ToString()}";
+        DiamondsGainedDisplay.text = $"+{SceneController.DiamondsGainedOnLevel.ToString()}";
         TotalWavesDisplay.text = SceneController.CurrentSessionPlayerData.TotalWavesCleared.ToString();
     }   
 }
