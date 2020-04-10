@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
-// Handles transition to GameLevelScene from WinScore scene on tap
-public class TapToContinue : MonoBehaviour
+/// <summary>
+/// Handles transition to GameLevelScene from WinScore scene on tap
+/// </summary>
+public class LoadNextGameLevel : MonoBehaviour
 {
     private ListOfGameLevels ListOfGameLevels = new ListOfGameLevels();
-    void OnMouseDown()
+    public void LoadNext()
     {
         if (!PauseButton.PauseClick) // блокировка при нажатой кнопке паузы (при открытом меню).
         {

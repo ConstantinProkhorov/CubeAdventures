@@ -744,7 +744,7 @@ PrefabInstance:
     - target: {fileID: 6214731550470562053, guid: 60495999651486b4f9e366e7241704f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6214731550470562053, guid: 60495999651486b4f9e366e7241704f5,
         type: 3}
@@ -920,7 +920,7 @@ MonoBehaviour:
   WaveName: Omega Wave
   FallingSpeed: 1.8
   EnemySpawnInterval: 1
-  LevelDuration: 15
+  LevelDuration: 1
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
