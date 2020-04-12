@@ -19,21 +19,15 @@ public class PauseButton : MonoBehaviour
             PauseClick = true;
             ScreenBlur.SetActive(true);
             blurTransparencyChange.ButtonClicked = !blurTransparencyChange.ButtonClicked;
-            if (activeScene.buildIndex > 6)
-            {
-                Time.timeScale = 0.0f;
-                AndroidControlls.GameIsPaused = true;
-            }
+            Time.timeScale = 0.0f;
+            AndroidControlls.GameIsPaused = true;
         }
         else if (PauseClick)
         {
             PauseClick = false;
             blurTransparencyChange.ButtonClicked = !blurTransparencyChange.ButtonClicked;
-            if (activeScene.buildIndex > 6)
-            {
-                Time.timeScale = 1.0f;
-                AndroidControlls.GameIsPaused = false;
-            }
+            Time.timeScale = 1.0f;
+            AndroidControlls.GameIsPaused = false;
         }
     }
     public void PauseEventToNull() //обнуление события при загрузке новой сцены
