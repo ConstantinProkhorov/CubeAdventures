@@ -319,8 +319,8 @@ RectTransform:
   - {fileID: 825831081}
   - {fileID: 1842418595}
   - {fileID: 406708668}
-  - {fileID: 1507554569}
   - {fileID: 1547206600}
+  - {fileID: 1507554569}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -813,7 +813,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ALF WAVE
+  m_Text: ALFA WAVE
 --- !u!222 &825831083
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1078,7 +1078,7 @@ RectTransform:
   m_Children:
   - {fileID: 1340824850}
   m_Father: {fileID: 308129590}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4, y: 0.16}
   m_AnchorMax: {x: 0.62, y: 0.27}

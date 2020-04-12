@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964108, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465794, g: 0.4964115, b: 0.5748184, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -543,7 +543,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &293129702
@@ -637,7 +637,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &335454905
@@ -966,7 +966,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buyWindow: {fileID: 494165861}
-  _Button: {fileID: 0}
 --- !u!1 &459025709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1043,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &494165856
@@ -1130,6 +1129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f097c836f2f292458c57d512e820b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanNotUnlockColor:
+    serializedVersion: 2
+    rgba: 4278190335
+  UnlockButton: {fileID: 0}
   BuyWindowBlur: {fileID: 1166991875}
   blurTransparencyChange: {fileID: 1166991878}
   PriceText: {fileID: 1973291568}
@@ -1381,7 +1384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buyWindow: {fileID: 494165861}
-  _Button: {fileID: 0}
 --- !u!1 &694300699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1542,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &779662526
@@ -1635,7 +1637,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &816566086
@@ -1730,7 +1732,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &823065921
@@ -1825,7 +1827,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &955917713
@@ -2049,6 +2051,7 @@ RectTransform:
   - {fileID: 1289763211}
   - {fileID: 671833604}
   - {fileID: 454265668}
+  - {fileID: 1690848359}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2223,7 +2226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buyWindow: {fileID: 494165861}
-  _Button: {fileID: 0}
 --- !u!114 &1289763216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2829,9 +2831,134 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1690848358
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1193547844}
+    m_Modifications:
+    - target: {fileID: 3452993167284042655, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_Name
+      value: BackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.13000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b48f5179b9ea814c8dc68701700cac5, type: 3}
+--- !u!224 &1690848359 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5607471913461192356, guid: 9b48f5179b9ea814c8dc68701700cac5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1690848358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1700624406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3157,7 +3284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buyWindow: {fileID: 494165861}
-  _Button: {fileID: 0}
 --- !u!114 &1801476909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3474,7 +3600,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1905570230
@@ -3742,7 +3868,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1982793881
@@ -3822,7 +3948,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2005667151
@@ -4062,7 +4188,7 @@ SpriteRenderer:
   m_Size: {x: 3.8, y: 3.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2132236858
