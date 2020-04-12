@@ -41,7 +41,7 @@ public class GameLevelSceneController : MonoBehaviour
             WaveTimer.TurnOff();
             EnemyCreator.isActive = false;
             LevelIsEnding = true;
-            InvokeRepeating(nameof(EndLevel), 2.0f, 2.0f);
+            InvokeRepeating(nameof(EndLevel), 1.0f, 1.0f);
         };
     }
     private void EndLevel()
