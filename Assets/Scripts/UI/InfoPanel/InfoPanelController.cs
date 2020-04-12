@@ -20,7 +20,6 @@ public class InfoPanelController : MonoBehaviour
             else if (!SceneLoadManager.IsGameLevel(sceneToBeLoaded))
             {
                 CurrentInfoPanelDisplay = TotalDisplay;
-
             }
         };
     }
