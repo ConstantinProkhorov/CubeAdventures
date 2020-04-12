@@ -23,8 +23,8 @@ public class SceneController : MonoBehaviour
     // словари для хранения цен разблокировки
     public static LevelOpenPriceDictionary LevelPriceDictionary { get; private set; }
     public static ColorOpenPriceDictionary ColorPriceDictionary { get; private set; }
-    public static int ScoreGainedOnLevel;
-    public static int DiamondsGainedOnLevel;
+    public static CurrencyGainedOnLevel ScoreGainedOnLevel;
+    public static CurrencyGainedOnLevel DiamondsGainedOnLevel;
     // временный метод для отладки игры
     public void PlayerDataReset() => LoadBlanckSaveFile();
     void Start()
@@ -42,6 +42,17 @@ public class SceneController : MonoBehaviour
             LoadBlanckSaveFile();
         }
         LoadMenuScene();
+        ScoreGainedOnLevel = new CurrencyGainedOnLevel();
+        DiamondsGainedOnLevel = new CurrencyGainedOnLevel();
+        //refresh data in gainedOnLevel classes
+        SceneLoadManager.NewSceneLoaded += (int currentActiveScent, int sceneToBeLoaded) =>
+        {
+            if (SceneLoadManager.IsGameLevel(sceneToBeLoaded))
+            {
+                ScoreGainedOnLevel = new CurrencyGainedOnLevel();
+                DiamondsGainedOnLevel = new CurrencyGainedOnLevel();
+            }
+        };
     }
     // сохранение только при выходе и при загрузке новой сцены в SceneLoadManager, в остальных случаях происходит точечное переписывание переменных этого класса
     void OnApplicationQuit() => SaveFileManager.Save(new PlayerData(CurrentSessionPlayerData));

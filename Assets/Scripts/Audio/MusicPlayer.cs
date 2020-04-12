@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 /// <summary>
-/// Логика проигрывания фоновой музыки при переключении между сценами
+/// Логика проигрывания фоновой музыки
 /// </summary>
 public class MusicPlayer : MonoBehaviour
 {
@@ -10,20 +10,34 @@ public class MusicPlayer : MonoBehaviour
     [SerializeField] private AudioSource GameLevelMusic;
     void Start()
     {
+        PlayMenuMusic();
         SceneLoadManager.NewSceneLoaded += (int currentActiveScent, int sceneToBeLoaded) =>
         {
-            //загрузка игровой сцены после сцены меню
-            if (SceneLoadManager.IsGameLevel(sceneToBeLoaded))
+            if (Settings.IsMusicOn)
             {
-                StartCoroutine(FadeAudioSource.StartFade(MenuMusic, FadeDuration, FadeTargetVolume));
-                GameLevelMusic.Play();
-            }
-            //загрузка сценю меню после игровой сцены
-            else if (SceneLoadManager.IsGameLevel(currentActiveScent))
-            {
-                StartCoroutine(FadeAudioSource.StartFade(GameLevelMusic, FadeDuration, FadeTargetVolume));
-                MenuMusic.Play();
+                //загрузка игровой сцены после сцены меню
+                if (SceneLoadManager.IsGameLevel(sceneToBeLoaded))
+                {
+                    StartCoroutine(FadeAudioSource.StartFade(MenuMusic, FadeDuration, FadeTargetVolume));
+                    GameLevelMusic.Play();
+                }
+                //загрузка сценю меню после игровой сцены
+                else if (SceneLoadManager.IsGameLevel(currentActiveScent))
+                {
+                    PlayMenuMusic();          
+                }
             }
         };
+    }
+    public void PlayMenuMusic()
+    {
+        if (Settings.IsMusicOn)
+        {
+            MenuMusic.Play();
+        }
+        else
+        {
+            StartCoroutine(FadeAudioSource.StartFade(MenuMusic, FadeDuration, FadeTargetVolume));
+        }
     }
 }

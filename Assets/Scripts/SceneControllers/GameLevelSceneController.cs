@@ -17,8 +17,8 @@ public class GameLevelSceneController : MonoBehaviour
     [SerializeField] private TimerInterface WaveTimer;
     [SerializeField] private Text WaveTimerText;
     //Assigned or changed in runtime
-    public CurrencyGainedOnLevel ScoreGainedOnLevel { get; private set; }
-    public CurrencyGainedOnLevel DiamondsGainedOnLevel { get; private set; }
+    //public CurrencyGainedOnLevel ScoreGainedOnLevel { get; private set; }
+    //public CurrencyGainedOnLevel DiamondsGainedOnLevel { get; private set; }
     private bool LevelIsEnding { get; set; } = false;
     public string LevelName { get => levelName; private set => levelName = value; }
     public void Start()
@@ -27,8 +27,6 @@ public class GameLevelSceneController : MonoBehaviour
         Player = PlayerAssembler.Player_Creator(SceneController.LastForm);
         ActiveLevelData.Set(LevelDataInput);
         SceneController.LastLevel = LevelName;                               // перезапись последнего уровня в который играл игрок
-        ScoreGainedOnLevel = new CurrencyGainedOnLevel();
-        DiamondsGainedOnLevel = new CurrencyGainedOnLevel();
         LevelStartUpTimer.TimerEnded += () => 
         {        
             //выключение текста через его внутренний метод
@@ -64,12 +62,5 @@ public class GameLevelSceneController : MonoBehaviour
             else 
                 return false;
         }
-    }
-    public void OnDisable() 
-    {
-        // то есть у нас получается двухступенчатое сохранение значений. Сначала я сохраняю их в SceneController, а потом он уже записывает их в сейвы.
-        // не уверен, что это нормальное решение. 
-        ScoreGainedOnLevel.Save(ref SceneController.ScoreGainedOnLevel);
-        DiamondsGainedOnLevel.Save(ref SceneController.DiamondsGainedOnLevel);
     }
 }

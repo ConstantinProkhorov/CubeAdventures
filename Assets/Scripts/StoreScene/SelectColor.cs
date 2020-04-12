@@ -42,7 +42,7 @@ public class SelectColor : MonoBehaviour
         }
         else
         {
-            buyWindow.OpenBuyWindow(thisButton.name, thisButton);
+            buyWindow.OpenBuyWindow(thisButton);
         }
     }
 }

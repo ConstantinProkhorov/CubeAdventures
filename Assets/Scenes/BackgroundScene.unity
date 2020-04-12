@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -544,6 +544,7 @@ GameObject:
   - component: {fileID: 494165860}
   - component: {fileID: 494165859}
   - component: {fileID: 494165862}
+  - component: {fileID: 494165863}
   m_Layer: 0
   m_Name: MainScriptHolder
   m_TagString: Untagged
@@ -631,6 +632,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7bb7b85167bdd408cf88ae722035aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &494165863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494165856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3f0f4aab58e204a8137cf6a8020350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeDuration: 2
+  FadeTargetVolume: 0
+  MenuMusic: {fileID: 2017568820}
+  GameLevelMusic: {fileID: 2017568822}
 --- !u!1 &520804224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2097,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2017568821}
-  - component: {fileID: 2017568819}
   - component: {fileID: 2017568820}
   - component: {fileID: 2017568822}
   m_Layer: 0
@@ -2090,22 +2106,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2017568819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017568818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d3f0f4aab58e204a8137cf6a8020350, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FadeDuration: 2
-  FadeTargetVolume: 0
-  MenuMusic: {fileID: 2017568820}
-  GameLevelMusic: {fileID: 2017568822}
 --- !u!82 &2017568820
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2117,7 +2117,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6c1b63161c681411ea5712e6d4ae91c1, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
