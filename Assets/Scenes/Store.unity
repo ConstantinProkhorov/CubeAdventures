@@ -419,6 +419,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f097c836f2f292458c57d512e820b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanNotUnlockColor:
+    serializedVersion: 2
+    rgba: 4278190335
+  UnlockButton: {fileID: 667100669}
   BuyWindowBlur: {fileID: 1154301556}
   blurTransparencyChange: {fileID: 1154301559}
   PriceText: {fileID: 1149578621}
@@ -1078,7 +1082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 320}
   m_AnchorMin: {x: 0.2, y: 0.2}
   m_AnchorMax: {x: 0.8, y: 0.8}
-  m_AnchoredPosition: {x: -14.7, y: -0.8}
+  m_AnchoredPosition: {x: -14.699997, y: -0.80000305}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &503730894
@@ -2040,7 +2044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1154301557
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2059,10 +2063,10 @@ RectTransform:
   m_Father: {fileID: 1231467021}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.053333335, y: 0.258125}
-  m_AnchorMax: {x: 0.9566667, y: 0.820625}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.055000003, y: 0.37056252}
+  m_AnchorMax: {x: 0.9566667, y: 0.76183337}
+  m_AnchoredPosition: {x: 0, y: -51}
+  m_SizeDelta: {x: 0, y: 328}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1154301558
 CanvasRenderer:

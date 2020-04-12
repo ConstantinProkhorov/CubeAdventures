@@ -20,7 +20,7 @@ public class LevelSelectButtonClick : MonoBehaviour
         }
         else
         {
-            buyWindow.OpenBuyWindow(ButtonName, gameObject);
+            buyWindow.OpenBuyWindow(gameObject);
         }
     }
 }

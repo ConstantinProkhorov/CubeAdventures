@@ -7,20 +7,18 @@ public class OnCollision : MonoBehaviour
 // многочисленных проверок при столкновении врагов между собой. 
 // Но как в таком случае реализовать изменеия очков? 
 {
-    private GameLevelSceneController GameLevelSceneController;
     private PointPopUp PopUp;
     private SizeChange sizeChange;
     void Start()
     {
         GameObject ScriptHolder = GameObject.Find("ScriptHolder");
-        GameLevelSceneController = ScriptHolder.GetComponent<GameLevelSceneController>();
         PopUp = ScriptHolder.GetComponent<PointPopUp>();
         sizeChange = gameObject.GetComponent<SizeChange>();
     }
     void OnCollisionEnter(Collision col)
     {
         AudioSource audioSource = col.gameObject.GetComponent<AudioSource>();
-        if (audioSource != null & !Settings.IsSoundsMuted)
+        if (audioSource != null & Settings.IsSoundsOn)
         {
             audioSource.Play();
         }
@@ -30,15 +28,17 @@ public class OnCollision : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("pointsgiver"))
         {
-            GameLevelSceneController.ScoreGainedOnLevel.AddToAmount();
-            SceneController.Score += 10;
+            int scoreGainedAmount = 10;
+            SceneController.ScoreGainedOnLevel.AddToAmount(scoreGainedAmount);
+            SceneController.Score += scoreGainedAmount;
             PopUp.OnCollision(gameObject.transform.position);
             sizeChange.ChangeSize();
         }
         else if (col.gameObject.CompareTag("collectible"))
         {
-            GameLevelSceneController.DiamondsGainedOnLevel.AddToAmount(1);
-            SceneController.Diamonds++;
+            int diamondsGainedAmount = 1;
+            SceneController.DiamondsGainedOnLevel.AddToAmount(diamondsGainedAmount);
+            SceneController.Diamonds += diamondsGainedAmount;
             sizeChange.ChangeSize();
         }
         col.gameObject.GetComponent<RemoveGameObject>().Remove();
