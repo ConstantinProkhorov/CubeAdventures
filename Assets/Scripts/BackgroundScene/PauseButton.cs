@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public delegate void UIController();
 
@@ -13,7 +12,6 @@ public class PauseButton : MonoBehaviour
     public void OnMouseDown()
     {
         PauseButtonClicked?.Invoke();
-        Scene activeScene = SceneManager.GetActiveScene();
         if (!PauseClick)
         {
             PauseClick = true;

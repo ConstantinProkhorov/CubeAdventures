@@ -3,10 +3,11 @@
 public class Player_Assembler : MonoBehaviour
 {
     public GameObject _player;
-    public GameObject LeftEye;
-    public GameObject RightEye;
-    public GameObject LeftFoot;
-    public GameObject RightFoot;
+    [SerializeField] GameObject Eyes;
+    [SerializeField] GameObject Mouth;
+    [SerializeField] RuntimeAnimatorController AnimatorController;
+    GameObject LeftFoot;
+    GameObject RightFoot;
 
     private readonly string[] Figures = { "Forms/Cube", "Forms/Sphere", "Forms/Cube", "Forms/Cube"/*, "Forms/Cube", "Forms/Cube" */};
     public int FiguresQuantity
@@ -56,24 +57,21 @@ public class Player_Assembler : MonoBehaviour
     }
     private void EyesAndLegsInstantiation()
     {
-        LeftEye = Resources.Load<GameObject>("Forms/NewLeftEye") as GameObject;
-        RightEye = Resources.Load<GameObject>("Forms/NewRightEye") as GameObject;
         LeftFoot = Resources.Load<GameObject>("Forms/LeftFoot") as GameObject;
         RightFoot = Resources.Load<GameObject>("Forms/RightFoot") as GameObject;
-
-        float EyesXPosition = _player.transform.position.x + _player.transform.lossyScale.x / 3f; // можно наверное заменить на просто числовые значения
-        float EyesYPosition = _player.transform.position.y + _player.transform.lossyScale.y / 3f;
-        float EyesZPosition = -0.55f;
 
         float LegsXPosition = _player.transform.position.x - _player.transform.lossyScale.x / 3f;
         float LegsYPosotion = _player.transform.position.y - _player.transform.lossyScale.y;
 
-        LeftEye = Instantiate(LeftEye, new Vector3(-EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
-        RightEye = Instantiate(RightEye, new Vector3(EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
+        Eyes = Instantiate(Eyes, new Vector3(_player.transform.position.x, _player.transform.position.y + 0.3f, - 0.55f), Quaternion.identity, _player.transform);
+        Mouth = Instantiate(Mouth, new Vector3(_player.transform.position.x, _player.transform.position.y, -0.55f), Quaternion.identity, _player.transform);
+        //LeftEye = Instantiate(LeftEye, new Vector3(-EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
+        //RightEye = Instantiate(RightEye, new Vector3(EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
         LeftFoot = Instantiate(LeftFoot, new Vector3(LegsXPosition, LegsYPosotion, 0), Quaternion.identity, _player.transform);
         RightFoot = Instantiate(RightFoot, new Vector3(-LegsXPosition, LegsYPosotion, 0), Quaternion.identity, _player.transform);
 
-        LeftEye.AddComponent<OpenCloseEye>();
-        RightEye.AddComponent<OpenCloseEye>();
+        //Eyes.AddComponent<OpenCloseEye>();
+        _player.AddComponent<Animator>(); //Контроллер анимаций глаз и рта.
+        _player.GetComponent<Animator>().runtimeAnimatorController = AnimatorController;
     }
 }
