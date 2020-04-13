@@ -9,11 +9,13 @@ public class OnCollision : MonoBehaviour
 {
     private PointPopUp PopUp;
     private SizeChange sizeChange;
+    private int ScorePerCoin;
     void Start()
     {
         GameObject ScriptHolder = GameObject.Find("ScriptHolder");
         PopUp = ScriptHolder.GetComponent<PointPopUp>();
         sizeChange = gameObject.GetComponent<SizeChange>();
+        ScorePerCoin = ActiveLevelData.ScorePerCoin;
     }
     void OnCollisionEnter(Collision col)
     {
@@ -28,9 +30,8 @@ public class OnCollision : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("pointsgiver"))
         {
-            int scoreGainedAmount = 10;
-            SceneController.ScoreGainedOnLevel.AddToAmount(scoreGainedAmount);
-            SceneController.Score += scoreGainedAmount;
+            SceneController.ScoreGainedOnLevel.AddToAmount(ScorePerCoin);
+            SceneController.Score += ScorePerCoin;
             PopUp.OnCollision(gameObject.transform.position);
             sizeChange.ChangeSize();
         }
@@ -41,7 +42,11 @@ public class OnCollision : MonoBehaviour
             SceneController.Diamonds += diamondsGainedAmount;
             sizeChange.ChangeSize();
         }
-        col.gameObject.GetComponent<RemoveGameObject>().Remove();
+        RemoveGameObject removeGameObject = col.gameObject.GetComponent<RemoveGameObject>();
+        if (removeGameObject != null)
+        {
+            col.gameObject.GetComponent<RemoveGameObject>().Remove();
+        }
     }
 }
 

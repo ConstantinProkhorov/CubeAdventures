@@ -224,7 +224,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7221cf02553d44bd8ad920032c4d2734, type: 3}
+    m_Font: {fileID: 12800000, guid: 7c7555a0c890f864f91345b6e8ca839c, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 1
@@ -428,7 +428,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7221cf02553d44bd8ad920032c4d2734, type: 3}
+    m_Font: {fileID: 12800000, guid: 7c7555a0c890f864f91345b6e8ca839c, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 1
@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelStartText: {fileID: 365924855}
   Prefix: 
-  Postfix: ' incomming!!!'
+  Postfix: ' INCOMMING!!!'
 --- !u!1 &440750581
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,10 +917,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaveName: Omega Wave
-  FallingSpeed: 1.8
-  EnemySpawnInterval: 1
-  LevelDuration: 10
+  FallingSpeed: 2
+  EnemySpawnInterval: 0.7
+  LevelDuration: 45
+  ScorePerCoin: 1
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,21 +935,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 25
+  enemyASpawnChance: 35
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 20
+  enemyBSpawnChance: 10
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
-  enemyCSpawnChance: 0
+  enemyCSpawnChance: 25
   enemyD: {fileID: 2443867936017225212, guid: 0b562261ede0df74e837f05830edfef2, type: 3}
-  enemyDSpawnChance: 8
+  enemyDSpawnChance: 0
   enemyE: {fileID: 8935892655870133375, guid: 6d001da693d20d34fbe1f2d2a74945af, type: 3}
   enemyESpawnChance: 0
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 50
+  PointsFigureSpawnChance: 30
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 25
+  DiamondFigureSpawnChance: 0
   isActive: 0
 --- !u!114 &1395036228
 MonoBehaviour:
@@ -1164,7 +1164,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7221cf02553d44bd8ad920032c4d2734, type: 3}
+    m_Font: {fileID: 12800000, guid: 7c7555a0c890f864f91345b6e8ca839c, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 1

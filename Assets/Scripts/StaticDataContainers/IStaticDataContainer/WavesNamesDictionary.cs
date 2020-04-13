@@ -16,7 +16,7 @@ public class WavesNamesDictionary : IStaticDataContainer
         { "GameLevel 10",   "UntitledWave" },
         { "GameLevel 11",   "UntitledWave" },
         { "GameLevel 12",   "UntitledWave" },
-        { "TestLevel",      "UntitledWave" }
+        { "TestLevel",      "This is Test Level" }
     };
     string IStaticDataContainer.Get(string dataName)
     {

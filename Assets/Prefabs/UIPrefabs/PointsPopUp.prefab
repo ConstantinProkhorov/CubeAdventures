@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6817514822576269582}
   - component: {fileID: 3828807376354082948}
   - component: {fileID: 7471655171925697835}
+  - component: {fileID: 3335975938154268163}
   m_Layer: 5
   m_Name: PointsPopUp
   m_TagString: Untagged
@@ -67,11 +68,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7221cf02553d44bd8ad920032c4d2734, type: 3}
+    m_Font: {fileID: 12800000, guid: 7c7555a0c890f864f91345b6e8ca839c, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 1
+    m_MinSize: 10
     m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -95,3 +96,16 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &3335975938154268163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6853448942610436496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd619762bb42c914a81c67da97ea81bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointPopUpText: {fileID: 3828807376354082948}
