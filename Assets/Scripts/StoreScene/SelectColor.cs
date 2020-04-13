@@ -16,6 +16,8 @@ public class SelectColor : MonoBehaviour
     {
         thisSceneController = InspectorAssignmentSceneController as IDictionarySupport; 
     }
+    //TODO: это что здесь вообще делает? 
+    //должно быть вынесено в отдельный класс
     void Update()
     {
         if (LerpOn && t < 1)

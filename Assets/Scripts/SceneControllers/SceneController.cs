@@ -26,7 +26,11 @@ public class SceneController : MonoBehaviour
     public static CurrencyGainedOnLevel ScoreGainedOnLevel;
     public static CurrencyGainedOnLevel DiamondsGainedOnLevel;
     // временный метод для отладки игры
-    public void PlayerDataReset() => LoadBlanckSaveFile();
+    public void PlayerDataReset()
+    {
+        LoadBlanckSaveFile();
+        ColorStateDictionary.Reset();
+    }
     void Start()
     {
         LevelStateDictionary = new LevelOpenCloseDictionary();
@@ -41,6 +45,7 @@ public class SceneController : MonoBehaviour
         {
             LoadBlanckSaveFile();
         }
+        ColorStateDictionary.SetAllStates(CurrentSessionPlayerData.colorOpenCloseDictionary);
         LoadMenuScene();
         ScoreGainedOnLevel = new CurrencyGainedOnLevel();
         DiamondsGainedOnLevel = new CurrencyGainedOnLevel();
@@ -56,6 +61,7 @@ public class SceneController : MonoBehaviour
     }
     // сохранение только при выходе и при загрузке новой сцены в SceneLoadManager, в остальных случаях происходит точечное переписывание переменных этого класса
     void OnApplicationQuit() => SaveFileManager.Save(new PlayerData(CurrentSessionPlayerData));
+    public void OnDisable() => SaveFileManager.Save(new PlayerData(CurrentSessionPlayerData));
     private void LoadSaveFile() => CurrentSessionPlayerData = SaveFileManager.Load();
     private void LoadBlanckSaveFile() => CurrentSessionPlayerData = new PlayerData();
     private void LoadMenuScene()

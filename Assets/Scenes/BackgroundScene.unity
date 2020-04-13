@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3f0f4aab58e204a8137cf6a8020350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeDuration: 2
+  FadeDuration: 1
   FadeTargetVolume: 0
   MenuMusic: {fileID: 2017568820}
   GameLevelMusic: {fileID: 2017568822}

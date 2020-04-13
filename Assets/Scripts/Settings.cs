@@ -11,15 +11,23 @@ public class Settings : MonoBehaviour
     /// </summary>
     public static bool IsSoundsOn { get; private set; }
     private void Start() => UpdateSettings();
-    public void MuteMusic(bool mute)
+    /// <summary>
+    /// Set if the music is on or not.
+    /// </summary>
+    /// <param name="state">true == on, false == off</param>
+    public void SetMusicState(bool state)
     {
-        PlayerPrefs.SetInt("IsMusicOn", mute ? 1 : 0);
+        PlayerPrefs.SetInt("IsMusicOn", state ? 1 : 0);
         UpdateSettings();
         PlayerPrefs.Save();
     }
-    public void MuteSounds(bool mute)
+    /// <summary>
+    /// Set if the sounds is on or not.
+    /// </summary>
+    /// <param name="state">true == on, false == off</param>
+    public void SetSoundsState(bool state)
     {
-        PlayerPrefs.SetInt("IsSoundsOn", mute ? 1 : 0);
+        PlayerPrefs.SetInt("IsSoundsOn", state ? 1 : 0);
         UpdateSettings();
         PlayerPrefs.Save();
     }
