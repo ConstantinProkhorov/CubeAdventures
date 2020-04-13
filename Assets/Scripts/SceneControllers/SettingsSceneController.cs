@@ -23,9 +23,8 @@ public class SettingsSceneController : MonoBehaviour
     }
     public void MuteMusic()
     {
-        Settings.MuteMusic(!Settings.IsMusicOn);
-        
+        Settings.SetMusicState(!Settings.IsMusicOn); 
         MusicPlayer.PlayMenuMusic();
     }
-    public void MuteSounds() => Settings.MuteSounds(!Settings.IsSoundsOn);
+    public void MuteSounds() => Settings.SetSoundsState(!Settings.IsSoundsOn);
 }

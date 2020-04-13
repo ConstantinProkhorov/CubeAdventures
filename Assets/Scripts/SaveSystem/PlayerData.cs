@@ -17,7 +17,7 @@ public class PlayerData
     {
         CurrentWaveName = "ALFA Wave";
         TotalWavesCleared = 0;
-        TotalScore = 0;
+        TotalScore = 50;
         Diamonds = 0;
         Dynamite = 100;
         LastForm = "Forms/Sphere";
@@ -40,8 +40,8 @@ public class PlayerData
         g = currentState.g;
         b = currentState.b;
         lastLevelPlayed = currentState.lastLevelPlayed;
-        levelOpenCloseDictionary = currentState.levelOpenCloseDictionary;
-        colorOpenCloseDictionary = currentState.levelOpenCloseDictionary;
+        levelOpenCloseDictionary = LevelOpenCloseDictionary.GetAllStates();
+        colorOpenCloseDictionary = СolorOpenCloseDictionary.GetAllStates();
     }
 }
 
