@@ -77,7 +77,7 @@ public sealed class Enemy_Creator : MonoBehaviour
                 Enemy.GetComponent<EnemyMovement>().thisSceneController = ThisSceneController;
                 if (Enemy.name == "Sphere_Enemy(Clone)")
                 {
-                    ColorRandomizer.AssignColor(Enemy);
+                    //ColorRandomizer.AssignColor(Enemy);
                 }
                 return;
             }

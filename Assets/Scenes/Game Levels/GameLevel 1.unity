@@ -696,16 +696,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DynamiteButton
       objectReference: {fileID: 0}
-    - target: {fileID: -4556867887745548017, guid: 60495999651486b4f9e366e7241704f5,
-        type: 3}
-      propertyPath: TimeDilation
-      value: 
-      objectReference: {fileID: 1402234599}
-    - target: {fileID: -4556867887745548017, guid: 60495999651486b4f9e366e7241704f5,
-        type: 3}
-      propertyPath: thisSceneController
-      value: 
-      objectReference: {fileID: 1395036225}
     - target: {fileID: 6214731550470562053, guid: 60495999651486b4f9e366e7241704f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -841,6 +831,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: -4556867887745548017, guid: 60495999651486b4f9e366e7241704f5,
+        type: 3}
+      propertyPath: TimeDilation
+      value: 
+      objectReference: {fileID: 1402234599}
+    - target: {fileID: -4556867887745548017, guid: 60495999651486b4f9e366e7241704f5,
+        type: 3}
+      propertyPath: thisSceneController
+      value: 
+      objectReference: {fileID: 1395036225}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60495999651486b4f9e366e7241704f5, type: 3}
 --- !u!224 &1392094908 stripped
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveName: Omega Wave
   FallingSpeed: 1.8
-  EnemySpawnInterval: 1.5
+  EnemySpawnInterval: 1
   LevelDuration: 10
 --- !u!114 &1395036227
 MonoBehaviour:
@@ -935,21 +935,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 0
+  enemyASpawnChance: 50
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 0
+  enemyBSpawnChance: 20
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
   enemyCSpawnChance: 0
   enemyD: {fileID: 2443867936017225212, guid: 0b562261ede0df74e837f05830edfef2, type: 3}
-  enemyDSpawnChance: 0
+  enemyDSpawnChance: 8
   enemyE: {fileID: 8935892655870133375, guid: 6d001da693d20d34fbe1f2d2a74945af, type: 3}
-  enemyESpawnChance: 100
+  enemyESpawnChance: 10
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 0
+  PointsFigureSpawnChance: 10
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 0
+  DiamondFigureSpawnChance: 2
   isActive: 0
 --- !u!114 &1395036228
 MonoBehaviour:
