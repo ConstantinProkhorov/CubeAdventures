@@ -450,10 +450,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  LeftEye: {fileID: 0}
-  RightEye: {fileID: 0}
-  LeftFoot: {fileID: 0}
-  RightFoot: {fileID: 0}
+  Eyes: {fileID: 232576019548828962, guid: f4427355745ca44c88f7e889b344f6f1, type: 3}
+  Mouth: {fileID: 1029083189651552788, guid: 652e62d5f65054e9ea4230487a5d9d2c, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 3bfd9f130d6822e46acea15e97983c15, type: 2}
 --- !u!1 &292864288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1231467017
 MonoBehaviour:
   m_ObjectHideFlags: 0
