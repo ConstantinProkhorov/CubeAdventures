@@ -19,14 +19,12 @@ public class СolorOpenCloseDictionary : IOpenCloseDictionary
     {
         ColorState[Name] = true;
     }
-
     public static bool[] GetAllStates()
     {
         bool[] dictionary = new bool[ColorState.Values.Count];
         ColorState.Values.CopyTo(dictionary, 0);
         return dictionary;
     }
-
     public void SetAllStates(bool[] States) //TODO: так, без конкатинации строк уже лучше, но всё равно какая-то дрянь.
     {
         string[] colorNames = new string[ColorState.Count];
@@ -35,5 +33,12 @@ public class СolorOpenCloseDictionary : IOpenCloseDictionary
         {
             ColorState[colorNames[i]] = States[i];
         }
+    }
+    /// <summary>
+    /// Use with care. Resets all unlock progress.
+    /// </summary>
+    public void Reset()
+    {
+        SetAllStates(new bool[] { true, true, false, false, false, false });
     }
 }

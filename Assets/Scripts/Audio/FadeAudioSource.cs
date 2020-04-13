@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public static class FadeAudioSource
@@ -7,7 +8,6 @@ public static class FadeAudioSource
     {
         float currentTime = 0;
         float start = audioSource.volume;
-
         while (currentTime < duration)
         {
             currentTime += Time.deltaTime;

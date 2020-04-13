@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class BuyWindow : MonoBehaviour
 {
     [SerializeField] private Color32 CanNotUnlockColor = Color.red;
+    [SerializeField] private Color32 CanUnlockColor = Color.white;
     [SerializeField] private Button UnlockButton;
     public event UIController BuyWindowOpen;
     public GameObject BuyWindowBlur;
@@ -19,21 +20,21 @@ public class BuyWindow : MonoBehaviour
     {
         pauseButton = GameObject.Find("Pause").GetComponent<PauseButton>();
     }
-    public void OpenBuyWindow(GameObject clickeColorButton)
+    public void OpenBuyWindow(GameObject clickedColorButton)
     {
         thisSceneController = InspectorAssignmentSceneController as IDictionarySupport;
         BuyWindowOpen?.Invoke();
         BuyWindowBlur.SetActive(true);
         blurTransparencyChange.ButtonClicked = true;
-        ColorButtonName = clickeColorButton.name;
-        Price = thisSceneController.PriceDictionary.GetPrice(clickeColorButton.name);
+        ColorButtonName = clickedColorButton.name;
+        Price = thisSceneController.PriceDictionary.GetPrice(clickedColorButton.name);
         PriceText.text = $"{Price.ToString()}";
         if (!CanUnlock())
         {
             PriceText.color = CanNotUnlockColor;
             UnlockButton.interactable = false;
         }
-        Button = clickeColorButton;
+        Button = clickedColorButton;
         pauseButton.PauseButtonClicked += CloseBuyWindow;
     }
     public void CloseBuyWindow() 
@@ -42,6 +43,7 @@ public class BuyWindow : MonoBehaviour
         blurTransparencyChange.ButtonClicked = false;
         pauseButton.PauseButtonClicked -= CloseBuyWindow;
         UnlockButton.interactable = true;
+        PriceText.color = CanUnlockColor;
     }
     public void UnlockLevel()
     {
