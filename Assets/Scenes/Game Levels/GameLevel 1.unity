@@ -898,7 +898,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  levelName: GameLevel 1
   PlayerAssembler: {fileID: 1395036231}
   LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
@@ -917,9 +916,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallingSpeed: 2
-  EnemySpawnInterval: 0.7
-  LevelDuration: 45
+  FallingSpeed: 2.2
+  EnemySpawnInterval: 0.6
+  LevelDuration: 60
   ScorePerCoin: 1
 --- !u!114 &1395036227
 MonoBehaviour:
@@ -935,11 +934,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisSceneController: {fileID: 1395036225}
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
-  enemyASpawnChance: 35
+  enemyASpawnChance: 40
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 10
+  enemyBSpawnChance: 0
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
-  enemyCSpawnChance: 25
+  enemyCSpawnChance: 30
   enemyD: {fileID: 2443867936017225212, guid: 0b562261ede0df74e837f05830edfef2, type: 3}
   enemyDSpawnChance: 0
   enemyE: {fileID: 8935892655870133375, guid: 6d001da693d20d34fbe1f2d2a74945af, type: 3}

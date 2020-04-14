@@ -4,15 +4,17 @@ using System.Collections;
 public abstract class EnemyMovement : MonoBehaviour
 {
     [SerializeField] protected int RotationSpeed = 1;
+    [SerializeField] protected Rigidbody Rigidbody;
     protected float FallingSpeed;
-    public GameLevelSceneController thisSceneController;
+    [SerializeField] public GameLevelSceneController thisSceneController;
     protected void Start()
     {
         FallingSpeed = ActiveLevelData.FallingSpeed;
     }
     protected virtual void Movement()
-    {     
-        transform.Translate(0, FallingSpeed * Time.deltaTime, 0, Space.World);
+    {
+        Rigidbody.MovePosition(transform.position + new Vector3(0, FallingSpeed * Time.deltaTime, 0));
+        //transform.Translate(0, FallingSpeed * Time.deltaTime, 0, Space.World);
     }
     protected virtual void Rotation()
     {

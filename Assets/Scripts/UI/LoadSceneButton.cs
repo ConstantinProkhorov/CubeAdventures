@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 /// <summary>
 /// Loads Target Scene. Method is called through inspector.
 /// </summary>

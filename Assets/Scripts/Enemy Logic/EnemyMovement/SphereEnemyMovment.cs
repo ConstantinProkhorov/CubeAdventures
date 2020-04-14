@@ -1,7 +1,7 @@
 ﻿public class SphereEnemyMovment : EnemyMovement
 {
-        public void Update()
-        {
-            Movement();
-        }
+    public void FixedUpdate()
+    {
+        Movement();
+    }
 }

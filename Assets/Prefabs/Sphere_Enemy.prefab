@@ -123,4 +123,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSpeed: 1
+  Rigidbody: {fileID: 195150584700619206}
   thisSceneController: {fileID: 0}

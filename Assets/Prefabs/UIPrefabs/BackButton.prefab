@@ -186,6 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetSceneName: StartScene
+  TargetScene:
+    m_Handle: 0
 --- !u!114 &5758887238249600832
 MonoBehaviour:
   m_ObjectHideFlags: 0

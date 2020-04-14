@@ -6,7 +6,7 @@
     public static int LevelDuration { get; private set; }
     public static int ScorePerCoin { get; private set; }
     /// <summary>
-    /// Updates all variables with values from LevelDataInput in currently active game level scene.
+    /// Updates all variables with values from LevelDataInput.
     /// </summary>
     public static void Set(LevelDataInput data)
     {
