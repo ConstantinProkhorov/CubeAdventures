@@ -107,7 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a14db67d324a29479650d11b6eb1d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  RotationSpeed: 1
+  Rigidbody: {fileID: -6707226193664720604}
+  thisSceneController: {fileID: 0}
 --- !u!54 &-6707226193664720604
 Rigidbody:
   m_ObjectHideFlags: 0

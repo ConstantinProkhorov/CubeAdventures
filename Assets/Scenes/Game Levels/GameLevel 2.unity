@@ -898,7 +898,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  levelName: GameLevel 2
   PlayerAssembler: {fileID: 1395036231}
   LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
@@ -917,9 +916,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallingSpeed: 2
-  EnemySpawnInterval: 0.7
-  LevelDuration: 45
+  FallingSpeed: 2.3
+  EnemySpawnInterval: 0.5
+  LevelDuration: 60
   ScorePerCoin: 1
 --- !u!114 &1395036227
 MonoBehaviour:

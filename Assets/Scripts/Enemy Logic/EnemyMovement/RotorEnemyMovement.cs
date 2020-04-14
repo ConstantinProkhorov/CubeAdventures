@@ -8,7 +8,7 @@ public sealed class RotorEnemyMovement : EnemyMovement
         base.Start();
         RotationDirection = RotationDirection.GetRandom();
     }
-    public void Update()
+    public void FixedUpdate()
     {
         Movement();
         Rotation();

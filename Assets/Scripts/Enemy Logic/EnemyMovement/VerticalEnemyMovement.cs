@@ -1,6 +1,6 @@
 ﻿public sealed class VerticalEnemyMovement : EnemyMovement
 {
-    public void Update()
+    public void FixedUpdate()
     {
         Movement();
         Rotation();

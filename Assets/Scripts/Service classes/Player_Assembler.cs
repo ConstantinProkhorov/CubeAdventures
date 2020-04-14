@@ -20,12 +20,11 @@ public class Player_Assembler : MonoBehaviour
         _player = Instantiate(_player, new Vector3(0, ScreenBorders.Buttom + 3*_player.transform.lossyScale.x, 0), Quaternion.identity);
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
         _player.layer = 2; // установка слоя IgnoreRaycast 
-        BoxCollider coll = _player.AddComponent<BoxCollider>();
-        coll.size = new Vector3(0.6f, 0.6f, 0.6f);
+        SphereCollider coll = _player.AddComponent<SphereCollider>();
+        coll.radius = 0.4f;
         _player.AddComponent<SizeChange>();
         _player.AddComponent<OnCollision>();
         _player.AddComponent<AudioSource>();
-        
         EyesAndLegsInstantiation();
         return _player;
     }

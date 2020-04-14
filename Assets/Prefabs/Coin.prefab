@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSpeed: 1
+  Rigidbody: {fileID: 5049334521897098061}
   thisSceneController: {fileID: 0}
 --- !u!54 &5049334521897098061
 Rigidbody:
@@ -236,6 +237,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 2944883336692362254}
-  MeshRenderer: {fileID: 358600206761399751}
   EnemyMovement: {fileID: -9168591268082879120}
   Delay: 2

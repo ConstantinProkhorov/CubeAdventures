@@ -9,18 +9,21 @@ public class GameLevelSceneController : MonoBehaviour
     [Header("Autoassigned")]
     public GameObject Player;
     [Header("Assigned manualy")]
-    [SerializeField] private string levelName = "GameLevel X";
     [SerializeField] private Player_Assembler PlayerAssembler;
     [SerializeField] private LevelDataInput LevelDataInput;
     [SerializeField] private Enemy_Creator EnemyCreator;
     [SerializeField] private LevelStartUpTimer LevelStartUpTimer;
     [SerializeField] private TimerInterface WaveTimer;
     [SerializeField] private Text WaveTimerText;
-    //Assigned or changed in runtime
-    //public CurrencyGainedOnLevel ScoreGainedOnLevel { get; private set; }
-    //public CurrencyGainedOnLevel DiamondsGainedOnLevel { get; private set; }
     private bool LevelIsEnding { get; set; } = false;
-    public string LevelName { get => levelName; private set => levelName = value; }
+    /// <summary>
+    /// Provide string Scene name.
+    /// </summary>
+    public string LevelName { get; private set; }
+    public void Awake()
+    {
+        LevelName = gameObject.scene.name;
+    }
     public void Start()
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
