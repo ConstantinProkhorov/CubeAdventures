@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameObjectToDisable: {fileID: 6959051841193795556}
+  GameObjectsToDisable:
+  - {fileID: 6959051841193795556}
 --- !u!82 &7925272653354643541
 AudioSource:
   m_ObjectHideFlags: 0
@@ -299,17 +301,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 465054083254881123}
     m_Modifications:
-    - target: {fileID: 9510688, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_Name
       value: Explosion
       objectReference: {fileID: 0}
-    - target: {fileID: 120280, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 9510688, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 426390, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -353,6 +351,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 426390, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120280, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 444620, guid: b185c1a9cf067374586d095111b15bd1, type: 3}

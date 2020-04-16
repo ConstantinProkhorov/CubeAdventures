@@ -1,16 +1,29 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Disables given gameObjects on PauseButtonClicked event.
+/// </summary>
 public class DisableOnPause : MonoBehaviour
 {
     [SerializeField] private GameObject GameObjectToDisable;
+    [SerializeField] private GameObject[] GameObjectsToDisable = new GameObject[1];
     private PauseButton PauseButton;
-    // Start is called before the first frame update
     void Start()
     {
         PauseButton = GameObject.Find("Pause").GetComponent<PauseButton>();
         PauseButton.PauseButtonClicked += DisableGameObject;
     }
-    private void DisableGameObject() => GameObjectToDisable.SetActive(!GameObjectToDisable.activeSelf);
+    /// <summary>
+    /// Sets gameObjects that will be disabled on PauseButtonClicked event.
+    /// </summary>
+    /// <param name="gameObjects">Any number of GameObjects</param>
+    public void SetGameObjectToDisable(params GameObject[] gameObject) => GameObjectsToDisable = gameObject;
+    private void DisableGameObject()
+    {
+        foreach (var item in GameObjectsToDisable)
+        {
+            item.SetActive(!item.activeSelf);
+        }
+    }
     public void OnDisable()
     {
         PauseButton.PauseButtonClicked -= DisableGameObject;

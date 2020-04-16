@@ -25,7 +25,7 @@ public class Player_Assembler : MonoBehaviour
         _player.AddComponent<SizeChange>();
         _player.AddComponent<OnCollision>();
         _player.AddComponent<AudioSource>();
-        EyesAndLegsInstantiation();
+        EyesAndLegsInstantiation(_player);
         return _player;
     }
     public void Player_Creator(Vector3 position, string s) //вызывается из меню
@@ -35,7 +35,7 @@ public class Player_Assembler : MonoBehaviour
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
         // размер фигуры игрока на старте
         _player.transform.localScale = Vector3.one;
-        EyesAndLegsInstantiation();
+        EyesAndLegsInstantiation(null);
     }
     public GameObject Player_Creator(Vector3 position, string lastForm, float playerSize) //вызывается из сцены крафта
     {
@@ -43,7 +43,7 @@ public class Player_Assembler : MonoBehaviour
         _player = Instantiate(_player, position, Quaternion.identity);
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
         _player.transform.localScale = new Vector3(playerSize, playerSize, playerSize);
-        EyesAndLegsInstantiation();
+        EyesAndLegsInstantiation(null);
 
         return _player;
     }   
@@ -54,7 +54,7 @@ public class Player_Assembler : MonoBehaviour
         float rotationZ = Random.Range(20.0f, 720.0f);
         return new Vector3(rotationX, rotationY, rotationZ);
     }
-    private void EyesAndLegsInstantiation()
+    private void EyesAndLegsInstantiation(GameObject player)
     {
         LeftFoot = Resources.Load<GameObject>("Forms/LeftFoot") as GameObject;
         RightFoot = Resources.Load<GameObject>("Forms/RightFoot") as GameObject;
@@ -64,6 +64,11 @@ public class Player_Assembler : MonoBehaviour
 
         Eyes = Instantiate(Eyes, new Vector3(_player.transform.position.x, _player.transform.position.y + 0.3f, - 0.55f), Quaternion.identity, _player.transform);
         Mouth = Instantiate(Mouth, new Vector3(_player.transform.position.x, _player.transform.position.y, -0.55f), Quaternion.identity, _player.transform);
+        if (player != null)
+        {
+        DisableOnPause disableOnPause = player.AddComponent<DisableOnPause>();
+        disableOnPause.SetGameObjectToDisable(Eyes, Mouth);
+        }
         //LeftEye = Instantiate(LeftEye, new Vector3(-EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
         //RightEye = Instantiate(RightEye, new Vector3(EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
         LeftFoot = Instantiate(LeftFoot, new Vector3(LegsXPosition, LegsYPosotion, 0), Quaternion.identity, _player.transform);
