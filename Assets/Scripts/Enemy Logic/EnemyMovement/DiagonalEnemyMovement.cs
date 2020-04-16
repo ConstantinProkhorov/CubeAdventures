@@ -25,6 +25,10 @@ public sealed class DiagonalEnemyMovement : EnemyMovement
     protected override void Movement()
     {
         Rigidbody.MovePosition(transform.position + new Vector3(FallDirection * Time.deltaTime, FallingSpeed * Time.deltaTime, 0));
-        //transform.Translate(FallDirection * Time.deltaTime, FallingSpeed * Time.deltaTime, 0, Space.World);
+    }
+    public override void StopMovement()
+    {
+        FallDirection = 0.0f;
+        base.StopMovement();
     }
 }

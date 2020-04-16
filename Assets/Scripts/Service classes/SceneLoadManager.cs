@@ -34,6 +34,7 @@ public static class SceneLoadManager
         ActiveSceneIndex = SceneManager.GetSceneByName(sceneName).buildIndex;
         NewSceneLoaded(activeScene.buildIndex, SceneManager.GetSceneByName(sceneName).buildIndex);
     }
+    //TODO: этот функционал должен быть перенесен в класс ListOfGameLevels. Там он сможет находиться по праву.
     /// <summary>
     /// Return true if scene with sceneIndex scene is GameLevel Scene.
     /// </summary>
