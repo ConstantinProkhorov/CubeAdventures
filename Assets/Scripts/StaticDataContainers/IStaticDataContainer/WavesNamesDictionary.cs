@@ -4,8 +4,8 @@ public class WavesNamesDictionary : IStaticDataContainer
 {
     private static Dictionary<string, string> WaveName = new Dictionary<string, string>
     {
-        { "GameLevel 1",    "Omega Wave" },
-        { "GameLevel 2",    "Sigma Wave" },
+        { "GameLevel 1",    "1st Wave" },
+        { "GameLevel 2",    "2nd Wave" },
         { "GameLevel 3",    "Omicron Wave" },
         { "GameLevel 4",    "UntitledWave" },
         { "GameLevel 5",    "UntitledWave" },

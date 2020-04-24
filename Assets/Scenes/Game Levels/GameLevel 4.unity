@@ -623,6 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextSizeIncrement: 2
+  Duration: 0.5
 --- !u!114 &365924858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,7 +637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelStartText: {fileID: 365924855}
-  LevelDataInput: {fileID: 1395036226}
+  Prefix: 
+  Postfix: 
 --- !u!1 &387312994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,7 +1376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5b043fa553ac641a11070d7df7fd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDisplay: {fileID: 55712582}
+  TimerDisplay: {fileID: 0}
+  TimerCountdownStep: 1
 --- !u!1 &1150334094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,7 +1509,6 @@ GameObject:
   - component: {fileID: 1395036225}
   - component: {fileID: 1395036226}
   - component: {fileID: 1395036228}
-  - component: {fileID: 1395036229}
   - component: {fileID: 1395036230}
   - component: {fileID: 1395036231}
   m_Layer: 0
@@ -1543,13 +1545,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  levelName: GameLevel 4
   PlayerAssembler: {fileID: 1395036231}
   LevelDataInput: {fileID: 1395036226}
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
   WaveTimer: {fileID: 1046821810}
-  TimerReplacementText: {fileID: 1846552778}
+  WaveTimerText: {fileID: 0}
 --- !u!114 &1395036226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1562,14 +1563,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaveName: Upsilon Wave
-  fallingSpeed: 2.2
-  timerIsNeeded: 0
-  PointsPerSecond: 10
+  FallingSpeed: 0
   EnemySpawnInterval: 0
-  PointsSubtractionAmount: 20
-  DiamondsSubtractAmount: 0
-  Timer: 30
+  LevelDuration: 0
+  ScorePerCoin: 0
 --- !u!114 &1395036227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1615,19 +1612,6 @@ MonoBehaviour:
   PointsPopUp: {fileID: 6853448942610436496, guid: e9e5ea044c45cd64cbf37859016d4dc6,
     type: 3}
   canvas: {fileID: 1150334097}
---- !u!114 &1395036229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395036223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2e25f696c67f049bbfb8514cb75b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneSkybox: {fileID: 2100000, guid: cc5209c8b41a7448d8d6a52c183946bc, type: 2}
 --- !u!114 &1395036230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,10 +1640,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  LeftEye: {fileID: 0}
-  RightEye: {fileID: 0}
-  LeftFoot: {fileID: 0}
-  RightFoot: {fileID: 0}
+  Eyes: {fileID: 0}
+  Mouth: {fileID: 0}
+  AnimatorController: {fileID: 0}
 --- !u!1 &1402234593
 GameObject:
   m_ObjectHideFlags: 0
