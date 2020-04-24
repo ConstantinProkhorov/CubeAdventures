@@ -17,13 +17,13 @@ public class PlayerData
     {
         CurrentWaveName = "ALFA Wave";
         TotalWavesCleared = 0;
-        TotalScore = 50;
-        Diamonds = 0;
+        TotalScore = 5000;
+        Diamonds = 100;
         Dynamite = 100;
         LastForm = "Forms/Sphere";
-        r = 0;
-        g = 20;
-        b = 0;
+        r = 0.007843138f;
+        g = 0.6784314f;
+        b = 0.07843138f;
         lastLevelPlayed = "GameLevel 1";
         levelOpenCloseDictionary = new bool[] { true, false, false, false };
         colorOpenCloseDictionary = new bool[] { true, true, false, false, false, false };
