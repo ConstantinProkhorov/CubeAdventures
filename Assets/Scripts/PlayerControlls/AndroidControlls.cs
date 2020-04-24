@@ -12,7 +12,7 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
     Transform LeftFoot;
     Transform RightFoot;
     float ymin = 2;
-    float ymax = 0.85f;
+    float ymax = 0.6f;
     [SerializeField] float rotationSpeed = 0.01f;
     Vector3 LeftFootPosition;
     Vector3 RightFootPosition;
@@ -56,14 +56,14 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
             Player.transform.Rotate(Vector3.up, 0.3f, Space.World);
         }
 
-        LeftFootPosition.y = Mathf.Clamp(LeftFoot.position.y + (float)0.1, Player.transform.position.y - ymin, Player.transform.position.y - ymax);
+        LeftFootPosition.y = Mathf.Clamp(LeftFoot.position.y + 0.1f, Player.transform.position.y - ymin, Player.transform.position.y - ymax);
         LeftFoot.position = LeftFootPosition;
 
-        RightFootPosition.y = Mathf.Clamp(RightFoot.position.y + (float)0.1, Player.transform.position.y - ymin, Player.transform.position.y - ymax);
+        RightFootPosition.y = Mathf.Clamp(RightFoot.position.y + 0.1f, Player.transform.position.y - ymin, Player.transform.position.y - ymax);
         RightFoot.position = RightFootPosition;
 
-        LeftFootPosition.x = Player.transform.position.x - (float)0.3;
-        RightFootPosition.x = Player.transform.position.x + (float)0.3;
+        LeftFootPosition.x = Player.transform.position.x - 0.35f;
+        RightFootPosition.x = Player.transform.position.x + 0.35f;
     }
     public void OnDrag(PointerEventData eventData)
     {
