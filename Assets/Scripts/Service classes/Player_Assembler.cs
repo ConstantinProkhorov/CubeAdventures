@@ -37,7 +37,7 @@ public class Player_Assembler : MonoBehaviour
         _player.transform.localScale = Vector3.one;
         EyesAndLegsInstantiation(null);
     }
-    public GameObject Player_Creator(Vector3 position, string lastForm, float playerSize) //вызывается из сцены крафта
+    public GameObject Player_Creator(Vector3 position, string lastForm, float playerSize) //вызывается из сцены магазина
     {
         _player = Resources.Load<GameObject>(lastForm) as GameObject ?? Resources.Load <GameObject>(SceneController.LastForm) as GameObject ;
         _player = Instantiate(_player, position, Quaternion.identity);
@@ -56,25 +56,22 @@ public class Player_Assembler : MonoBehaviour
     }
     private void EyesAndLegsInstantiation(GameObject player)
     {
-        LeftFoot = Resources.Load<GameObject>("Forms/LeftFoot") as GameObject;
+        LeftFoot = Resources.Load<GameObject>("Forms/LeftFootFrog_") as GameObject;
         RightFoot = Resources.Load<GameObject>("Forms/RightFoot") as GameObject;
 
-        float LegsXPosition = _player.transform.position.x - _player.transform.lossyScale.x / 3f;
-        float LegsYPosotion = _player.transform.position.y - _player.transform.lossyScale.y;
+        float LegsXPosition = _player.transform.position.x - _player.transform.lossyScale.x / 2.5f;
+        float LegsYPosotion = _player.transform.position.y - _player.transform.lossyScale.y/2;
 
-        Eyes = Instantiate(Eyes, new Vector3(_player.transform.position.x, _player.transform.position.y + 0.3f, - 0.55f), Quaternion.identity, _player.transform);
+        Eyes = Instantiate(Eyes, new Vector3(_player.transform.position.x, _player.transform.position.y + 0.3f, - 0.55f),Quaternion.identity, _player.transform);
         Mouth = Instantiate(Mouth, new Vector3(_player.transform.position.x, _player.transform.position.y, -0.55f), Quaternion.identity, _player.transform);
         if (player != null)
         {
         DisableOnPause disableOnPause = player.AddComponent<DisableOnPause>();
         disableOnPause.SetGameObjectToDisable(Eyes, Mouth);
         }
-        //LeftEye = Instantiate(LeftEye, new Vector3(-EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
-        //RightEye = Instantiate(RightEye, new Vector3(EyesXPosition, EyesYPosition, EyesZPosition), Quaternion.identity, _player.transform);
         LeftFoot = Instantiate(LeftFoot, new Vector3(LegsXPosition, LegsYPosotion, 0), Quaternion.identity, _player.transform);
         RightFoot = Instantiate(RightFoot, new Vector3(-LegsXPosition, LegsYPosotion, 0), Quaternion.identity, _player.transform);
 
-        //Eyes.AddComponent<OpenCloseEye>();
         _player.AddComponent<Animator>(); //Контроллер анимаций глаз и рта.
         _player.GetComponent<Animator>().runtimeAnimatorController = AnimatorController;
     }

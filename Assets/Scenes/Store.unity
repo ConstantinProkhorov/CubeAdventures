@@ -375,7 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Player_Assembler: {fileID: 196646674}
   playerSize: 1.5
-  PlayerModelPosition: {x: 0, y: 4, z: 6}
+  PlayerModelPosition: {x: 0, y: 4, z: 0}
 --- !u!4 &196646668
 Transform:
   m_ObjectHideFlags: 0
@@ -432,6 +432,9 @@ MonoBehaviour:
   CanNotUnlockColor:
     serializedVersion: 2
     rgba: 4278190335
+  CanUnlockColor:
+    serializedVersion: 2
+    rgba: 4294967295
   UnlockButton: {fileID: 667100669}
   BuyWindowBlur: {fileID: 1154301556}
   blurTransparencyChange: {fileID: 1154301559}
