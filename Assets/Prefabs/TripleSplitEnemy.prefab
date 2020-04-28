@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2443867936017225212}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,7 +94,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Size: {x: 0.04, y: 0.04, z: 0.04}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5970985109549252534
 Rigidbody:
@@ -139,10 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf602fd0a5040b4797081beea263dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChildFigure: {fileID: 0}
+  ChildFigure: {fileID: 8935892655870133375, guid: 72ea38117e2002a4380c96385f4a30e6,
+    type: 3}
   thisSceneController: {fileID: 0}
-  MaxAllowedSplitPosition: 3
-  MinAllowedSplitPosition: -1
+  MaxAllowedSplitPosition: 4
+  MinAllowedSplitPosition: 3
 --- !u!114 &1140912325555808411
 MonoBehaviour:
   m_ObjectHideFlags: 0

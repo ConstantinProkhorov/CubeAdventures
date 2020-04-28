@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964108, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465794, g: 0.4964115, b: 0.5748184, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,8 +156,8 @@ RectTransform:
   m_Father: {fileID: 308129590}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.32888892, y: 0.86033344}
-  m_AnchorMax: {x: 0.6675556, y: 0.9013126}
+  m_AnchorMin: {x: 0.32888892, y: 0.30837506}
+  m_AnchorMax: {x: 0.6712963, y: 0.34731254}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -991,8 +991,8 @@ RectTransform:
   m_Father: {fileID: 308129590}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.19825928, y: 0.6532973}
-  m_AnchorMax: {x: 0.8018889, y: 0.71247756}
+  m_AnchorMin: {x: 0.05266666, y: 0.6532973}
+  m_AnchorMax: {x: 0.95000005, y: 0.6884376}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1017,7 +1017,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7221cf02553d44bd8ad920032c4d2734, type: 3}
+    m_Font: {fileID: 12800000, guid: 7c7555a0c890f864f91345b6e8ca839c, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
@@ -1029,7 +1029,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ALF WAVE
+  m_Text: //wave name
 --- !u!222 &825831083
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelStartText: {fileID: 825831082}
-  Prefix: 
+  Prefix: 'Next wave is '
   Postfix: 
 --- !u!114 &825831085
 MonoBehaviour:
@@ -1434,6 +1434,7 @@ GameObject:
   - component: {fileID: 1828579177}
   - component: {fileID: 1828579180}
   - component: {fileID: 1828579179}
+  - component: {fileID: 1828579178}
   m_Layer: 5
   m_Name: GameName
   m_TagString: UI
@@ -1455,11 +1456,26 @@ RectTransform:
   m_Father: {fileID: 308129590}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.19000001, y: 0.7531251}
-  m_AnchorMax: {x: 0.81000006, y: 0.83675003}
+  m_AnchorMin: {x: 0.08877778, y: 0.70360416}
+  m_AnchorMax: {x: 0.91400003, y: 0.91477084}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1828579178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828579176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!114 &1828579179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,7 +1489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1481,19 +1497,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7221cf02553d44bd8ad920032c4d2734, type: 3}
+    m_Font: {fileID: 12800000, guid: 7c7555a0c890f864f91345b6e8ca839c, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 100
+    m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: explode adventures
+  m_Text: "DYNAMITE \nFROGGY"
 --- !u!222 &1828579180
 CanvasRenderer:
   m_ObjectHideFlags: 0
