@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb82748c4f3c43448b0eb6480b5d243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionDelay: 1.2
+  ExplosionDelay: 0.5
   DynamiteExplosion: {fileID: -3345172854019621868}
   ExplosionSound: {fileID: 7925272653354643541}
   ExplosionEffect: {fileID: 6959051841186390178}
@@ -182,7 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionRadius: 3
-  ExplosionPower: 500
+  ExplosionUpwardModifier: 2
+  ExplosionPower: 600
 --- !u!114 &7339157599158685746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,13 +302,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 465054083254881123}
     m_Modifications:
-    - target: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-      propertyPath: m_Name
-      value: Explosion
-      objectReference: {fileID: 0}
     - target: {fileID: 9510688, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+      propertyPath: m_Name
+      value: Explosion
       objectReference: {fileID: 0}
     - target: {fileID: 426390, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_LocalPosition.x

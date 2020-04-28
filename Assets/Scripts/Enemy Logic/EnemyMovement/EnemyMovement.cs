@@ -11,6 +11,10 @@ public abstract class EnemyMovement : MonoBehaviour
     protected void Start()
     {
         FallingSpeed = ActiveLevelData.FallingSpeed;
+        if (Rigidbody == null)
+        {
+            Rigidbody = gameObject.GetComponent<Rigidbody>();
+        }
     }
     protected virtual void Movement()
     {

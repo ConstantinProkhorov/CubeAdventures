@@ -4,18 +4,18 @@ public class WavesNamesDictionary : IStaticDataContainer
 {
     private static Dictionary<string, string> WaveName = new Dictionary<string, string>
     {
-        { "GameLevel 1",    "1st Wave" },
-        { "GameLevel 2",    "2nd Wave" },
-        { "GameLevel 3",    "Omicron Wave" },
-        { "GameLevel 4",    "UntitledWave" },
-        { "GameLevel 5",    "UntitledWave" },
-        { "GameLevel 6",    "Bonus Wave" },
-        { "GameLevel 7",    "UntitledWave" },
-        { "GameLevel 8",    "UntitledWave" },
-        { "GameLevel 9",    "UntitledWave" },
-        { "GameLevel 10",   "UntitledWave" },
-        { "GameLevel 11",   "UntitledWave" },
-        { "GameLevel 12",   "Super-Bonus Wave" },
+        { "GameLevel 1",    "Intruders" },
+        { "GameLevel 2",    "Invaders" },
+        { "GameLevel 3",    "Pitched Wave" },
+        { "GameLevel 4",    "Splitters" },
+        { "GameLevel 5",    "Bonus Wave" },
+        { "GameLevel 6",    "Rotors" },
+        { "GameLevel 7",    "Rain Wave" },
+        { "GameLevel 8",    "Reapers" },
+        { "GameLevel 9",    "Horde" },
+        { "GameLevel 10",   "Dread Wave" },
+        { "GameLevel 11",   "Nightmare Wave" },
+        { "GameLevel 12",   "Prize Wave" },
         { "GameTestLevel",  "This is Test Level" }
     };
     string IStaticDataContainer.Get(string dataName)

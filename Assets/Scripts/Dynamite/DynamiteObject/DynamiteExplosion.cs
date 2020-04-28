@@ -1,20 +1,15 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 /// <summary>
-/// Physics part of dynamite explosion
+/// Exolosion interaction with colliders of affected figures.
 /// </summary>
 public class DynamiteExplosion : MonoBehaviour
 {
     [SerializeField] private float ExplosionRadius = 5.0f;
+    [SerializeField] private float ExplosionUpwardModifier = 2.0f;
     [SerializeField] private float ExplosionPower = 5000.0f;
-    //public IEnumerator Start()
-    //{
-    //    //Explode();
-    //    //GetComponent<Image>().enabled = false;
-    //    //GetComponent<DynamiteMovement>().enabled = false;
-    //    //yield return new WaitForSeconds(0.5f);
-    //    //Destroy(gameObject);
-    //}
+    /// <summary>
+    /// Start Explosion.
+    /// </summary>
     public void Explode() 
     {
         Vector3 ExplosionPosition = gameObject.transform.position;
@@ -25,7 +20,7 @@ public class DynamiteExplosion : MonoBehaviour
             EnemyMovement enemyMovement = hit.GetComponent<EnemyMovement>();
             if (rb != null)
             {
-                rb.AddExplosionForce(ExplosionPower, ExplosionPosition, ExplosionRadius);
+                rb.AddExplosionForce(ExplosionPower, ExplosionPosition, ExplosionRadius, ExplosionUpwardModifier);
                 enemyMovement.StopMovement();
             }
         }

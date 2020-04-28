@@ -20,6 +20,6 @@ public class WaveNameDisplay : MonoBehaviour
         {
             LevelName = SceneController.LastLevel;
         }
-        LevelStartText.text =$"{Prefix}{GameData.LevelWaveName.Get(LevelName).ToUpper()}{Postfix}";
+        LevelStartText.text =$"{Prefix}{GameData.LevelWaveName.Get(LevelName)}{Postfix}";
     }
 }
