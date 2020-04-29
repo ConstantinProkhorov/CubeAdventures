@@ -2,6 +2,7 @@
 // это данные, которые не перезаписываются.
 // логично сделать их статическими, для удобного доступа, да?
 // этот класс предоставляет интерфейс, если я его не меняю, все операции над именами игровых уровней можно размещать здесь.
+//TODO: логично вынести сюда операцию проверки, является ли уровень игровым.
 /// <summary>
 /// Provides operations on List of game levels names.
 /// </summary>
@@ -29,5 +30,19 @@ public static class ListOfGameLevels
     /// <summary>
     /// Returns name of the next game level after the one which name was provided as parameter.
     /// </summary>
-    public static string GetNextLevel(string levelName) => ListOfLevels[ListOfLevels.IndexOf(levelName) + 1];
+    /// <returns>If level is last one returns name of the StartScene/</returns>
+    public static string GetNextLevel(string levelName)
+    {
+        int indexOfLevel = ListOfLevels.IndexOf(levelName) + 1;
+        if (indexOfLevel < ListOfLevels.Count)
+        {
+            return ListOfLevels[indexOfLevel];
+        }
+        else return "StartScene";
+    }
+    /// <summary>
+    /// Return true if scene with provided name is GameLevel Scene.
+    /// </summary>
+    /// <param name="levelName">Name of the scene in question.</param>
+    public static bool IsGameLevel(string sceneName) => ListOfLevels.Contains(sceneName);
 }

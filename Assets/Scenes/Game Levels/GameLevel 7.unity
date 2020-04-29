@@ -944,10 +944,10 @@ MonoBehaviour:
   enemyESpawnChance: 0
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
-  PointsFigureSpawnChance: 30
+  PointsFigureSpawnChance: 29
   DiamondFigure: {fileID: 5552273120672060707, guid: 3cb7bd1a3e565d145a75fe2e8b5fc894,
     type: 3}
-  DiamondFigureSpawnChance: 0
+  DiamondFigureSpawnChance: 1
   isActive: 0
 --- !u!114 &1395036228
 MonoBehaviour:

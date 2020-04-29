@@ -38,9 +38,11 @@ public static class SceneLoadManager
     /// <summary>
     /// Return true if scene with sceneIndex scene is GameLevel Scene.
     /// </summary>
+    [Obsolete("Use ListOfGameLevels.IsGameLevel(string sceneName) instead.")]
     public static bool IsGameLevel(int sceneIndex) => SceneManager.GetSceneByBuildIndex(sceneIndex).name.Contains("Game");
     /// <summary>
     /// Return true if active scene is GameLevel Scene.
     /// </summary>
+    [Obsolete("Use ListOfGameLevels.IsGameLevel(string sceneName) instead.")]
     public static bool IsGameLevel() => IsGameLevel(ActiveSceneIndex); 
 }

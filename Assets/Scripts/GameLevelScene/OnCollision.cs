@@ -32,7 +32,7 @@ public class OnCollision : MonoBehaviour
         {
             SceneController.ScoreGainedOnLevel.AddToAmount(ScorePerCoin);
             SceneController.Score += ScorePerCoin;
-            PopUp.OnCollision(gameObject.transform.position);
+            PopUp.CreatePopUp(gameObject.transform.position, ScorePerCoin);
             sizeChange.ChangeSize();
         }
         else if (col.gameObject.CompareTag("collectible"))
@@ -40,6 +40,7 @@ public class OnCollision : MonoBehaviour
             int diamondsGainedAmount = 1;
             SceneController.DiamondsGainedOnLevel.AddToAmount(diamondsGainedAmount);
             SceneController.Diamonds += diamondsGainedAmount;
+            PopUp.CreatePopUp(gameObject.transform.position, diamondsGainedAmount);
             sizeChange.ChangeSize();
         }
         RemoveGameObject removeGameObject = col.gameObject.GetComponent<RemoveGameObject>();

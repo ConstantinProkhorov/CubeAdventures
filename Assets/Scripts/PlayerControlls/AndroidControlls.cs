@@ -5,6 +5,7 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
 {
     public GameLevelSceneController LevelSceneController;
     float PlayerRadius;
+    //границы экрана
     float minX, maxX, minY, maxY;
     public static bool GameIsPaused = false;
     public int Sens = 100; //настройка чувствительности
@@ -20,7 +21,7 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
     {
         minX = ScreenBorders.Left;
         maxX = ScreenBorders.Right;
-        minY = ScreenBorders.Buttom;
+        minY = ScreenBorders.Bottom - 0.5f;
         maxY = ScreenBorders.Top;
         Player = LevelSceneController.Player;
         PlayerRadius = Player.transform.localScale.x / 2;
@@ -73,7 +74,7 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
             float XSens = eventData.delta.x / Sens;
             float YSens = eventData.delta.y / Sens;
             playerPosition.x = Mathf.Clamp(Player.transform.position.x + XSens, minX + PlayerRadius, maxX - PlayerRadius);
-            playerPosition.y = Mathf.Clamp(Player.transform.position.y + YSens, minY + PlayerRadius * 2, maxY + PlayerRadius);
+            playerPosition.y = Mathf.Clamp(Player.transform.position.y + YSens, minY + PlayerRadius, maxY - PlayerRadius);
             Player.transform.position = playerPosition;
             PlayerRotation();
             ChangeFootPosition(YSens);

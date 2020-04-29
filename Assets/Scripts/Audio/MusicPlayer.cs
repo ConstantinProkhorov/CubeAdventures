@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 /// <summary>
 /// Логика проигрывания фоновой музыки
 /// </summary>
@@ -12,21 +13,29 @@ public class MusicPlayer : MonoBehaviour
     void Start()
     {
         PlayMenuMusic();
-        SceneLoadManager.NewSceneLoaded += (int currentActiveScent, int sceneToBeLoaded) =>
+        SceneLoadManager.NewSceneLoaded += (int currentActiveScene, int sceneToBeLoaded) =>
         {
             if (Settings.IsMusicOn)
             {
-                //загрузка игровой сцены после сцены меню
-                if (SceneLoadManager.IsGameLevel(sceneToBeLoaded))
+                //если загружаемая сцена игровая
+                if (ListOfGameLevels.IsGameLevel(SceneManager.GetSceneByBuildIndex(sceneToBeLoaded).name))
                 {
+                    //и если выгружаемая сцена не содержится в заданном списке,  то включается GameLevelMusic
+                    if (!ListOfScenesToPlayGameLevelMusic.Contains(SceneManager.GetSceneByBuildIndex(currentActiveScene).name))
+                    {
                     StartCoroutine(FadeAudioSource.StartFade(MenuMusic, FadeDuration, FadeTargetVolume));
                     StartCoroutine(PlayAfterFade(GameLevelMusic));
+                    }
                 }
-                //загрузка сценю меню после игровой сцены
-                else if (SceneLoadManager.IsGameLevel(currentActiveScent))
+                //если выгружаемая сцена игровая
+                else if (ListOfGameLevels.IsGameLevel(SceneManager.GetSceneByBuildIndex(currentActiveScene).name))
                 {
-                    StartCoroutine(FadeAudioSource.StartFade(GameLevelMusic, FadeDuration, FadeTargetVolume));
-                    StartCoroutine(PlayAfterFade(MenuMusic));
+                    //и если загружаемая сцена не содержится в заданном списке, то включается MenuMusic
+                    if (!ListOfScenesToPlayGameLevelMusic.Contains(SceneManager.GetSceneByBuildIndex(sceneToBeLoaded).name))
+                    {
+                        StartCoroutine(FadeAudioSource.StartFade(GameLevelMusic, FadeDuration, FadeTargetVolume));
+                        StartCoroutine(PlayAfterFade(MenuMusic));
+                    }
                 }
             }
         };
@@ -45,7 +54,7 @@ public class MusicPlayer : MonoBehaviour
         }
     }
     /// <summary>
-    /// Plays given audioSource. FadeDuration should be equale to FadeAudioSource FadeDuration. 
+    /// Plays given audioSource. FadeDuration should be equal to FadeAudioSource FadeDuration. 
     /// </summary>
     private IEnumerator PlayAfterFade(AudioSource audioSourceToPlay)
     {

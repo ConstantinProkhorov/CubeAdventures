@@ -17,7 +17,7 @@ public class Player_Assembler : MonoBehaviour
     public GameObject Player_Creator(string s) // вызывается из игрового уровня   
     {
         _player = Resources.Load<GameObject>(s) as GameObject;
-        _player = Instantiate(_player, new Vector3(0, ScreenBorders.Buttom + 3*_player.transform.lossyScale.x, 0), Quaternion.identity);
+        _player = Instantiate(_player, new Vector3(0, ScreenBorders.Bottom + 3*_player.transform.lossyScale.x, 0), Quaternion.identity);
         _player.GetComponent<MeshRenderer>().material.color = SceneController.PlayerCurrentColor;
         _player.layer = 2; // установка слоя IgnoreRaycast 
         SphereCollider coll = _player.AddComponent<SphereCollider>();

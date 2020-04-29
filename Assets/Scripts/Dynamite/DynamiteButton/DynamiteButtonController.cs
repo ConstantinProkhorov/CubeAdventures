@@ -37,7 +37,8 @@ public class DynamiteButtonController : MonoBehaviour
     private void AttachDynamiteButtonToPlayer()
     {
         Transform playerTransform = thisSceneController.Player.transform;
-        Vector3 position = playerTransform.position - playerTransform.lossyScale / 2;
-        gameObject.transform.position = position;
+        Vector3 DynamiteNewPosition = playerTransform.position - playerTransform.lossyScale / 2;
+        gameObject.transform.position = DynamiteNewPosition;
+        //gameObject.transform.position = UIElementsPositionAdjuster.GetAdjustedPosition(gameObject.GetComponent<RectTransform>());
     }
 }
