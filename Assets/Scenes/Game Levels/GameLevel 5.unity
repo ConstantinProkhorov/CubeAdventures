@@ -915,9 +915,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142ab42d56cf2b24ea294de31f2405f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallingSpeed: 12
-  EnemySpawnInterval: 0.7
-  LevelDuration: 45
+  FallingSpeed: 5
+  EnemySpawnInterval: 0.3
+  LevelDuration: 60
   ScorePerCoin: 2
 --- !u!114 &1395036227
 MonoBehaviour:

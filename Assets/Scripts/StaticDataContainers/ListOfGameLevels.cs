@@ -40,4 +40,9 @@ public static class ListOfGameLevels
         }
         else return "StartScene";
     }
+    /// <summary>
+    /// Return true if scene with provided name is GameLevel Scene.
+    /// </summary>
+    /// <param name="levelName">Name of the scene in question.</param>
+    public static bool IsGameLevel(string sceneName) => ListOfLevels.Contains(sceneName);
 }

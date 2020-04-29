@@ -30,7 +30,6 @@ public class TimeDilation : MonoBehaviour, IDragHandler
             Time.timeScale = 0.2f;
             Time.fixedDeltaTime = Time.timeScale * 0.02f;
             TimeScaleSlowed();
-
         }
     }
     public void OnEndDrag(PointerEventData eventData) { }

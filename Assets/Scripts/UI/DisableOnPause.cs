@@ -4,7 +4,6 @@
 /// </summary>
 public class DisableOnPause : MonoBehaviour
 {
-    [SerializeField] private GameObject GameObjectToDisable;
     [SerializeField] private GameObject[] GameObjectsToDisable = new GameObject[1];
     private PauseButton PauseButton;
     void Start()
