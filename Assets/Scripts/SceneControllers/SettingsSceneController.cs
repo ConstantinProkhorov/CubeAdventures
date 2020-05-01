@@ -21,10 +21,18 @@ public class SettingsSceneController : MonoBehaviour
     {
         MainScriptHolder.GetComponent<SceneController>().PlayerDataReset();
     }
-    public void MuteMusic()
+    public void ChangeMuteState()
     {
-        Settings.SetMusicState(!Settings.IsMusicOn); 
-        MusicPlayer.PlayMenuMusic();
+        if (Settings.IsMusicOn)
+        {
+            Settings.SetMusicState(false);
+            MusicPlayer.FadeMenuMusic();
+        }
+        else if (!Settings.IsMusicOn)
+        {
+            Settings.SetMusicState(true);
+            MusicPlayer.PlayMenuMusic();
+        }
     }
     public void MuteSounds() => Settings.SetSoundsState(!Settings.IsSoundsOn);
 }

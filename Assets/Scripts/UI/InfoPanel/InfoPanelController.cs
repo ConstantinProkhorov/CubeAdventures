@@ -11,13 +11,13 @@ public class InfoPanelController : MonoBehaviour
     void Start()
     {
         CurrentInfoPanelDisplay = TotalDisplay;
-        SceneLoadManager.NewSceneLoaded += (int currentActiveScent, int sceneToBeLoaded) =>
+        SceneLoadManager.NewSceneLoaded += (string currentActiveScent, string sceneToBeLoaded) =>
         {
-            if (SceneLoadManager.IsGameLevel(sceneToBeLoaded))
+            if (ListOfGameLevels.IsGameLevel(sceneToBeLoaded))
             {
                 CurrentInfoPanelDisplay = GainedDisplay;
             }
-            else if (!SceneLoadManager.IsGameLevel(sceneToBeLoaded))
+            else if (!ListOfGameLevels.IsGameLevel(sceneToBeLoaded))
             {
                 CurrentInfoPanelDisplay = TotalDisplay;
             }

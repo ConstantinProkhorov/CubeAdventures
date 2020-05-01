@@ -50,9 +50,9 @@ public class SceneController : MonoBehaviour
         ScoreGainedOnLevel = new CurrencyGainedOnLevel();
         DiamondsGainedOnLevel = new CurrencyGainedOnLevel();
         //refresh data in gainedOnLevel classes
-        SceneLoadManager.NewSceneLoaded += (int currentActiveScent, int sceneToBeLoaded) =>
+        SceneLoadManager.NewSceneLoaded += (string currentActiveScent, string sceneToBeLoaded) =>
         {
-            if (SceneLoadManager.IsGameLevel(sceneToBeLoaded))
+            if (ListOfGameLevels.IsGameLevel(sceneToBeLoaded))
             {
                 ScoreGainedOnLevel = new CurrencyGainedOnLevel();
                 DiamondsGainedOnLevel = new CurrencyGainedOnLevel();

@@ -3,11 +3,11 @@
 public class Settings : MonoBehaviour
 {
     /// <summary>
-    /// Returns true if player disabled music on settings scene
+    /// Returns true if music is enabled on settings scene
     /// </summary>
     public static bool IsMusicOn { get; private set; }
     /// <summary>
-    /// Returns true if player disabled sounds on settings scene
+    /// Returns true if sounds are enabled on settings scene
     /// </summary>
     public static bool IsSoundsOn { get; private set; }
     private void Start() => UpdateSettings();
