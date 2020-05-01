@@ -21,7 +21,7 @@ public class SettingsSceneController : MonoBehaviour
     {
         MainScriptHolder.GetComponent<SceneController>().PlayerDataReset();
     }
-    public void ChangeMuteState()
+    public void ChangeMusicMuteState()
     {
         if (Settings.IsMusicOn)
         {
@@ -34,5 +34,16 @@ public class SettingsSceneController : MonoBehaviour
             MusicPlayer.PlayMenuMusic();
         }
     }
-    public void MuteSounds() => Settings.SetSoundsState(!Settings.IsSoundsOn);
+    public void ChangeSoundsMuteState()
+    {
+        if (Settings.IsSoundsOn)
+        {
+            Settings.SetSoundsState(false);
+
+        }
+        else if (!Settings.IsSoundsOn)
+        {
+            Settings.SetSoundsState(true);
+        }
+    }
 }
