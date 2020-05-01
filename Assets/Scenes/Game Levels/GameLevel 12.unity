@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7edf6d0252f3448b1e6020b3097060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelStartText: {fileID: 365924855}
+  DisplayText: {fileID: 365924855}
   Prefix: 
   Postfix: . Enjoy!!!
 --- !u!1 &440750581

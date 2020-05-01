@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 /// <summary>
 /// Логика проигрывания фоновой музыки
 /// </summary>
@@ -10,48 +9,60 @@ public class MusicPlayer : MonoBehaviour
     [SerializeField] private float FadeTargetVolume = 0.0f;
     [SerializeField] private AudioSource MenuMusic;
     [SerializeField] private AudioSource GameLevelMusic;
+    /// <summary>
+    /// Определяет какая музыка проигрывается на какой сцене. 
+    /// Я изначально думал над созданием словаря с соответствиями. И хотя словари более очевидные, возникает проблема.
+    /// Так как в игре уже очень много словарей, ссылающихся на имя сцены и любые изменения имен сцен и их добавление, 
+    /// что наиболее важно, вызовет цепочку доработок, которая мне не нужна. Это решение страдает от той же проблему, но только частично. 
+    /// </summary>
+    private AudioSource GetAudioSourceForScene(string sceneName)
+    {
+        if (ListOfGameLevels.IsGameLevel(sceneName))
+        {
+            return GameLevelMusic;
+        }
+        else if (sceneName == "WinScore" | sceneName == "EndScore")
+        {
+            return GameLevelMusic;
+        }
+        else return MenuMusic;
+    }
     void Start()
     {
+        //проигрывание музыки при загрузке игры
         PlayMenuMusic();
-        SceneLoadManager.NewSceneLoaded += (int currentActiveScene, int sceneToBeLoaded) =>
+        SceneLoadManager.NewSceneLoaded += (string currentActiveScene, string sceneToBeLoaded) =>
         {
-            if (Settings.IsMusicOn)
+            AudioSource currentSceneMusic = GetAudioSourceForScene(currentActiveScene);
+            AudioSource sceneToBeLoadedMusic = GetAudioSourceForScene(sceneToBeLoaded);
+            //условие переключения музыки - музыка на сцена отличается
+            if (currentSceneMusic != sceneToBeLoadedMusic)
             {
-                //если загружаемая сцена игровая
-                if (ListOfGameLevels.IsGameLevel(SceneManager.GetSceneByBuildIndex(sceneToBeLoaded).name))
+                //если загружаемая сцена нужна GameLevelMusic 
+                if (sceneToBeLoadedMusic == GameLevelMusic)
                 {
-                    //и если выгружаемая сцена не содержится в заданном списке,  то включается GameLevelMusic
-                    if (!ListOfScenesToPlayGameLevelMusic.Contains(SceneManager.GetSceneByBuildIndex(currentActiveScene).name))
-                    {
                     StartCoroutine(FadeAudioSource.StartFade(MenuMusic, FadeDuration, FadeTargetVolume));
                     StartCoroutine(PlayAfterFade(GameLevelMusic));
-                    }
                 }
-                //если выгружаемая сцена игровая
-                else if (ListOfGameLevels.IsGameLevel(SceneManager.GetSceneByBuildIndex(currentActiveScene).name))
+                //если загружаемой сцене нужна MenuMusic
+                else if (sceneToBeLoadedMusic == MenuMusic)
                 {
-                    //и если загружаемая сцена не содержится в заданном списке, то включается MenuMusic
-                    if (!ListOfScenesToPlayGameLevelMusic.Contains(SceneManager.GetSceneByBuildIndex(sceneToBeLoaded).name))
-                    {
-                        StartCoroutine(FadeAudioSource.StartFade(GameLevelMusic, FadeDuration, FadeTargetVolume));
-                        StartCoroutine(PlayAfterFade(MenuMusic));
-                    }
+                    StartCoroutine(FadeAudioSource.StartFade(GameLevelMusic, FadeDuration, FadeTargetVolume));
+                    StartCoroutine(PlayAfterFade(MenuMusic));
                 }
             }
         };
-    } 
-    // я пока оставляю это так. но тут проблема. Так как этот метод вызывается на старте, то при выключенных звуках все равно идет какой-то звук,
-    // так  как срабатывает Fade
+    }
     public void PlayMenuMusic()
     {
         if (Settings.IsMusicOn)
         {
             MenuMusic.Play();
         }
-        else
-        {
-            StartCoroutine(FadeAudioSource.StartFade(MenuMusic, FadeDuration, FadeTargetVolume));
-        }
+    }
+    public void FadeMenuMusic()
+    {
+        StartCoroutine(FadeAudioSource.StartFade(MenuMusic, FadeDuration, FadeTargetVolume));
     }
     /// <summary>
     /// Plays given audioSource. FadeDuration should be equal to FadeAudioSource FadeDuration. 
