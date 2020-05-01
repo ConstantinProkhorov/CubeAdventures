@@ -33,22 +33,25 @@ public class MusicPlayer : MonoBehaviour
         PlayMenuMusic();
         SceneLoadManager.NewSceneLoaded += (string currentActiveScene, string sceneToBeLoaded) =>
         {
-            AudioSource currentSceneMusic = GetAudioSourceForScene(currentActiveScene);
-            AudioSource sceneToBeLoadedMusic = GetAudioSourceForScene(sceneToBeLoaded);
-            //условие переключения музыки - музыка на сцена отличается
-            if (currentSceneMusic != sceneToBeLoadedMusic)
+            if (Settings.IsMusicOn)
             {
-                //если загружаемая сцена нужна GameLevelMusic 
-                if (sceneToBeLoadedMusic == GameLevelMusic)
+                AudioSource currentSceneMusic = GetAudioSourceForScene(currentActiveScene);
+                AudioSource sceneToBeLoadedMusic = GetAudioSourceForScene(sceneToBeLoaded);
+                //условие переключения музыки - музыка на сцена отличается
+                if (currentSceneMusic != sceneToBeLoadedMusic)
                 {
-                    StartCoroutine(FadeAudioSource.StartFade(MenuMusic, FadeDuration, FadeTargetVolume));
-                    StartCoroutine(PlayAfterFade(GameLevelMusic));
-                }
-                //если загружаемой сцене нужна MenuMusic
-                else if (sceneToBeLoadedMusic == MenuMusic)
-                {
-                    StartCoroutine(FadeAudioSource.StartFade(GameLevelMusic, FadeDuration, FadeTargetVolume));
-                    StartCoroutine(PlayAfterFade(MenuMusic));
+                    //если загружаемая сцена нужна GameLevelMusic 
+                    if (sceneToBeLoadedMusic == GameLevelMusic)
+                    {
+                        StartCoroutine(FadeAudioSource.StartFade(MenuMusic, FadeDuration, FadeTargetVolume));
+                        StartCoroutine(PlayAfterFade(GameLevelMusic));
+                    }
+                    //если загружаемой сцене нужна MenuMusic
+                    else if (sceneToBeLoadedMusic == MenuMusic)
+                    {
+                        StartCoroutine(FadeAudioSource.StartFade(GameLevelMusic, FadeDuration, FadeTargetVolume));
+                        StartCoroutine(PlayAfterFade(MenuMusic));
+                    }
                 }
             }
         };

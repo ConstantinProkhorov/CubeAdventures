@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PointPopUp : MonoBehaviour
 {
@@ -34,3 +33,5 @@ public class PointPopUp : MonoBehaviour
         Destroy(PopUp);
     }
 }
+
+
