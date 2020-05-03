@@ -27,12 +27,16 @@ public static class SceneLoadManager
         Scene activeScene = SceneManager.GetActiveScene();
         int activeSceneIndex = activeScene.buildIndex; 
         SaveFileManager.Save(new PlayerData(SceneController.CurrentSessionPlayerData));
-        SceneManager.UnloadSceneAsync(activeSceneIndex);
-        Resources.UnloadUnusedAssets();      
-        PauseButtonReset();           
-        SceneManager.LoadScene(sceneToLoadName, LoadSceneMode.Additive);
-        ActiveSceneIndex = SceneManager.GetSceneByName(sceneToLoadName).buildIndex;
-        NewSceneLoaded(activeScene.name, sceneToLoadName);
+        AsyncOperation SceneUnload = SceneManager.UnloadSceneAsync(activeSceneIndex);
+        //TODO: разгребсти эту помойку
+        SceneUnload.completed += (i) =>
+        {
+            Resources.UnloadUnusedAssets();
+            PauseButtonReset();
+            SceneManager.LoadScene(sceneToLoadName, LoadSceneMode.Additive);
+            ActiveSceneIndex = SceneManager.GetSceneByName(sceneToLoadName).buildIndex;
+            NewSceneLoaded(activeScene.name, sceneToLoadName);
+        };
     }
     private static void PauseButtonReset()
     {
