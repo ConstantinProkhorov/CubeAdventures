@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 1271900181}
   - component: {fileID: 1271900180}
   - component: {fileID: 1271900184}
+  - component: {fileID: 1271900185}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -870,7 +871,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1271900184}
+      - m_Target: {fileID: 1271900185}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1017,6 +1018,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1271900185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271900178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 1271900184}
 --- !u!1 &1318342944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,6 +1478,8 @@ GameObject:
   - component: {fileID: 1853086860}
   - component: {fileID: 1853086857}
   - component: {fileID: 1853086859}
+  - component: {fileID: 1853086862}
+  - component: {fileID: 1853086861}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -1483,7 +1499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7edf6d0252f3448b1e6020b3097060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelStartText: {fileID: 875466748}
+  DisplayText: {fileID: 0}
   Prefix: 'You survived '
   Postfix: 
 --- !u!4 &1853086858
@@ -1511,7 +1527,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1611,6 +1627,32 @@ MonoBehaviour:
   TotalWavesDisplay: {fileID: 1318342947}
   ScoreGainedDisplay: {fileID: 1114060284}
   DiamondsGainedDisplay: {fileID: 1594814034}
+--- !u!114 &1853086861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853086856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061f4a7a1ce18411bb853764c807320f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlaySound_: {fileID: 1853086862}
+--- !u!114 &1853086862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853086856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 1853086859}
 --- !u!1 &1862093950
 GameObject:
   m_ObjectHideFlags: 0
