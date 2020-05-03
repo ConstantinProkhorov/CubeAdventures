@@ -34,8 +34,8 @@ public static class SceneLoadManager
             PauseButtonReset();
             SceneManager.LoadScene(sceneToLoadName, LoadSceneMode.Additive);
             ActiveSceneIndex = SceneManager.GetSceneByName(sceneToLoadName).buildIndex;
-            NewSceneLoaded(activeScene.name, sceneToLoadName);
         };
+        NewSceneLoaded(activeScene.name, sceneToLoadName);
     }
     private static void PauseButtonReset()
     {
