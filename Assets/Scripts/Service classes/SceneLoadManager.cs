@@ -23,23 +23,16 @@ public static class SceneLoadManager
     /// <param name="sceneToLoadName">Name of the scene to load</param>
     public static void SceneLoad(string sceneToLoadName)
     {
-        Debug.Log("scene at the begginning:" + SceneManager.sceneCount);
-
         //TODO: выставление загруженной сцены активной должно быть здесь
         Scene activeScene = SceneManager.GetActiveScene();
         int activeSceneIndex = activeScene.buildIndex; 
-        //SaveFileManager.Save(new PlayerData(SceneController.CurrentSessionPlayerData));
+        SaveFileManager.Save(new PlayerData(SceneController.CurrentSessionPlayerData));
         SceneManager.UnloadSceneAsync(activeSceneIndex);
-        Resources.UnloadUnusedAssets();
-        Debug.Log("scene after one was unloaded:" + SceneManager.sceneCount);
-        
+        Resources.UnloadUnusedAssets();      
         PauseButtonReset();           
         SceneManager.LoadScene(sceneToLoadName, LoadSceneMode.Additive);
-        Debug.Log("scene after one was loaded:" + SceneManager.sceneCount);
-
         ActiveSceneIndex = SceneManager.GetSceneByName(sceneToLoadName).buildIndex;
         NewSceneLoaded(activeScene.name, sceneToLoadName);
-        Debug.Log("scene at the end:" + SceneManager.sceneCount);
     }
     private static void PauseButtonReset()
     {
