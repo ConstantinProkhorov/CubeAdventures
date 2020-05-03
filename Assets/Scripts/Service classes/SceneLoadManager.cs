@@ -26,8 +26,9 @@ public static class SceneLoadManager
         //TODO: выставление загруженной сцены активной должно быть здесь
         Scene activeScene = SceneManager.GetActiveScene();
         int activeSceneIndex = activeScene.buildIndex; 
-        SaveFileManager.Save(new PlayerData(SceneController.CurrentSessionPlayerData));
+        //SaveFileManager.Save(new PlayerData(SceneController.CurrentSessionPlayerData));
         SceneManager.UnloadSceneAsync(activeSceneIndex);
+        //SceneManager.Un(activeSceneIndex);
         PauseButton pauseButton = GameObject.Find("Pause").GetComponent<PauseButton>();//TODO: подумать над способами избавиться от операции Find()
         pauseButton.PauseEventToNull();
         pauseButton.blurTransparencyChange.ResetColor();

@@ -7,13 +7,14 @@ public class OnCollision : MonoBehaviour
 // многочисленных проверок при столкновении врагов между собой. 
 // Но как в таком случае реализовать изменеия очков? 
 {
-    private PointPopUp PopUp;
+    private IPopUpFactory PopUpFactory;
     private SizeChange sizeChange;
     private int ScorePerCoin;
     void Start()
     {
+        //интересно, используя scriptableObject, могу ли я избежать операций Find?
         GameObject ScriptHolder = GameObject.Find("ScriptHolder");
-        PopUp = ScriptHolder.GetComponent<PointPopUp>();
+        PopUpFactory = ScriptHolder.GetComponent<IPopUpFactory>();
         sizeChange = gameObject.GetComponent<SizeChange>();
         ScorePerCoin = ActiveLevelData.ScorePerCoin;
     }
@@ -32,7 +33,8 @@ public class OnCollision : MonoBehaviour
         {
             SceneController.ScoreGainedOnLevel.AddToAmount(ScorePerCoin);
             SceneController.Score += ScorePerCoin;
-            PopUp.CreatePopUp(gameObject.transform.position, ScorePerCoin);
+            IPopUp PopUp = PopUpFactory.CreatePopUp(gameObject.transform.position);
+            PopUp.SetOutput(ScorePerCoin);
             sizeChange.ChangeSize();
         }
         else if (col.gameObject.CompareTag("collectible"))
@@ -40,7 +42,8 @@ public class OnCollision : MonoBehaviour
             int diamondsGainedAmount = 1;
             SceneController.DiamondsGainedOnLevel.AddToAmount(diamondsGainedAmount);
             SceneController.Diamonds += diamondsGainedAmount;
-            PopUp.CreatePopUp(gameObject.transform.position, diamondsGainedAmount);
+            IPopUp PopUp = PopUpFactory.CreatePopUp(gameObject.transform.position);
+            PopUp.SetOutput(diamondsGainedAmount);
             sizeChange.ChangeSize();
         }
         RemoveGameObject removeGameObject = col.gameObject.GetComponent<RemoveGameObject>();
