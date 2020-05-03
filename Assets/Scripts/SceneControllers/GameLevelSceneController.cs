@@ -13,6 +13,7 @@ public class GameLevelSceneController : MonoBehaviour
     [SerializeField] private Enemy_Creator EnemyCreator = null;
     [SerializeField] private LevelStartUpTimer LevelStartUpTimer = null;
     [SerializeField] private TimerInterface WaveTimer = null;
+    private int ReserveTimer = 0;
     private bool LevelIsEnding { get; set; } = false;
     /// <summary>
     /// Provide string Scene name.
@@ -47,10 +48,16 @@ public class GameLevelSceneController : MonoBehaviour
     }
     private void EndLevel()
     {
+        ReserveTimer++;
+        //HACK: это условие это хака вызванная непонятной, воспроизводимой очень редко и только на телефоне проблемой
+        //незавершения уровня. 
+        if (ReserveTimer > 7)
+        {
+            UnloadGameLevel();
+        }
         if (LevelIsEnding & !AnyEnemiesLeft())
         {
-            SceneController.CurrentSessionPlayerData.TotalWavesCleared++;
-            SceneLoadManager.SceneLoad("WinScore");
+            UnloadGameLevel();
         }
         bool AnyEnemiesLeft()
         {
@@ -62,6 +69,11 @@ public class GameLevelSceneController : MonoBehaviour
                 return true;
             else 
                 return false;
+        }
+        void UnloadGameLevel()
+        {
+            SceneController.CurrentSessionPlayerData.TotalWavesCleared++;
+            SceneLoadManager.SceneLoad("WinScore");
         }
     }
 }
