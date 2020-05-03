@@ -28,8 +28,7 @@ public static class SceneLoadManager
         int activeSceneIndex = activeScene.buildIndex; 
         SaveFileManager.Save(new PlayerData(SceneController.CurrentSessionPlayerData));
         AsyncOperation SceneUnload = SceneManager.UnloadSceneAsync(activeSceneIndex);
-        //TODO: разгребсти эту помойку
-        SceneUnload.completed += (i) =>
+        SceneUnload.completed += (asyncOperation) =>
         {
             Resources.UnloadUnusedAssets();
             PauseButtonReset();
