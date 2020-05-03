@@ -3,10 +3,8 @@ using GameWork.Unity.Directions;
 
 public class ButtonsSlideY : MonoBehaviour
 {
-#pragma warning disable 649
-    [SerializeField] private RectTransform rec;
+    [SerializeField] private RectTransform rec = null;
     private Vector2 DefaultOffsetMin, DefaultOffsetMax;
-
     public float speed;
     public float checkPosON;
     public float checkPosDown = -150f;

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameLevelSceneController : MonoBehaviour
 {
@@ -9,12 +8,11 @@ public class GameLevelSceneController : MonoBehaviour
     [Header("Autoassigned")]
     public GameObject Player;
     [Header("Assigned manualy")]
-    [SerializeField] private Player_Assembler PlayerAssembler;
-    [SerializeField] private LevelDataInput LevelDataInput;
-    [SerializeField] private Enemy_Creator EnemyCreator;
-    [SerializeField] private LevelStartUpTimer LevelStartUpTimer;
-    [SerializeField] private TimerInterface WaveTimer;
-    [SerializeField] private Text WaveTimerText;
+    [SerializeField] private Player_Assembler PlayerAssembler = null;
+    [SerializeField] private LevelDataInput LevelDataInput = null;
+    [SerializeField] private Enemy_Creator EnemyCreator = null;
+    [SerializeField] private LevelStartUpTimer LevelStartUpTimer = null;
+    [SerializeField] private TimerInterface WaveTimer = null;
     private bool LevelIsEnding { get; set; } = false;
     /// <summary>
     /// Provide string Scene name.

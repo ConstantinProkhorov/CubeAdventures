@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public sealed class TimerRealisation : TimerInterface
 {
     public override event Action TimerEnded;
-    [SerializeField] private Text TimerDisplay;
+    [SerializeField] private Text TimerDisplay = null;
     [SerializeField] private float TimerCountdownStep = 1.0f;
     public float timer { get; private set; }
     public override void TurnOn()
@@ -17,7 +17,7 @@ public sealed class TimerRealisation : TimerInterface
         StartCoroutine(nameof(OutputTime));
     }
     /// <summary>
-    /// Deactivates whole gameobject of this timer. For better or worse.
+    /// Deactivates whole gameobject of this timer. For better or worse.=
     /// </summary>
     public override void TurnOff() => StopCoroutine(nameof(OutputTime));
     IEnumerator OutputTime()

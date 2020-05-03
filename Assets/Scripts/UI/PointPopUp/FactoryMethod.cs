@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 /// <summary>
-/// Factory for creating PopUps.
+/// PopUps created usin Factory Method.
+/// IPopUpFactory used to create GameObject containing IPopUp
 /// </summary>
 public interface IPopUpFactory
 {

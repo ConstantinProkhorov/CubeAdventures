@@ -3,13 +3,12 @@ using UnityEngine;
 
 public class PopUpFactory : MonoBehaviour, IPopUpFactory
 {
-    [SerializeField] private GameObject PointsPopUp;
+    [SerializeField] private GameObject PointsPopUp = null;
     [SerializeField] private float DestructionDelay = 0.5f;
     private float PopUpOffset = 0.8f;
     private GameObject PopUp;
     private Vector3 PlayerPosition;
-#pragma warning disable 649
-    [SerializeField] Canvas canvas;
+    [SerializeField] Canvas canvas = null;
     /// <summary>
     /// Instantiates PopUp.
     /// </summary>

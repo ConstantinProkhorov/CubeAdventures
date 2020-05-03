@@ -7,8 +7,8 @@ public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] private float FadeDuration = 2.0f;
     [SerializeField] private float FadeTargetVolume = 0.0f;
-    [SerializeField] private AudioSource MenuMusic;
-    [SerializeField] private AudioSource GameLevelMusic;
+    [SerializeField] private AudioSource MenuMusic = null;
+    [SerializeField] private AudioSource GameLevelMusic = null;
     /// <summary>
     /// Определяет какая музыка проигрывается на какой сцене. 
     /// Я изначально думал над созданием словаря с соответствиями. И хотя словари более очевидные, возникает проблема.

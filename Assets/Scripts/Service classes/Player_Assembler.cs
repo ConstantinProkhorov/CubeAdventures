@@ -3,11 +3,11 @@
 public class Player_Assembler : MonoBehaviour
 {
     public GameObject _player;
-    [SerializeField] GameObject Eyes;
-    [SerializeField] GameObject Mouth;
-    [SerializeField] RuntimeAnimatorController AnimatorController;
-    GameObject LeftFoot;
-    GameObject RightFoot;
+    [SerializeField] GameObject Eyes = null;
+    [SerializeField] GameObject Mouth = null;
+    [SerializeField] RuntimeAnimatorController AnimatorController = null;
+    private GameObject LeftFoot;
+    private GameObject RightFoot;
 
     private readonly string[] Figures = { "Forms/Cube", "Forms/Sphere", "Forms/Cube", "Forms/Cube"/*, "Forms/Cube", "Forms/Cube" */};
     public int FiguresQuantity

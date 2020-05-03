@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 public class DynamiteMovement : MonoBehaviour
 {
-    [SerializeField] float FlySpeed;
-    [SerializeField] float RotationSpeed;
+    [SerializeField] float FlySpeed = default;
+    [SerializeField] float RotationSpeed = default;
     void Update()
     {
         transform.Translate(0, FlySpeed * Time.deltaTime, 0, Space.World);

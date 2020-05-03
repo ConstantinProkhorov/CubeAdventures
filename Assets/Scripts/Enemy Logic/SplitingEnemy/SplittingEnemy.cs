@@ -2,7 +2,7 @@
 
 public class SplittingEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject ChildFigure;
+    [SerializeField] private GameObject ChildFigure = null;
     [SerializeField] private GameLevelSceneController thisSceneController;    
     private SplitStrategy SplitStrategy;
 

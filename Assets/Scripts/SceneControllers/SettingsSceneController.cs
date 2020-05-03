@@ -2,8 +2,8 @@
 using UnityEngine.SceneManagement;
 public class SettingsSceneController : MonoBehaviour
 {
-    [SerializeField] private SwitchButton MusicSwitch;
-    [SerializeField] private SwitchButton SoundsSwitch;
+    [SerializeField] private SwitchButton MusicSwitch = null;
+    [SerializeField] private SwitchButton SoundsSwitch = null;
     private GameObject MainScriptHolder;
     private Settings Settings;
     private MusicPlayer MusicPlayer;

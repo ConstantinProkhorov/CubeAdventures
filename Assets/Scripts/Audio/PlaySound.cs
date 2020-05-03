@@ -4,7 +4,7 @@
 /// </summary>
 public class PlaySound : MonoBehaviour
 {
-    [SerializeField] private AudioSource Sound;
+    [SerializeField] private AudioSource Sound = null;
     /// <summary>
     /// Plays sounds if sounds are not muted on the settings scene.
     /// </summary>

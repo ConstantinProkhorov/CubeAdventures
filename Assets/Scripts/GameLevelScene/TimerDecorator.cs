@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class TimerDecorator : TimerInterface
 {
     public override event Action TimerEnded;
-    [SerializeField] private TimerInterface WaveTimer;
+    [SerializeField] private TimerInterface WaveTimer = null;
     private Color TimerEndedColor = new Color32(9, 173, 41, 255);
-    [SerializeField] private Text TimerDisplay;
+    [SerializeField] private Text TimerDisplay = null;
     public void Start()
     {       
         TimerEnded += () => TimerDisplay.color = TimerEndedColor;

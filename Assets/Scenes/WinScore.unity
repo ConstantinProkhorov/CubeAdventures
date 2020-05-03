@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7edf6d0252f3448b1e6020b3097060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayText: {fileID: 0}
+  DisplayText: {fileID: 875466748}
   Prefix: 'You survived '
   Postfix: 
 --- !u!4 &1853086858

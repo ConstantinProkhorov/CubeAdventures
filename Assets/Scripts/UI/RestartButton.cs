@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 public class RestartButton : MonoBehaviour
 {
-    [SerializeField] private Button Button;
+    [SerializeField] private Button Button = null;
     private int restartPrice;
     private string lastLevelName;
     public void Start()

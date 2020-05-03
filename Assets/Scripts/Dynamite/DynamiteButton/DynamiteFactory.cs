@@ -4,7 +4,7 @@
 /// </summary>
 public class DynamiteFactory : MonoBehaviour
 {
-    [SerializeField] private GameObject DynamitePrefab;
+    [SerializeField] private GameObject DynamitePrefab = null;
     /// <summary>
     /// Instantiates one new Dynamite. 
     /// </summary>

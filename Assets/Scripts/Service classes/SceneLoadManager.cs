@@ -23,21 +23,32 @@ public static class SceneLoadManager
     /// <param name="sceneToLoadName">Name of the scene to load</param>
     public static void SceneLoad(string sceneToLoadName)
     {
+        Debug.Log("scene at the begginning:" + SceneManager.sceneCount);
+
         //TODO: выставление загруженной сцены активной должно быть здесь
         Scene activeScene = SceneManager.GetActiveScene();
         int activeSceneIndex = activeScene.buildIndex; 
         //SaveFileManager.Save(new PlayerData(SceneController.CurrentSessionPlayerData));
         SceneManager.UnloadSceneAsync(activeSceneIndex);
-        //SceneManager.Un(activeSceneIndex);
+        Resources.UnloadUnusedAssets();
+        Debug.Log("scene after one was unloaded:" + SceneManager.sceneCount);
+        
+        PauseButtonReset();           
+        SceneManager.LoadScene(sceneToLoadName, LoadSceneMode.Additive);
+        Debug.Log("scene after one was loaded:" + SceneManager.sceneCount);
+
+        ActiveSceneIndex = SceneManager.GetSceneByName(sceneToLoadName).buildIndex;
+        NewSceneLoaded(activeScene.name, sceneToLoadName);
+        Debug.Log("scene at the end:" + SceneManager.sceneCount);
+    }
+    private static void PauseButtonReset()
+    {
         PauseButton pauseButton = GameObject.Find("Pause").GetComponent<PauseButton>();//TODO: подумать над способами избавиться от операции Find()
         pauseButton.PauseEventToNull();
         pauseButton.blurTransparencyChange.ResetColor();
         pauseButton.ScreenBlur.SetActive(false);
         PauseButton.PauseClick = false;        // убирает меню  
         Time.timeScale = 1;                    // восстанавливаем ход времени
-        AndroidControlls.GameIsPaused = false; // разблокируем управление    
-        SceneManager.LoadScene(sceneToLoadName, LoadSceneMode.Additive);
-        ActiveSceneIndex = SceneManager.GetSceneByName(sceneToLoadName).buildIndex;
-        NewSceneLoaded(activeScene.name, sceneToLoadName);
+        AndroidControlls.GameIsPaused = false; // разблокируем управление 
     }
 }

@@ -4,8 +4,8 @@
 /// </summary>
 public class InfoPanelController : MonoBehaviour
 {
-    [SerializeField] private InfoPanelDisplay TotalDisplay;
-    [SerializeField] private InfoPanelDisplay GainedDisplay;
+    [SerializeField] private InfoPanelDisplay TotalDisplay = null;
+    [SerializeField] private InfoPanelDisplay GainedDisplay = null;
     private InfoPanelDisplay CurrentInfoPanelDisplay;
     // Start is called before the first frame update
     void Start()

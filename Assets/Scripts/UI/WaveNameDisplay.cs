@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 /// <summary>
 /// Displays name of the wave.
 /// Customizable with prefix and postfix.
@@ -9,11 +8,11 @@ using UnityEngine.SceneManagement;
 //С другой он очень зависит сразу от нескольких классов. Это минус. 
 public class WaveNameDisplay : MonoBehaviour
 {
-    [SerializeField] private Text DisplayText;
+    [SerializeField] private Text DisplayText = null;
     [Tooltip("This string will be put before wave name.")]
-    [SerializeField] private string Prefix;
+    [SerializeField] private string Prefix = null;
     [Tooltip("This string will be put after wave name.")]
-    [SerializeField] private string Postfix;
+    [SerializeField] private string Postfix = null;
     void Start()
     {
         string LevelName;

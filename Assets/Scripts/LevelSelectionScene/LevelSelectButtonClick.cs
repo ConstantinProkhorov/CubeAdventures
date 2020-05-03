@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-// обрабатывает клик по кнопке c запуском окна разблокировки за очки
+/// <summary>
+/// Oбрабатывает клик по кнопке c запуском окна разблокировки за очки.
+/// </summary>
 public class LevelSelectButtonClick : MonoBehaviour
 {
     public SelectLevelController InspectorAssignmentSceneController;
@@ -15,7 +17,6 @@ public class LevelSelectButtonClick : MonoBehaviour
     {
         if (thisSceneController.UnlockDictionary.GetState(ButtonName)) 
         {
-            //SceneController.LastLevel = ButtonName; //последняя сцена сохраняется при загрузке нового игрового уровня
             SceneLoadManager.SceneLoad(ButtonName);
         }
         else

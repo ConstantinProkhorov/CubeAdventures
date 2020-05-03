@@ -3,13 +3,11 @@ using GameWork.Unity.Directions;
 
 public class ButtonSlideX : MonoBehaviour
 {
-#pragma warning disable 649
-    [SerializeField] private RectTransform rec;
+    [SerializeField] private RectTransform rec = null;
     private Vector2 DefaultOffsetMin, DefaultOffsetMax;
-
-    public float speed;
-    public float checkPosON = 0f;
-    public float checkPosLeft = -150f;
+    [SerializeField] private float speed = default;
+    [SerializeField] private float checkPosON = 0f;
+    [SerializeField] private float checkPosLeft = -150f;
 
 	void Start()
     {

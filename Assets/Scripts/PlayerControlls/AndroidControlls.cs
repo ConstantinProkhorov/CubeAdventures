@@ -12,7 +12,7 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
     private GameObject Player;
     Transform LeftFoot;
     Transform RightFoot;
-    float ymin = 2;
+    float ymin = 2.0f;
     float ymax = 0.6f;
     [SerializeField] float rotationSpeed = 0.01f;
     Vector3 LeftFootPosition;

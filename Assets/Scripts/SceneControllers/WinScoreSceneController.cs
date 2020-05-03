@@ -4,10 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class WinScoreSceneController : MonoBehaviour
 {
-    [SerializeField] private Text TotalWavesDisplay;
-    //public Text HardestWaveDoneDisplay;
-    [SerializeField] private Text ScoreGainedDisplay;
-    [SerializeField] private Text DiamondsGainedDisplay;
+    [SerializeField] private Text TotalWavesDisplay = null;
+    [SerializeField] private Text ScoreGainedDisplay = null;
+    [SerializeField] private Text DiamondsGainedDisplay = null;
 
     void Start()
     {

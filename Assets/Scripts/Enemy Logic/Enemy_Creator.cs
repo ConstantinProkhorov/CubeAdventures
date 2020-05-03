@@ -5,7 +5,7 @@ public sealed class Enemy_Creator : MonoBehaviour
     #region Variables Declaration
     private EnemySpawnRandomizer EnemySpawnRandomizer;
     private IColorRandomizer ColorRandomizer;
-    [SerializeField] GameLevelSceneController ThisSceneController;
+    [SerializeField] GameLevelSceneController ThisSceneController = null;
     // фигуры врагов и шанс их появления
     #pragma warning disable 649
     [SerializeField] private GameObject enemyA;

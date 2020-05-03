@@ -18,8 +18,8 @@ public static class UIElementsPositionAdjuster/* : MonoBehaviour*/
         int magicalNumber = 5;
         Vector3 AdjustedPosition = rectTransform.transform.position;
         rectTransform.GetWorldCorners(elementCornenrs);
-        Debug.Log(elementCornenrs[2].x);
-        Debug.Log(elementCornenrs[2].y);
+        //Debug.Log(elementCornenrs[2].x);
+        //Debug.Log(elementCornenrs[2].y);
         if (elementCornenrs[0].y < ScreenBorders.Bottom)
         {
             float positionDelta = ScreenBorders.Bottom - elementCornenrs[0].y;

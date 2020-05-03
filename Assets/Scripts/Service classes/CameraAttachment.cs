@@ -2,8 +2,7 @@
 public class CameraAttachment : MonoBehaviour
 {
     private const int PlaneDistance = 10;
-#pragma warning disable 649
-    [SerializeField] private Canvas _canvas;
+    [SerializeField] private Canvas _canvas = null;
     void Start()
     {
         _canvas.worldCamera = WorldCamera._camera;

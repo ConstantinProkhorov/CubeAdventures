@@ -5,7 +5,7 @@ public class BuyWindow : MonoBehaviour
 {
     [SerializeField] private Color32 CanNotUnlockColor = Color.red;
     [SerializeField] private Color32 CanUnlockColor = Color.white;
-    [SerializeField] private Button UnlockButton;
+    [SerializeField] private Button UnlockButton = null;
     public event UIController BuyWindowOpen;
     public GameObject BuyWindowBlur;
     public BlurTransparencyChange blurTransparencyChange;

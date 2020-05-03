@@ -4,9 +4,9 @@
 /// </summary>
 public class DynamiteButtonController : MonoBehaviour
 {
-    [SerializeField] private TimeDilation TimeDilation;
-    [SerializeField] private GameLevelSceneController thisSceneController;
-    [SerializeField] private ShowDynamiteButton ShowDynamiteButton;
+    [SerializeField] private TimeDilation TimeDilation = null;
+    [SerializeField] private GameLevelSceneController thisSceneController = null;
+    [SerializeField] private ShowDynamiteButton ShowDynamiteButton = null;
     void Start()
     {
         // button needs to be hidden on start

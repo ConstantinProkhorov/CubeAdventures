@@ -6,10 +6,10 @@ using UnityEngine;
 public class DynamiteController : MonoBehaviour
 {
     [SerializeField] private float ExplosionDelay = 2.0f;
-    [SerializeField] private DynamiteExplosion DynamiteExplosion;
-    [SerializeField] private AudioSource ExplosionSound;
-    [SerializeField] private Animator ExplosionEffect;
-    [SerializeField] private DynamiteMovement DynamiteMovement;
+    [SerializeField] private DynamiteExplosion DynamiteExplosion = null;
+    [SerializeField] private AudioSource ExplosionSound = null;
+    [SerializeField] private Animator ExplosionEffect = null;
+    [SerializeField] private DynamiteMovement DynamiteMovement = null;
     IEnumerator Start()
     {
         yield return new WaitForSeconds(ExplosionDelay);

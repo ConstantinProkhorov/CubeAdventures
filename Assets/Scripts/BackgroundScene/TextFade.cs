@@ -3,10 +3,8 @@ using UnityEngine.UI;
 
 public class TextFade : MonoBehaviour
 {
-#pragma warning disable 649
-    [SerializeField] private Text Text;
-#pragma warning disable 649
-    [SerializeField] private Outline Outline;
+    [SerializeField] private Text Text = null;
+    [SerializeField] private Outline Outline = null;
 
     void Update()
     {

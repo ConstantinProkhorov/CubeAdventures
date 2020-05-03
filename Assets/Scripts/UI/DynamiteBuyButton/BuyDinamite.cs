@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class BuyDinamite : MonoBehaviour
 {
     [SerializeField] private int amountToBuy = 1; 
-    [SerializeField] private Button BuyDynamiteButton; 
-    //[SerializeField] private StartSceneController startSceneController;
+    [SerializeField] private Button BuyDynamiteButton = null; 
     public int AmountToBuy { get => amountToBuy; }
     public int TotalBuyPrice { get; private set; }
     public void Awake()

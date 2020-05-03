@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class SwitchButton : MonoBehaviour
 {
-    [SerializeField] private Button ThisSwitch;
-    [SerializeField] private Sprite OnSwitch;
-    [SerializeField] private Sprite OffSwitch;
+    [SerializeField] private Button ThisSwitch = null;
+    [SerializeField] private Sprite OnSwitch = null;
+    [SerializeField] private Sprite OffSwitch = null;
     //state of the switch, true == on, false == off
     private bool CurrentState = true;
     /// <summary>

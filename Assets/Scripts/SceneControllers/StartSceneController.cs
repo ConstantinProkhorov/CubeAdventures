@@ -1,15 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartSceneController : MonoBehaviour
 {
-    #region IInfoPanel implementation
-    public event Action<int> ScoreChanged;
-    public event Action<int> DiamondsChanged;
-    public event Action<int> DynamiteChanged;
-    #endregion
-    [SerializeField] private Player_Assembler PlayerAssembler;
+    [SerializeField] private Player_Assembler PlayerAssembler = null;
     void Start()
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));

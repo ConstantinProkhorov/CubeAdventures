@@ -3,9 +3,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class EndScoreSceneController : MonoBehaviour
 {     
-    [SerializeField] private Text ScoreGainedDisplay;
-    [SerializeField] private Text DiamondsGainedDisplay;
-    [SerializeField] private Text DiamondsNeededToRestart;
+    [SerializeField] private Text ScoreGainedDisplay = null;
+    [SerializeField] private Text DiamondsGainedDisplay = null;
+    [SerializeField] private Text DiamondsNeededToRestart = null;
     void Start()
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));

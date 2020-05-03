@@ -5,7 +5,7 @@ using UnityEngine.UI;
 /// </summary>
 public class ShowDynamiteButton : MonoBehaviour
 {
-    [SerializeField] private Button DynamiteButton;
+    [SerializeField] private Button DynamiteButton = null;
     public bool IsHidden { get; private set; }
     public void Show()
     {
