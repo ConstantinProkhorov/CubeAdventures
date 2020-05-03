@@ -15,7 +15,10 @@ public class DynamiteController : MonoBehaviour
         yield return new WaitForSeconds(ExplosionDelay);
         DynamiteExplosion.Explode();
         //анимация взрыва
-        ExplosionSound.Play();
+        if (Settings.IsSoundsOn)
+        {
+            ExplosionSound.Play();
+        }
         //это тоже кривой код, но пока так
         ExplosionEffect.gameObject.SetActive(true);
         //выключение иконки динамита, потому что я блять не могу сделать это переменной и назначить в инспекторе.

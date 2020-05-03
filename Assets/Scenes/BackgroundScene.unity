@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 219611818}
   - component: {fileID: 219611823}
   - component: {fileID: 219611824}
+  - component: {fileID: 219611825}
   m_Layer: 5
   m_Name: StartScene
   m_TagString: MainUI
@@ -259,7 +260,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 219611824}
+      - m_Target: {fileID: 219611825}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -418,6 +419,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &219611825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219611816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 219611824}
 --- !u!1 &382046380
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +798,7 @@ GameObject:
   - component: {fileID: 543885833}
   - component: {fileID: 543885829}
   - component: {fileID: 543885834}
+  - component: {fileID: 543885835}
   m_Layer: 5
   m_Name: Pause
   m_TagString: MainUI
@@ -892,7 +907,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 543885834}
+      - m_Target: {fileID: 543885835}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1051,6 +1066,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &543885835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543885826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 543885834}
 --- !u!1 &611058796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1160,7 @@ GameObject:
   - component: {fileID: 612958414}
   - component: {fileID: 612958413}
   - component: {fileID: 612958418}
+  - component: {fileID: 612958419}
   m_Layer: 5
   m_Name: Settings
   m_TagString: MainUI
@@ -1255,7 +1284,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 612958418}
+      - m_Target: {fileID: 612958419}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1402,6 +1431,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &612958419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612958411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 612958418}
 --- !u!1 &992607521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,6 +1754,7 @@ GameObject:
   - component: {fileID: 1344969209}
   - component: {fileID: 1344969213}
   - component: {fileID: 1344969214}
+  - component: {fileID: 1344969215}
   m_Layer: 5
   m_Name: Store
   m_TagString: MainUI
@@ -1819,7 +1862,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1344969214}
+      - m_Target: {fileID: 1344969215}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1982,6 +2025,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1344969215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344969207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 1344969214}
 --- !u!1 &1402635311
 GameObject:
   m_ObjectHideFlags: 0

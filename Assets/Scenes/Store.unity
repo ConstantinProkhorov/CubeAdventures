@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 329253217}
   - component: {fileID: 329253221}
   - component: {fileID: 329253222}
+  - component: {fileID: 329253223}
   m_Layer: 5
   m_Name: PurpleColor
   m_TagString: Untagged
@@ -854,7 +855,7 @@ MonoBehaviour:
           m_StringArgument: GreenColorSelection
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 329253222}
+      - m_Target: {fileID: 329253223}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1015,6 +1016,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &329253223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329253215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 329253222}
 --- !u!1 &346801339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1119,7 @@ GameObject:
   - component: {fileID: 455809058}
   - component: {fileID: 455809059}
   - component: {fileID: 455809060}
+  - component: {fileID: 455809061}
   m_Layer: 5
   m_Name: RedColor
   m_TagString: Untagged
@@ -1186,7 +1201,7 @@ MonoBehaviour:
           m_StringArgument: RedColorSelection
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 455809060}
+      - m_Target: {fileID: 455809061}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1360,6 +1375,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &455809061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455809053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 455809060}
 --- !u!1 &503730892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,6 +1786,7 @@ GameObject:
   - component: {fileID: 667100671}
   - component: {fileID: 667100670}
   - component: {fileID: 667100669}
+  - component: {fileID: 667100672}
   m_Layer: 5
   m_Name: BuyWindowButton
   m_TagString: Untagged
@@ -1839,7 +1868,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 196646669}
+      - m_Target: {fileID: 667100672}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -1890,6 +1919,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667100667}
   m_CullTransparentMesh: 0
+--- !u!114 &667100672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667100667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 196646669}
 --- !u!1 &904075537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,6 +2032,7 @@ GameObject:
   - component: {fileID: 964407390}
   - component: {fileID: 964407394}
   - component: {fileID: 964407395}
+  - component: {fileID: 964407396}
   m_Layer: 5
   m_Name: OrangeColor
   m_TagString: Untagged
@@ -2084,7 +2127,7 @@ MonoBehaviour:
           m_StringArgument: GreenColorSelection
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 964407395}
+      - m_Target: {fileID: 964407396}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -2245,6 +2288,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &964407396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964407388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 964407395}
 --- !u!1 &1019964963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,6 +2316,7 @@ GameObject:
   - component: {fileID: 1019964968}
   - component: {fileID: 1019964969}
   - component: {fileID: 1019964970}
+  - component: {fileID: 1019964971}
   m_Layer: 5
   m_Name: GreenColor
   m_TagString: Untagged
@@ -2341,7 +2398,7 @@ MonoBehaviour:
           m_StringArgument: GreenColorSelection
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1019964970}
+      - m_Target: {fileID: 1019964971}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -2515,6 +2572,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1019964971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019964963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 1019964970}
 --- !u!1 &1149578618
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,6 +2983,7 @@ GameObject:
   - component: {fileID: 1259919668}
   - component: {fileID: 1259919667}
   - component: {fileID: 1259919666}
+  - component: {fileID: 1259919669}
   m_Layer: 5
   m_Name: BuyWindowClose
   m_TagString: Untagged
@@ -2994,7 +3065,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 196646669}
+      - m_Target: {fileID: 1259919669}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -3045,6 +3116,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259919664}
   m_CullTransparentMesh: 0
+--- !u!114 &1259919669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259919664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 196646669}
 --- !u!1001 &1260669580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3356,6 +3440,7 @@ GameObject:
   - component: {fileID: 1873207902}
   - component: {fileID: 1873207906}
   - component: {fileID: 1873207907}
+  - component: {fileID: 1873207908}
   m_Layer: 5
   m_Name: GoldColor
   m_TagString: Untagged
@@ -3450,7 +3535,7 @@ MonoBehaviour:
           m_StringArgument: GreenColorSelection
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1873207907}
+      - m_Target: {fileID: 1873207908}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -3611,6 +3696,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1873207908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873207900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 1873207907}
 --- !u!1 &1903851739
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,6 +3724,7 @@ GameObject:
   - component: {fileID: 1903851741}
   - component: {fileID: 1903851745}
   - component: {fileID: 1903851746}
+  - component: {fileID: 1903851747}
   m_Layer: 5
   m_Name: BlueColor
   m_TagString: Untagged
@@ -3720,7 +3819,7 @@ MonoBehaviour:
           m_StringArgument: GreenColorSelection
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1903851746}
+      - m_Target: {fileID: 1903851747}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -3881,6 +3980,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1903851747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903851739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 1903851746}
 --- !u!1001 &2084502711
 PrefabInstance:
   m_ObjectHideFlags: 0
