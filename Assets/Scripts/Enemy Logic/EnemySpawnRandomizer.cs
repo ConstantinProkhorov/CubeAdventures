@@ -3,15 +3,15 @@ public class EnemySpawnRandomizer
 {
     private float[] TopSpawnPositions;
     private readonly float SpawnPositionY;
-    private (float left, float right) SpawnPositionX;
+    //private (float left, float right) SpawnPositionX;
     private readonly (float bottom, float top) VerticalSpawnBorders = (-3.5f, 3.0f);
     private readonly float SpawnStep = 0.6f;
     public EnemySpawnRandomizer()
     {
         CalculateTopSpawnPositions();
         SpawnPositionY = ScreenBorders.Top + ScreenBorders.Top / 3f;
-        SpawnPositionX.right = ScreenBorders.Right;
-        SpawnPositionX.left = -SpawnPositionX.right;
+        //SpawnPositionX.right = ScreenBorders.Right;
+        //SpawnPositionX.left = -SpawnPositionX.right;
     }
     private float[] CalculateTopSpawnPositions() // расчет возможных позиций для создания фигур
     { 
@@ -41,11 +41,11 @@ public class EnemySpawnRandomizer
         int x = Random.Range(0, 2);
         if (x == 0)
         {
-            return SpawnPositionX.right;
+            return ScreenBorders.Right;
         }
         else
         {
-            return SpawnPositionX.left;
+            return ScreenBorders.Left;
         }
     }
 }

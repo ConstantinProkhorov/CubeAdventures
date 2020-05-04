@@ -21,7 +21,7 @@ public class AndroidControlls : MonoBehaviour, IDragHandler
     {
         minX = ScreenBorders.Left;
         maxX = ScreenBorders.Right;
-        minY = ScreenBorders.Bottom - 0.5f;
+        minY = ScreenBorders.Bottom + 0.25f;
         maxY = ScreenBorders.Top;
         Player = LevelSceneController.Player;
         PlayerRadius = Player.transform.localScale.x / 2;

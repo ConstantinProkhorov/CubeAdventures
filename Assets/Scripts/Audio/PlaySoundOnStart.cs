@@ -2,7 +2,7 @@
 
 public class PlaySoundOnStart : MonoBehaviour
 {
-    [SerializeField] private PlaySound PlaySound_ = null;
+    [SerializeField] private ButtonSound PlaySound_ = null;
     void Start()
     {
         PlaySound_.Play();

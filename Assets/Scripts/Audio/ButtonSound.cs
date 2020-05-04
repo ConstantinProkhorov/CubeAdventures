@@ -2,18 +2,12 @@
 /// <summary>
 /// Checks wether sounds are muted before playing sound;
 /// </summary>
-public class PlaySound : MonoBehaviour
+public class ButtonSound : MonoBehaviour
 {
-    [SerializeField] private AudioSource Sound = null;
+    [SerializeField] private AudioClip ClickSound = null;
     /// <summary>
     /// Plays sounds if sounds are not muted on the settings scene.
     /// </summary>
     /// <param name="IsSoundsOn"></param>
-    public void Play()
-    {
-        if (Settings.IsSoundsOn)
-        {
-            Sound.Play();
-        }
-    }
+    public void Play() => SoundPlayer.Instance.PlaySound(ClickSound);
 }

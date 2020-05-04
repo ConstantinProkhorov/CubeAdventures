@@ -11,10 +11,10 @@ public static class ScreenBorders
     public static void CalculateScreenBorders()
     {
         ScreenCentre = Camera.main.transform.position.x;
-        //эти хаки с плюс 1 вызваны расположение камеры не по центру. 
+        // HACK: эти хаки с плюс 1 вызваны расположение камеры не по центру. 
         Top = Camera.main.orthographicSize + 1;
         Bottom = ScreenCentre - Top + 2;
-        HalfCamWidth = Top * Camera.main.aspect;
+        HalfCamWidth = (Top - 1) * Camera.main.aspect;
         Left = ScreenCentre - HalfCamWidth; 
         Right = ScreenCentre + HalfCamWidth;
     }

@@ -903,7 +903,6 @@ MonoBehaviour:
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
   WaveTimer: {fileID: 55712581}
-  WaveTimerText: {fileID: 55712582}
 --- !u!114 &1395036226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,7 +916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FallingSpeed: 2.5
-  EnemySpawnInterval: 0.5
+  EnemySpawnInterval: 1
   LevelDuration: 45
   ScorePerCoin: 100
 --- !u!114 &1395036227
@@ -936,19 +935,19 @@ MonoBehaviour:
   enemyA: {fileID: 8935892655870133375, guid: ddd69b42ef46cd24397df688b8ff8210, type: 3}
   enemyASpawnChance: 0
   enemyB: {fileID: 8842911635074811912, guid: 07fa8520f0c43134b8c7db8d22425d25, type: 3}
-  enemyBSpawnChance: 20
+  enemyBSpawnChance: 0
   enemyC: {fileID: 7978840948680416844, guid: d76c73a0f2e3241618e21190cd2bc7ba, type: 3}
   enemyCSpawnChance: 0
   enemyD: {fileID: 1550654925732726866, guid: 75c6055b2b166fc45885327c1332d709, type: 3}
   enemyDSpawnChance: 0
   enemyE: {fileID: 8935892655870133375, guid: 6d001da693d20d34fbe1f2d2a74945af, type: 3}
-  enemyESpawnChance: 0
+  enemyESpawnChance: 100
   PointsFigure: {fileID: 2073581005837902107, guid: f04bdde686c0ffd42b153cce56391174,
     type: 3}
   PointsFigureSpawnChance: 0
   DiamondFigure: {fileID: 2443867936017225212, guid: 0b562261ede0df74e837f05830edfef2,
     type: 3}
-  DiamondFigureSpawnChance: 80
+  DiamondFigureSpawnChance: 0
   isActive: 0
 --- !u!114 &1395036228
 MonoBehaviour:
@@ -964,6 +963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PointsPopUp: {fileID: 6853448942610436496, guid: e9e5ea044c45cd64cbf37859016d4dc6,
     type: 3}
+  DestructionDelay: 0.5
   canvas: {fileID: 1150334097}
 --- !u!114 &1395036229
 MonoBehaviour:

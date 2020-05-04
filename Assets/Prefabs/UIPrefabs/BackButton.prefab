@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 5758887238249600833}
   - component: {fileID: 5758887238249600832}
   - component: {fileID: 5758887238249600835}
-  - component: {fileID: 7249782332319297394}
   - component: {fileID: -7454124314623625142}
   m_Layer: 5
   m_Name: BackButton
@@ -376,4 +375,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194eacc8262c490468a51a81f95549f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sound: {fileID: 7249782332319297394}
+  ClickSound: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
