@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44877464, g: 0.4988324, b: 0.5756943, a: 1}
+  m_IndirectSpecularColor: {r: 0.44877416, g: 0.49883157, b: 0.5756931, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -641,8 +641,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481096129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 2.5, z: 1}
-  m_LocalScale: {x: 20, y: 15, z: 0.1}
+  m_LocalPosition: {x: 3, y: 1, z: 1}
+  m_LocalScale: {x: 18, y: 12, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -980,7 +980,6 @@ MonoBehaviour:
   EnemyCreator: {fileID: 1395036227}
   LevelStartUpTimer: {fileID: 365924853}
   WaveTimer: {fileID: 55712581}
-  WaveTimerText: {fileID: 55712582}
 --- !u!114 &1395036226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,6 +1040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PointsPopUp: {fileID: 6853448942610436496, guid: e9e5ea044c45cd64cbf37859016d4dc6,
     type: 3}
+  DestructionDelay: 0.5
   canvas: {fileID: 1150334097}
 --- !u!114 &1395036231
 MonoBehaviour:
