@@ -73,10 +73,6 @@ public class GameLevelSceneController : MonoBehaviour
         void UnloadGameLevel()
         {
             SceneController.CurrentSessionPlayerData.TotalWavesCleared++;
-            if (gameObject.scene.name == ListOfGameLevels.LastLevelName)
-            {
-                SceneController.LastLevel = ListOfGameLevels.FirstLevelName;
-            }
             SceneLoadManager.SceneLoad("WinScore");
         }
     }
