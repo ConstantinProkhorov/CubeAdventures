@@ -8,7 +8,12 @@ public class LoadNextGameLevel : MonoBehaviour
     {
         if (!PauseButton.PauseClick) // блокировка при нажатой кнопке паузы (при открытом меню).
         {
-            string LastLevel = SceneController.LastLevel ?? "GameLevel 1";
+            string LastLevel = SceneController.LastLevel;
+            //TODO: этой логике здесь не место.
+            if (LastLevel == ListOfGameLevels.LastLevelName)
+            {
+                SceneController.LastLevel = ListOfGameLevels.FirstLevelName;
+            }
             SceneLoadManager.SceneLoad(ListOfGameLevels.GetNextLevel(LastLevel));
         }
     }
