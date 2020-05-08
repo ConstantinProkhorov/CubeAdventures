@@ -27,6 +27,10 @@ public static class ListOfGameLevels
     /// </summary>
     public static string FirstLevelName { get => ListOfLevels[0]; }
     /// <summary>
+    /// Provides the name of the last game level.
+    /// </summary>
+    public static string LastLevelName { get => ListOfLevels[ListOfLevels.Count - 1]; }
+    /// <summary>
     /// Returns name of the next game level after the one which name was provided as parameter.
     /// </summary>
     /// <returns>If level is last one returns name of the StartScene/</returns>
