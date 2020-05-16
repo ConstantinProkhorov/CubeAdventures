@@ -5,11 +5,11 @@ public class Settings : MonoBehaviour
     /// <summary>
     /// Returns true if music is enabled on settings scene
     /// </summary>
-    public static bool IsMusicOn { get; private set; }
+    public static bool IsMusicOn { get; private set; } = true;
     /// <summary>
     /// Returns true if sounds are enabled on settings scene
     /// </summary>
-    public static bool IsSoundsOn { get; private set; }
+    public static bool IsSoundsOn { get; private set; } = true;
     private void Start() => UpdateSettings();
     /// <summary>
     /// Set if the music is on or not.
