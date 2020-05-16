@@ -6,14 +6,12 @@ public static class SaveFileManager
 {
     private static string Path
     {
-        get
-        { return Application.persistentDataPath + "player1.tsf"; }
+        get => Application.persistentDataPath + "player1.tsf";
     } 
     public static void Save(PlayerData data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(Path, FileMode.Create);
-
         formatter.Serialize(stream, data);
         stream.Close();
     }
@@ -23,15 +21,13 @@ public static class SaveFileManager
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(Path, FileMode.Open);
-
             PlayerData data = formatter.Deserialize(stream) as PlayerData;
             stream.Close();
-
             return data;
         }
         else
         {
-            PlayerData data = SaveFileManager.FirstLoad();
+            PlayerData data = FirstLoad();
             return data;
         }
     }

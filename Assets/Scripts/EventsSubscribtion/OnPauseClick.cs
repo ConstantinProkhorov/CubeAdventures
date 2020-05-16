@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 // класс блокирует интерфейс при появлении блюров.
+// и при нажатии на паузу
+// класс должен быть переписан, при переделки системы постановки на паузу, использовать класс DisableOnPause.
 public class OnPauseClick : MonoBehaviour
 {
     public BuyWindow buyWindow;
-    public GameObject _Button;
     void Start()
     {
         // для кнопки паузы
-        _Button = GameObject.Find("Pause");
-        _Button.GetComponent<PauseButton>().PauseButtonClicked += BlockButton;
+        GameObject PauseButton = GameObject.Find("Pause");
+        PauseButton.GetComponent<PauseButton>().PauseButtonClicked += BlockButton;
         // для интерфейса покупок
-        buyWindow.BuyWindowOpen += BlockButton;
+        if (buyWindow != null)
+        {
+            buyWindow.BuyWindowOpen += BlockButton;
+        }
     }
     private void BlockButton() // метод блокировки кнопок, оптправляем в событие
     {

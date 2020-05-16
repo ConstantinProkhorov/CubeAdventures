@@ -1,15 +1,49 @@
 ﻿using UnityEngine;
-public class SettingsSceneController : BaseController
+using UnityEngine.SceneManagement;
+public class SettingsSceneController : MonoBehaviour
 {
-    private const byte buildIndex = 6;  
+    [SerializeField] private SwitchButton MusicSwitch = null;
+    [SerializeField] private SwitchButton SoundsSwitch = null;
+    private GameObject MainScriptHolder;
+    private Settings Settings;
+    private MusicPlayer MusicPlayer;
     void Start()
     {
-        thisSetActive(buildIndex);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
+        MainScriptHolder = GameObject.Find("MainScriptHolder");
+        Settings = MainScriptHolder.GetComponent<Settings>();
+        //выставление переключателей в начальное положение
+        MusicSwitch.SetSwitchState(Settings.IsMusicOn);
+        SoundsSwitch.SetSwitchState(Settings.IsSoundsOn);
+        MusicPlayer = MainScriptHolder.GetComponent<MusicPlayer>();
     }
-
     public void Reset() // временный метод для сброса настроек.
     {
-        GameObject temp = GameObject.Find("MainScriptHolder");
-        temp.GetComponent<SceneController>().PlayerDataReset();
+        MainScriptHolder.GetComponent<SceneController>().PlayerDataReset();
+    }
+    public void ChangeMusicMuteState()
+    {
+        if (Settings.IsMusicOn)
+        {
+            Settings.SetMusicState(false);
+            MusicPlayer.FadeMenuMusic();
+        }
+        else if (!Settings.IsMusicOn)
+        {
+            Settings.SetMusicState(true);
+            MusicPlayer.PlayMenuMusic();
+        }
+    }
+    public void ChangeSoundsMuteState()
+    {
+        if (Settings.IsSoundsOn)
+        {
+            Settings.SetSoundsState(false);
+
+        }
+        else if (!Settings.IsSoundsOn)
+        {
+            Settings.SetSoundsState(true);
+        }
     }
 }

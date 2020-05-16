@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3978946674129420329}
   - component: {fileID: 6018687905257985596}
   - component: {fileID: 195150584700619206}
-  - component: {fileID: 4366902319492245122}
+  - component: {fileID: 7202286447418855227}
   m_Layer: 0
   m_Name: Sphere_Enemy
   m_TagString: Enemy
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8935892655870133375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.064, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a9caba423e5ab546a9bd1905559cb55, type: 2}
+  - {fileID: 2100000, guid: f9ce4b5b272e62e47b0c83a957786c1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,7 +92,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &195150584700619206
 Rigidbody:
@@ -102,15 +102,15 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8935892655870133375}
   serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0.01
-  m_AngularDrag: 0.01
+  m_Mass: 1
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
---- !u!114 &4366902319492245122
+--- !u!114 &7202286447418855227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8935892655870133375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dae4fc6bc9ded7b4fabd91e35b66b177, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a14db67d324a29479650d11b6eb1d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  RotationSpeed: 1
+  Rigidbody: {fileID: 195150584700619206}
+  thisSceneController: {fileID: 0}

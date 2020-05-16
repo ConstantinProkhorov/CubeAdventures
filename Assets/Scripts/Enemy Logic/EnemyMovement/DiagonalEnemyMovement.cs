@@ -15,15 +15,20 @@ public sealed class DiagonalEnemyMovement : EnemyMovement
     public new void Start()
     {
         base.Start();
-        FallDirection = FallInclination * fallingSpeed * (float)direction;
+        FallDirection = FallInclination * FallingSpeed * (float)direction;
     }
-    public void Update()
+    public void FixedUpdate()
     {
         Movement();
-        Destroy();
+        Rotation();
     }
     protected override void Movement()
     {
-        transform.Translate(FallDirection * Time.deltaTime, fallingSpeed * Time.deltaTime, 0, Space.World);
+        Rigidbody.MovePosition(transform.position + new Vector3(FallDirection * Time.deltaTime, FallingSpeed * Time.deltaTime, 0));
+    }
+    public override void StopMovement()
+    {
+        FallDirection = 0.0f;
+        base.StopMovement();
     }
 }

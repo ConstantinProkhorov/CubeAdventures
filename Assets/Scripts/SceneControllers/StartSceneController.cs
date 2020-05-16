@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class StartSceneController : BaseController
+public class StartSceneController : MonoBehaviour
 {
-    private const byte buildIndex = 1;
-    [SerializeField] private Player_Assembler PlayerAssembler;
+    [SerializeField] private Player_Assembler PlayerAssembler = null;
     void Start()
     {
-        thisSetActive(buildIndex); //установка данной сцены активной методом из наследуемого класса
-        PlayerAssembler.Player_Creator(new Vector3(0, 1, 0), SceneController.lastForm);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameObject.scene.buildIndex));
+        PlayerAssembler.Player_Creator(new Vector3(0, 1, 0), SceneController.LastForm);
     }
 }

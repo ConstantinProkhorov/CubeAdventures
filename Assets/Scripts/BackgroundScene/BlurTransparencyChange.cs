@@ -1,41 +1,36 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 // плавно изменяет прозрачность фона при нажатии кнопки меню.
 public class BlurTransparencyChange : MonoBehaviour
-{
-    public Material matt;
+{   
     private Color color;
     public float TransperensyStep = 0.03f;
     public bool ButtonClicked = false;
-    void Start() //обращается напряму к материалу. Не могу понять это вменяемое решение или нет.
+    void Start()
     {
-        color = matt.color;
+        color = GetComponent<Image>().color;
     }
-
     void Update() 
     {
-        if (ButtonClicked && color.a < 0.7f)
+        if (ButtonClicked && color.a < 0.9f)
         {
             color.a += TransperensyStep;
-            matt.color = color;
+            GetComponent<Image>().color = color;
         }
         else if (!ButtonClicked)
         {
-            if (color.a > 0.0f)
+            gameObject.SetActive(false);
+            if (color.a > 0.2f)
             {
                 color.a -= TransperensyStep;
-                matt.color = color;
-            }
-            else
-            {
-                gameObject.SetActive(false);
+                GetComponent<Image>().color = color;
             }
         }
     }
-
     public void ResetColor()
     {
         color.a = 0.0f;
-        matt.color = color;
+        GetComponent<Image>().color = color;
         ButtonClicked = false;
     }
 }

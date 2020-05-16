@@ -1,40 +1,47 @@
 ﻿[System.Serializable]
 public class PlayerData 
 {
-    public int totalScore;
-    public int diamonds;
-    public string lastForm;
+    public int TotalWavesCleared;
+    public string CurrentWaveName;
+    public int TotalScore;
+    public int Diamonds;
+    public int Dynamite;
+    public string LastForm;
     public float r, g, b;
     public string lastLevelPlayed = "GameLevel 1";
     public int[] avaliableFigures;
 
     public bool[] levelOpenCloseDictionary;
     public bool[] colorOpenCloseDictionary;
-
-    public PlayerData(int score, int _diamonds, string form, float _r, float _g, float _b, string lastLevel, bool[] levelState, bool[] colorState)
+    public PlayerData()
     {
-        totalScore = score;
-        lastForm = form;
-        diamonds = _diamonds;
-        r = _r;
-        g = _g;
-        b = _b;
-        lastLevelPlayed = lastLevel;
-        levelOpenCloseDictionary = levelState;
-        colorOpenCloseDictionary = colorState;
-    }
-    public PlayerData() // конструктор по умолчанию
-    {
-        totalScore = 0;
-        //lastForm = "Forms/CatPlayer";
-        lastForm = "Forms/Cube";
-        diamonds = 0;
-        r = 0;
-        g = 0;
-        b = 0;
+        CurrentWaveName = "ALFA Wave";
+        TotalWavesCleared = 0;
+        TotalScore = 00;
+        Diamonds = 100;
+        Dynamite = 100;
+        LastForm = "Forms/Sphere";
+        r = 0.007843138f;
+        g = 0.6784314f;
+        b = 0.07843138f;
         lastLevelPlayed = "GameLevel 1";
         levelOpenCloseDictionary = new bool[] { true, false, false, false };
         colorOpenCloseDictionary = new bool[] { true, true, false, false, false, false };
+    }
+    public PlayerData(PlayerData currentState)
+    {
+        TotalWavesCleared = currentState.TotalWavesCleared;
+        CurrentWaveName = currentState.CurrentWaveName;
+        TotalScore = currentState.TotalScore;
+        LastForm = currentState.LastForm;
+        Diamonds = currentState.Diamonds;
+        Dynamite = currentState.Dynamite;
+        r = currentState.r;
+        g = currentState.g;
+        b = currentState.b;
+        lastLevelPlayed = currentState.lastLevelPlayed;
+        levelOpenCloseDictionary = LevelOpenCloseDictionary.GetAllStates();
+        colorOpenCloseDictionary = СolorOpenCloseDictionary.GetAllStates();
     }
 }
 

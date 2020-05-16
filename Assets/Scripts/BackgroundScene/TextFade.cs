@@ -3,14 +3,12 @@ using UnityEngine.UI;
 
 public class TextFade : MonoBehaviour
 {
-#pragma warning disable 649
-    [SerializeField] private Text txt;
-#pragma warning disable 649
-    [SerializeField] private Outline oLine;
+    [SerializeField] private Text Text = null;
+    [SerializeField] private Outline Outline = null;
 
     void Update()
     {
-        txt.color = new Color(txt.color.r, txt.color.g, txt.color.b, Mathf.PingPong(Time.time/2.0f, 1.0f));
-        oLine.effectColor = new Color(oLine.effectColor.r, oLine.effectColor.g, oLine.effectColor.b, txt.color.a - 0.3f);
+        Text.color = new Color(Text.color.r, Text.color.g, Text.color.b, Mathf.PingPong(Time.time/2.0f, 1.0f));
+        Outline.effectColor = new Color(Outline.effectColor.r, Outline.effectColor.g, Outline.effectColor.b, Text.color.a - 0.3f);
     }
 }

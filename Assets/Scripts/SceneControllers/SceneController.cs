@@ -1,31 +1,35 @@
 ﻿using UnityEngine;
-public class SceneController : BaseController
-{ // Класс хранящий данные игрока после загрузки в едином месте и предоставляющий к ним доступ // функции загрузки сейвов должны быть отсюда убраны.
-    private PlayerData playerData;
-
-    public static int score;
-    public static int currentLevelScore;
-    public static int diamonds;
-    public static string lastForm;
-    public static string LastLevel;
-    public static float r,g,b; // TODO: убрать, заменить на доступ через PlayerCurrentColor
-    public static Color PlayerCurrentColor // cвойство с текущим цветом игрока
+using UnityEngine.SceneManagement;
+public class SceneController : MonoBehaviour
+{ // Класс хранящий данные игрока после загрузки в едином месте и предоставляющий к ним доступ 
+    public static PlayerData CurrentSessionPlayerData { get; set; }
+    // Доступ к членам PlayerData через оболочку свойств. Сделал так, чтобы было удобнее отслеживать доступ к данным. Не могу сказать, хорошее ли это 
+    // решение, но буду смотреть на результат.
+    public static int TotalWavesCleared { get => CurrentSessionPlayerData.TotalWavesCleared; set => CurrentSessionPlayerData.TotalWavesCleared = value; }
+    public static string CurrentWaveName { get => CurrentSessionPlayerData.CurrentWaveName; set => CurrentSessionPlayerData.CurrentWaveName = value; }
+    public static int Score { get => CurrentSessionPlayerData.TotalScore; set => CurrentSessionPlayerData.TotalScore = value; }
+    public static int Diamonds { get => CurrentSessionPlayerData.Diamonds; set => CurrentSessionPlayerData.Diamonds = value; }
+    public static int Dynamite { get => CurrentSessionPlayerData.Dynamite; set => CurrentSessionPlayerData.Dynamite = value < 0 ? 0 : value; }
+    public static string LastForm { get => CurrentSessionPlayerData.LastForm; set => CurrentSessionPlayerData.LastForm = value; }
+    public static string LastLevel { get => CurrentSessionPlayerData.lastLevelPlayed; set => CurrentSessionPlayerData.lastLevelPlayed = value; }
+    public static Color PlayerCurrentColor
     {
-        get { return new Color(r, g, b); }
-        set { r = value.r; g = value.g; b = value.b; }
+        get { return new Color(CurrentSessionPlayerData.r, CurrentSessionPlayerData.g, CurrentSessionPlayerData.b); }
+        set { CurrentSessionPlayerData.r = value.r; CurrentSessionPlayerData.g = value.g; CurrentSessionPlayerData.b = value.b; }
     }
     // словари для хранения данных для сущностей которые могут быть открыты/закрыты (уровни, цвета)
     public static LevelOpenCloseDictionary LevelStateDictionary { get; private set; }
     public static СolorOpenCloseDictionary ColorStateDictionary { get; private set; }
     // словари для хранения цен разблокировки
-
     public static LevelOpenPriceDictionary LevelPriceDictionary { get; private set; }
     public static ColorOpenPriceDictionary ColorPriceDictionary { get; private set; }
-    public static int ScoreGainedOnLevel { get; set; }
-
-    public void PlayerDataReset() // временный метод для отладки игры
+    public static CurrencyGainedOnLevel ScoreGainedOnLevel;
+    public static CurrencyGainedOnLevel DiamondsGainedOnLevel;
+    // временный метод для отладки игры
+    public void PlayerDataReset()
     {
         LoadBlanckSaveFile();
+        ColorStateDictionary.Reset();
     }
     void Start()
     {
@@ -33,8 +37,6 @@ public class SceneController : BaseController
         LevelPriceDictionary = new LevelOpenPriceDictionary();
         ColorStateDictionary = new СolorOpenCloseDictionary();
         ColorPriceDictionary = new ColorOpenPriceDictionary();
-
-        ScreenBorders.CalculateScreenBorders();
         try
         {
             LoadSaveFile();
@@ -43,42 +45,28 @@ public class SceneController : BaseController
         {
             LoadBlanckSaveFile();
         }
+        ColorStateDictionary.SetAllStates(CurrentSessionPlayerData.colorOpenCloseDictionary);
         LoadMenuScene();
+        ScoreGainedOnLevel = new CurrencyGainedOnLevel();
+        DiamondsGainedOnLevel = new CurrencyGainedOnLevel();
+        //refresh data in gainedOnLevel classes
+        SceneLoadManager.NewSceneLoaded += (string currentActiveScent, string sceneToBeLoaded) =>
+        {
+            if (ListOfGameLevels.IsGameLevel(sceneToBeLoaded))
+            {
+                ScoreGainedOnLevel = new CurrencyGainedOnLevel();
+                DiamondsGainedOnLevel = new CurrencyGainedOnLevel();
+            }
+        };
     }
-
-    //void OnApplicationPause()
-    //{
-    //    SaveFileManager.Save(new PlayerData(score, diamonds, form));
-    //}
-    void OnApplicationQuit() // сохранение только при выходе и при загрузке новой сцены в BaseController, в остальных случаях происходит точечное переписывание переменных этого класса
+    // сохранение только при выходе и при загрузке новой сцены в SceneLoadManager, в остальных случаях происходит точечное переписывание переменных этого класса
+    void OnApplicationQuit() => SaveFileManager.Save(new PlayerData(CurrentSessionPlayerData));
+    public void OnDisable() => SaveFileManager.Save(new PlayerData(CurrentSessionPlayerData));
+    private void LoadSaveFile() => CurrentSessionPlayerData = SaveFileManager.Load();
+    private void LoadBlanckSaveFile() => CurrentSessionPlayerData = new PlayerData();
+    private void LoadMenuScene()
     {
-        SaveFileManager.Save(new PlayerData(score, diamonds, lastForm, r, g, b, LastLevel, LevelOpenCloseDictionary.GetAllStates(), СolorOpenCloseDictionary.GetAllStates()));
-    }
-
-    private void LoadSaveFile() //TODO: эти методы тут не нужны.
-    {
-        playerData = SaveFileManager.Load();
-        score = playerData.totalScore;
-        lastForm = playerData.lastForm;
-        diamonds = playerData.diamonds;
-        r = playerData.r;
-        g = playerData.g;
-        b = playerData.b;
-        LastLevel = playerData.lastLevelPlayed;
-        LevelStateDictionary.SetAllStates(playerData.levelOpenCloseDictionary);
-        ColorStateDictionary.SetAllStates(playerData.colorOpenCloseDictionary);
-    }
-    private void LoadBlanckSaveFile()
-    {
-        playerData = new PlayerData();
-        score = playerData.totalScore;
-        lastForm = playerData.lastForm;
-        diamonds = playerData.diamonds;
-        r = playerData.r;
-        g = playerData.g;
-        b = playerData.b;
-        LastLevel = playerData.lastLevelPlayed;
-        LevelStateDictionary.SetAllStates(playerData.levelOpenCloseDictionary);
-        ColorStateDictionary.SetAllStates(playerData.colorOpenCloseDictionary);
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            SceneManager.LoadScene(1, LoadSceneMode.Additive);
     }
 }

@@ -8,14 +8,13 @@ public sealed class RotorEnemyMovement : EnemyMovement
         base.Start();
         RotationDirection = RotationDirection.GetRandom();
     }
-    public void Update()
+    public void FixedUpdate()
     {
         Movement();
         Rotation();
-        Destroy();
     }
     protected override void Rotation()
     {
-        transform.Rotate(0, 0, rotationSpeed * (float)RotationDirection);
+        transform.Rotate(0, 0, RotationSpeed * (float)RotationDirection);
     }
 }

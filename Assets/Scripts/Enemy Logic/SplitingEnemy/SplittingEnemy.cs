@@ -2,9 +2,8 @@
 
 public class SplittingEnemy : MonoBehaviour
 {
-    [SerializeField] private int SpawnNumber = 2;
-    [SerializeField] private GameObject ChildFigure;
-    [SerializeField] private LevelSceneController thisSceneController;    
+    [SerializeField] private GameObject ChildFigure = null;
+    [SerializeField] private GameLevelSceneController thisSceneController;    
     private SplitStrategy SplitStrategy;
 
     private float SplitPosition;
@@ -22,8 +21,6 @@ public class SplittingEnemy : MonoBehaviour
         {
             SplitStrategy.Split(ChildFigure, gameObject.transform, thisSceneController);
             Destroy(gameObject);
-            thisSceneController.DecrementEnemyCounter(gameObject);
-            thisSceneController.IncrementEnemyCounter(gameObject, SpawnNumber);
         }
     }
 }

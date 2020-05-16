@@ -1,91 +1,55 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class OnCollision : MonoBehaviour // TODO: Класс слишком большой и многофункциональный, лучше бы виделить отсюда все(?) результаты столкновений в отдельные скрипты
+public class OnCollision : MonoBehaviour
+// TODO: Класс слишком большой и многофункциональный, лучше бы виделить отсюда все(?) результаты столкновений в отдельные скрипты
+// а сейчас? 
+// по идеи должно быть класс у игрока, который вызывает 1 класс у фигуры, который уже и реализует последствия столкновения. Класс на игроке позволяет избежать 
+// многочисленных проверок при столкновении врагов между собой. 
+// Но как в таком случае реализовать изменеия очков? 
 {
-    private PointPopUp PopUp;
+    private IPopUpFactory PopUpFactory;
     private SizeChange sizeChange;
-    private ContinuePlayingWindow ContinuePlayingWindow;
-    private SpecialEffects CurrentPlayerEffect;
-    [SerializeField] private LevelSceneController thisSceneController;
+    private int ScorePerCoin;
     void Start()
     {
+        //интересно, используя scriptableObject, могу ли я избежать операций Find?
         GameObject ScriptHolder = GameObject.Find("ScriptHolder");
-        PopUp = ScriptHolder.GetComponent<PointPopUp>();
-        ContinuePlayingWindow = ScriptHolder.GetComponent<ContinuePlayingWindow>();
-        thisSceneController = ScriptHolder.GetComponent<LevelSceneController>();
+        PopUpFactory = ScriptHolder.GetComponent<IPopUpFactory>();
         sizeChange = gameObject.GetComponent<SizeChange>();
+        ScorePerCoin = ActiveLevelData.ScorePerCoin;
     }
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("Enemy") && (CurrentPlayerEffect != SpecialEffects.Invincibility)) 
+        AudioSource audioSource = col.gameObject.GetComponent<AudioSource>();
+        if (audioSource != null & Settings.IsSoundsOn)
         {
-            ContinuePlayingWindow.OpenWindow(col.gameObject);
-            thisSceneController.DecrementEnemyCounter(col.gameObject);
+            audioSource.Play();
         }
-
+        if (col.gameObject.CompareTag("Enemy")) 
+        {
+            SceneLoadManager.SceneLoad("EndScore");
+        }
         else if (col.gameObject.CompareTag("pointsgiver"))
         {
-            thisSceneController.ScoreGainedOnLevel.Add(/*pointsAdded =*/ 10);
-            Destroy(col.gameObject);
-            thisSceneController.DecrementEnemyCounter(col.gameObject);
-            PopUp.OnCollision(gameObject.transform.position);
+            SceneController.ScoreGainedOnLevel.AddToAmount(ScorePerCoin);
+            SceneController.Score += ScorePerCoin;
+            IPopUp PopUp = PopUpFactory.CreatePopUp(gameObject.transform.position);
+            PopUp.SetOutput(ScorePerCoin);
             sizeChange.ChangeSize();
         }
-
-        else if (col.gameObject.CompareTag("transparent"))
-        {
-            SetEffect(col.gameObject);
-            thisSceneController.DecrementEnemyCounter(col.gameObject);
-        }
-
         else if (col.gameObject.CompareTag("collectible"))
         {
-            SceneController.diamonds++;
-            Destroy(col.gameObject);
+            int diamondsGainedAmount = 1;
+            SceneController.DiamondsGainedOnLevel.AddToAmount(diamondsGainedAmount);
+            SceneController.Diamonds += diamondsGainedAmount;
+            IPopUp PopUp = PopUpFactory.CreatePopUp(gameObject.transform.position);
+            PopUp.SetOutput(diamondsGainedAmount);
             sizeChange.ChangeSize();
-            thisSceneController.DecrementEnemyCounter(col.gameObject);
-        }      
-    }
-
-    private void SetEffect(GameObject figure)
-    {
-        TransparentFigureEffect data = figure.GetComponent<TransparentFigureEffect>();
-        switch (data.FigureEffect)
-        {            
-            case SpecialEffects.Invincibility:
-                StartCoroutine(SetInvincibility(data.EffectDuration));
-                Destroy(figure);
-                break;
-            case SpecialEffects.Explosion:
-                Explosion(figure);
-                Destroy(figure);
-                break;
-            default:
-                break;
         }
-    }
-
-    private IEnumerator SetInvincibility(byte duration)
-    {
-        CurrentPlayerEffect = SpecialEffects.Invincibility;
-        yield return new WaitForSeconds(duration);
-        CurrentPlayerEffect = SpecialEffects.NoEffect;
-    }
-
-    private void Explosion(GameObject _figure) // метод вызывающий взрыв, расталкивающий фигуры.
-    {
-        float radius = 5.0F;
-        float power = 300.0F;
-        Vector3 explosionPos = _figure.transform.position;
-        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
-        foreach (Collider hit in colliders)
+        RemoveGameObject removeGameObject = col.gameObject.GetComponent<RemoveGameObject>();
+        if (removeGameObject != null)
         {
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.AddExplosionForce(power, explosionPos, radius);
-            }
+            col.gameObject.GetComponent<RemoveGameObject>().Remove();
         }
     }
 }

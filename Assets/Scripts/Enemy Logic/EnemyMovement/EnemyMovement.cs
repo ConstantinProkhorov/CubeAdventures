@@ -1,38 +1,41 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public abstract class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] protected int rotationSpeed = 1;
-    private (float min, float max) destroyPosY;
-    private (float min, float max) destroyPosX;
-    protected float fallingSpeed;
-    public LevelSceneController thisSceneController;
+    [SerializeField] protected int RotationSpeed = 1;
+    [SerializeField] protected Rigidbody Rigidbody;
+    protected float FallingSpeed;
+    [SerializeField] public GameLevelSceneController thisSceneController;
+    private const float StopMovementDelay = 2.0f;
     protected void Start()
     {
-        fallingSpeed = ActiveLevelData.FallingSpeed;
-        destroyPosY = (ScreenBorders.Buttom + ScreenBorders.Buttom / 2, ScreenBorders.Top + ScreenBorders.Top / 2);       
-        destroyPosX = (ScreenBorders.Left + ScreenBorders.Left / 2, ScreenBorders.Right + ScreenBorders.Right / 2);
+        FallingSpeed = ActiveLevelData.FallingSpeed;
+        if (Rigidbody == null)
+        {
+            Rigidbody = gameObject.GetComponent<Rigidbody>();
+        }
     }
     protected virtual void Movement()
-    {     
-        transform.Translate(0, fallingSpeed * Time.deltaTime, 0, Space.World);
+    {
+        Rigidbody.MovePosition(new Vector3(transform.position.x, transform.position.y + FallingSpeed * Time.deltaTime, transform.position.z));
     }
     protected virtual void Rotation()
     {
-        transform.Rotate(0, -rotationSpeed, -rotationSpeed);
+        transform.Rotate(0, -RotationSpeed, -RotationSpeed);
     }
-
-    protected void Destroy() // TODO: ок, а есть ли еще более оптимальный способ?
+    public void OnBecameInvisible() => Destroy(gameObject);
+    /// <summary>
+    /// Stops enemy figure movement and applies gravity to it.
+    /// </summary>
+    public virtual void StopMovement()
     {
-        if (transform.localPosition.y < destroyPosY.min || transform.localPosition.y > destroyPosY.max)
-        {
-            Destroy(gameObject);
-            thisSceneController.DecrementEnemyCounter(gameObject);
-        }
-        if (transform.localPosition.x > destroyPosX.max || transform.localPosition.x < destroyPosX.min)
-        {
-            Destroy(gameObject);
-            thisSceneController.DecrementEnemyCounter(gameObject);
-        }
+        StartCoroutine(GravityForcedFall());
+    }
+    private IEnumerator GravityForcedFall()
+    {
+        FallingSpeed = 0.0f;
+        yield return new WaitForSeconds(StopMovementDelay);
+        gameObject.GetComponent<Rigidbody>().useGravity = true;
     }
 }

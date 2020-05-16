@@ -1,18 +1,23 @@
 ﻿using System.Collections.Generic;
-// цена открытия цветов
+/// <summary>
+/// Dictionary with Color unlock prices.
+/// </summary>
 public class ColorOpenPriceDictionary : IPriceDictionary
 {
     private static Dictionary<string, int> ColorPrice = new Dictionary<string, int>
     {
-        //{ "RedColor", 10 },
-        //{ "GreenColor", 10 },
-        { "BlueColor", 1000 },
-        { "PurpleColor", 2000 },
-        { "OrangeColor", 4000 },
-        { "GoldColor", 8000 }
+        { "RedColor", 0 },
+        { "GreenColor", 0 },
+        { "BlueColor", 2000 },
+        { "PurpleColor", 3000 },
+        { "OrangeColor", 6000 },
+        { "GoldColor", 9000 }
     };
-
-    public int GetPrice(string Name) // возвращает цену разблокировки
+    /// <summary>
+    /// Returns color unlock price.
+    /// </summary>
+    /// <param name="Name">Color name</param>
+    public int GetPrice(string Name)
     {
         return ColorPrice[Name];
     }

@@ -2,9 +2,10 @@
 using UnityEngine;
 public sealed class Enemy_Creator : MonoBehaviour
 {
+    #region Variables Declaration
     private EnemySpawnRandomizer EnemySpawnRandomizer;
     private IColorRandomizer ColorRandomizer;
-    [SerializeField] LevelSceneController ThisSceneController;
+    [SerializeField] GameLevelSceneController ThisSceneController = null;
     // фигуры врагов и шанс их появления
     #pragma warning disable 649
     [SerializeField] private GameObject enemyA;
@@ -21,22 +22,16 @@ public sealed class Enemy_Creator : MonoBehaviour
     [SerializeField] private int PointsFigureSpawnChance;
     [SerializeField] private GameObject DiamondFigure;
     [SerializeField] private int DiamondFigureSpawnChance;
-    // словарь всех фигур на уровне
+    // словарь всех доступных для инстанциирования фигур на уровне
     private Dictionary<GameObject, int> AllFigures;
     // переменные для контроля уровня сложности
     // контроль частоты появления фигур
     public bool isActive = false;
-    public static float spawnInterval;
+    private float SpawnInterval;
     private float timeCount = 0;
-    public int EnemyCounter { get; set; } = 0;
-    public StepType stepType = StepType.FloatStep;
-    public static float figuresize = 0.3f;
-    private float EnemySpawnInterval;
-    private float SpawnIntervalStep;
+    #endregion
     private void Start()
     {
-
-        Debug.Log(EnemyCounter);
         AllFigures = new Dictionary<GameObject, int>
         {
         { PointsFigure, 0 + PointsFigureSpawnChance },
@@ -47,34 +42,26 @@ public sealed class Enemy_Creator : MonoBehaviour
         { enemyD, PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance },
         { enemyE,PointsFigureSpawnChance + DiamondFigureSpawnChance + enemyASpawnChance + enemyBSpawnChance + enemyCSpawnChance + enemyDSpawnChance + enemyESpawnChance }
         };
-        spawnInterval = GetNewSpawnInterval(stepType);
-        EnemySpawnInterval = ActiveLevelData.EnemySpawnInterval;
-        SpawnIntervalStep = ActiveLevelData.SpawnIntervalStep;
+        //первоночальное получение интервала появления врагов.
+        SpawnInterval = ActiveLevelData.EnemySpawnInterval / 2;
         ColorRandomizer = new EnemyColorRandomizer(); //в условиях юнити, прикрывая класс абстракцие в виде интерфейса, я не разрываю зависимость и не ослабляю ее, так
         // как все равно остается эта строчка кода. В условиях юнити (и, возможно, не только в них) вероятно нужен третий скрипт, который бы назначал переменные.
         EnemySpawnRandomizer = new EnemySpawnRandomizer();
     }
-    void Update() // Ох, надо все это через события писать было... один таймер на уровне может считать время, и рассылать события о прошедшем времени. 
-        // а у меня тут сколько раз время считается? три, может больше. 
-        // а если мне нужные несогласованные интервалы?
-    { // я так понимаю, что правильно решение здесь это использовать фабричный метод, TODO: вчитаться и если надо переписать весь класс
+    // Ох, надо все это через события писать было... один таймер на уровне может считать время, и рассылать события о прошедшем времени. 
+    // а у меня тут сколько раз время считается? три, может больше. 
+    // а если мне нужные несогласованные интервалы?
+    // я так понимаю, что правильно решение здесь это использовать фабричный метод, TODO: вчитаться и если надо переписать весь класс
+    void Update()
+    {     
         if (isActive)
         {
             timeCount += Time.deltaTime;
-            if (timeCount > spawnInterval)
+            if (timeCount > SpawnInterval)
             {
                 Enemy_Spawner();
-                ThisSceneController.IncrementEnemyCounter(gameObject);
+                SpawnInterval = GetNewSpawnInterval();
                 timeCount = default;
-            }
-            if (EnemyCounter >= ActiveLevelData.DifficultyIncreaseStep) // 
-            {
-                spawnInterval = GetNewSpawnInterval(stepType, ActiveLevelData.SpawnIntervalStep);
-                //EnemyCounter = default;
-            }
-            else
-            { 
-                spawnInterval = GetNewSpawnInterval(stepType);
             }
         }
     }
@@ -90,44 +77,21 @@ public sealed class Enemy_Creator : MonoBehaviour
                 Enemy.GetComponent<EnemyMovement>().thisSceneController = ThisSceneController;
                 if (Enemy.name == "Sphere_Enemy(Clone)")
                 {
-                    ColorRandomizer.AssignColor(Enemy);
+                    //ColorRandomizer.AssignColor(Enemy);
                 }
                 return;
             }
         }
     }
-    public float GetNewSpawnInterval(StepType stepType)
+    public float GetNewSpawnInterval()
     {
-        if (stepType == StepType.NoStep)
+        float presetSpawnInterval = ActiveLevelData.EnemySpawnInterval;
+        switch (Random.Range(0,2))
         {
-            return EnemySpawnInterval;
+            case 0:
+                return presetSpawnInterval + presetSpawnInterval * 0.1f;
+            default:
+                return presetSpawnInterval - presetSpawnInterval * 0.1f;
         }
-        int i = Random.Range(0, 2);
-        if (stepType == StepType.FloatStep)
-        {
-            if (i == 0)
-            {
-                return EnemySpawnInterval += Random.Range(0, SpawnIntervalStep);
-            }
-            else
-            {
-                return EnemySpawnInterval -= Random.Range(0, SpawnIntervalStep);
-            }
-        }
-        else
-        {
-            if (i == 0)
-            {
-                return EnemySpawnInterval += SpawnIntervalStep;
-            }
-            else
-            {
-                return EnemySpawnInterval -= SpawnIntervalStep;
-            }
-        }
-    }
-    public float GetNewSpawnInterval(StepType stepType, float delta)
-    {
-        return GetNewSpawnInterval(stepType) - delta;
     }
 }

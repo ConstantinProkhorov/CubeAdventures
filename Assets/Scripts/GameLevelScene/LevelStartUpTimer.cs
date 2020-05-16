@@ -1,16 +1,14 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class LevelStartUpTimer : MonoBehaviour
 {
     public TimerAnimation TimerAnimation;
     public event Action TimerEnded;
-    [SerializeField] private Text Timer;
+    [SerializeField] private Text Timer = null;
     private float time = 1;
     private readonly string[] CountDownText = { "3", "2", "1", "GO!" };
     private int IndexValue;
-
     public void FixedUpdate()
     { 
         if (time >= 1 & IndexValue < CountDownText.Length)
@@ -26,8 +24,5 @@ public class LevelStartUpTimer : MonoBehaviour
         }
         time += Time.fixedDeltaTime;
     }
-    public void TurnOff()
-    {
-        gameObject.SetActive(false);
-    }
+    public void TurnOff() => gameObject.SetActive(false);
 }
