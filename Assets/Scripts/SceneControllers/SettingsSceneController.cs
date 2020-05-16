@@ -39,7 +39,6 @@ public class SettingsSceneController : MonoBehaviour
         if (Settings.IsSoundsOn)
         {
             Settings.SetSoundsState(false);
-
         }
         else if (!Settings.IsSoundsOn)
         {

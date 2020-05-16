@@ -44,8 +44,6 @@ public sealed class Enemy_Creator : MonoBehaviour
         };
         //первоночальное получение интервала появления врагов.
         SpawnInterval = ActiveLevelData.EnemySpawnInterval / 2;
-        ColorRandomizer = new EnemyColorRandomizer(); //в условиях юнити, прикрывая класс абстракцие в виде интерфейса, я не разрываю зависимость и не ослабляю ее, так
-        // как все равно остается эта строчка кода. В условиях юнити (и, возможно, не только в них) вероятно нужен третий скрипт, который бы назначал переменные.
         EnemySpawnRandomizer = new EnemySpawnRandomizer();
     }
     // Ох, надо все это через события писать было... один таймер на уровне может считать время, и рассылать события о прошедшем времени. 
@@ -75,10 +73,6 @@ public sealed class Enemy_Creator : MonoBehaviour
             {
                 Enemy = Instantiate(enemy.Key, EnemySpawnRandomizer.GetRandomSpawnPosition(enemy.Key.name), Quaternion.identity);
                 Enemy.GetComponent<EnemyMovement>().thisSceneController = ThisSceneController;
-                if (Enemy.name == "Sphere_Enemy(Clone)")
-                {
-                    //ColorRandomizer.AssignColor(Enemy);
-                }
                 return;
             }
         }

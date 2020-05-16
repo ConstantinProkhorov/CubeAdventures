@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+//TODO: удалить класс
 public interface IColorRandomizer
 {
     void AssignColor(GameObject figure);
