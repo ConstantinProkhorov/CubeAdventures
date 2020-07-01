@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class SceneController : MonoBehaviour
 { // Класс хранящий данные игрока после загрузки в едином месте и предоставляющий к ним доступ 
     public static PlayerData CurrentSessionPlayerData { get; set; }
@@ -32,11 +33,12 @@ public class SceneController : MonoBehaviour
         ColorStateDictionary.Reset();
     }
     void Start()
-    {
+        { 
         LevelStateDictionary = new LevelOpenCloseDictionary();
         LevelPriceDictionary = new LevelOpenPriceDictionary();
         ColorStateDictionary = new СolorOpenCloseDictionary();
         ColorPriceDictionary = new ColorOpenPriceDictionary();
+
         try
         {
             LoadSaveFile();
