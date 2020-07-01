@@ -18,8 +18,8 @@ public class PlayerData
         CurrentWaveName = "ALFA Wave";
         TotalWavesCleared = 0;
         TotalScore = 00;
-        Diamonds = 100;
-        Dynamite = 100;
+        Diamonds = 5;
+        Dynamite = 30;
         LastForm = "Forms/Sphere";
         r = 0.007843138f;
         g = 0.6784314f;

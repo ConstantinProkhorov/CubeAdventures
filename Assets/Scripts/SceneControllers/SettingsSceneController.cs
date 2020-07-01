@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class SettingsSceneController : MonoBehaviour
 {
     [SerializeField] private SwitchButton MusicSwitch = null;
